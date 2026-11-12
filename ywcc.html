@@ -334,6 +334,26 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
 .y-btns svg{width:28px;height:28px;color:var(--red);flex:none}
 .y-btns small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
 .y-btns b{font-size:19px}
+.rio{background:radial-gradient(900px 500px at 90% 0%,rgba(0,156,59,.22),transparent 60%),radial-gradient(800px 500px at 0% 100%,rgba(255,223,0,.10),transparent 60%),#000;border-top:1px solid var(--line)}
+.rio-head{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.rio-date{border:2px solid var(--red);padding:26px 34px;text-align:center;min-width:260px}
+.rio-date span{display:block;font-family:var(--display);font-size:64px;line-height:1}
+.rio-date b{display:block;font-family:var(--display);font-weight:400;font-size:34px;color:var(--red);text-transform:uppercase;margin-top:4px}
+.rio-date small{display:block;color:var(--muted);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-top:10px;font-weight:700}
+.rio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.rio-card{border:1px solid var(--line);background:var(--ink);padding:32px 30px}
+.rio-card .k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.rio-card h3{font-size:32px;margin:12px 0 10px}
+.rio-card p{color:var(--muted);font-size:15px}
+.ages{display:flex;gap:10px;margin:14px 0 12px}
+.ages b{font-family:var(--display);font-weight:400;font-size:34px;background:#fff;color:#000;padding:6px 14px;line-height:1}
+.rio-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:22px}
+.rio-steps div{background:var(--black);padding:26px}
+.rio-steps span{font-family:var(--display);color:var(--red);font-size:22px}
+.rio-steps b{display:block;font-size:18px;margin:8px 0 6px}
+.rio-steps p{color:var(--muted);font-size:14px}
+@media (max-width:1000px){.rio-head{grid-template-columns:1fr}.rio-date{min-width:0;text-align:left}.rio-grid{grid-template-columns:1fr}.rio-steps{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.rio-steps{grid-template-columns:1fr}.rio-date span{font-size:52px}}
 .ny-grid{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:24px;margin-top:46px;align-items:stretch}
 .vid{border:1px solid var(--line);background:#000;position:relative}
 .vid video{width:100%;height:100%;max-height:640px;object-fit:cover;display:block}
@@ -396,14 +416,43 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
     <div>
       <div class="eyebrow">Australia · Youth World Cup Challenge</div>
       <h1>Represent<br><span class="outline" style="-webkit-text-stroke:2px #fff;color:transparent">Australia.</span></h1>
-      <p>Prodigy Futbol Lab is the local representative for the Australian squad competing in the Youth World Cup Challenge, an international youth tournament hosted in New York in 2026 and Rio de Janeiro in 2027.</p>
+      <p>Prodigy Futbol Lab is the local representative for the Australian squad competing in the Youth World Cup Challenge, an international youth tournament hosted in New York in 2026 and Rio de Janeiro in 2027. Trials for the Rio 2027 squads are coming to PFL in early 2027.</p>
       <div class="cta-row">
-        <a href="https://wa.me/61421441200?text=Hi%20PFL%2C%20I%27m%20interested%20in%20the%20Australia%20Youth%20World%20Cup%20Challenge%20squad." class="btn" target="_blank" rel="noopener">Register interest</a>
+        <a href="#rio-2027" class="btn">Rio 2027 trials</a>
         <a href="https://www.instagram.com/aus_youthworldcupchallenge/" class="btn ghost" target="_blank" rel="noopener">Follow the squad</a>
         <a href="#ny-2026" class="btn ghost">See New York 2026</a>
       </div>
     </div>
     <img src="img/ywcc-logo.png" alt="Australia Youth World Cup Challenge logo">
+  </div>
+</section>
+
+<section class="rio" id="rio-2027">
+  <div class="wrap">
+    <div class="rio-head reveal">
+      <div>
+        <div class="eyebrow">International tournament opportunity</div>
+        <h2>Youth World Cup 2027<br><span class="red">Rio de Janeiro</span></h2>
+        <p class="lead">As part of PFL's commitment to providing exceptional development opportunities, selected players from our Under 10, 12 and 14 squads will represent Australia at the Youth World Cup in Rio de Janeiro, Brazil.</p>
+      </div>
+      <div class="rio-date"><span>10 to 15</span><b>August 2027</b><small>Rio de Janeiro, Brazil</small></div>
+    </div>
+    <div class="rio-grid reveal">
+      <div class="rio-card"><div class="k">Age groups</div><div class="ages"><b>U10</b><b>U12</b><b>U14</b></div><p>Separate boys and girls squads in each age group.</p></div>
+      <div class="rio-card"><div class="k">Selection</div><h3>Trials at PFL</h3><p>Trials and squad selection will be held at PFL, 144-154 Haughton Road, Oakleigh, in early 2027.</p></div>
+      <div class="rio-card"><div class="k">The experience</div><h3>Represent Australia</h3><p>Compete against young players from around the world in one of football's most iconic cities.</p></div>
+    </div>
+    <div class="rio-steps reveal">
+      <div><span>01</span><b>Apply now</b><p>Register your interest by WhatsApp or email.</p></div>
+      <div><span>02</span><b>Trial at PFL</b><p>Attend trials in early 2027. We'll send dates to everyone who applies.</p></div>
+      <div><span>03</span><b>Get selected</b><p>Selected players join the U10, U12 or U14 squad.</p></div>
+      <div><span>04</span><b>Rio 2027</b><p>Fly to Brazil and compete from 10 to 15 August 2027.</p></div>
+    </div>
+    <div class="cta-row reveal" style="margin-top:34px">
+      <a href="https://wa.me/61421441200?text=Hi%20PFL%2C%20I%27d%20like%20to%20apply%20for%20Youth%20World%20Cup%202027%20trials.%20Player%20name%3A%20%20Age%20group%3A%20" class="btn" target="_blank" rel="noopener">Apply via WhatsApp</a>
+      <a href="mailto:info@pflab.com.au?subject=Youth%20World%20Cup%202027%20trials%20application" class="btn ghost">Apply via email</a>
+    </div>
+    <p class="note" style="margin-top:14px">WhatsApp 0421 441 200 · info@pflab.com.au. Please include the player's name, age group and whether they're a boy or girl.</p>
   </div>
 </section>
 
@@ -416,7 +465,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
     </div>
     <div class="hosts">
       <div class="host ny reveal"><span class="yr">2026</span><div class="k">2026 edition · Completed</div><h3>New York</h3><p>United States. Our squad competed in 2026.</p></div>
-      <div class="host rio reveal"><span class="yr">2027</span><div class="k">2027 edition · Up next</div><h3>Rio de Janeiro</h3><p>Brazil. Register your interest now.</p></div>
+      <div class="host rio reveal"><span class="yr">2027</span><div class="k">2027 edition · Up next</div><h3>Rio de Janeiro</h3><p>Brazil, 10 to 15 August 2027. U10, U12 and U14 boys and girls squads. <a href="#rio-2027" style="color:#fff;text-decoration:underline">Apply for trials</a></p></div>
     </div>
   </div>
 </section>
@@ -503,7 +552,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   </div>
 </footer>
 
-<div class="float"><a href="https://wa.me/61421441200?text=Hi%20PFL%2C%20I%27m%20interested%20in%20the%20Australia%20Youth%20World%20Cup%20Challenge%20squad." class="btn" target="_blank" rel="noopener">Register interest</a></div>
+<div class="float"><a href="https://wa.me/61421441200?text=Hi%20PFL%2C%20I%27m%20interested%20in%20the%20Australia%20Youth%20World%20Cup%20Challenge%20squad." class="btn" target="_blank" rel="noopener">Apply for Rio 2027</a></div>
 
 <script>
 (function(){
