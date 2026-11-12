@@ -146,7 +146,7 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .coach h3{font-size:36px;margin:8px 0 12px}
 .coach p{color:var(--muted);font-size:15px}
 .coach.feature{grid-column:1/-1;grid-template-columns:minmax(280px,420px) 1fr}
-.tom-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:2fr 1fr;gap:2px;background:var(--line);position:relative}
+.tom-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,2fr) minmax(0,1fr);contain:size;min-height:560px;gap:2px;background:var(--line);position:relative}
 .tom-photos img.main{grid-column:1/-1;object-position:center 20%}
 .tom-photos.single{grid-template-rows:1fr}
 .tquote{margin:6px 0 4px;padding:22px 24px;border:1px solid #3a0d0e;background:linear-gradient(120deg,#160304,#0b0b0b);font-size:18px;font-style:italic;line-height:1.55;color:#eee}
@@ -295,7 +295,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   .tile.big h3{font-size:32px}
   .gallery img{height:180px}
   .coach,.coach.feature{grid-template-columns:1fr}
-  .tom-photos{grid-template-rows:380px 180px}
+  .tom-photos{grid-template-rows:380px 180px;contain:none;min-height:0}
   .tom-photos.single{grid-template-rows:420px}
   .coach.feature .info{padding:28px}
   .coach.feature h3{font-size:42px}
@@ -559,7 +559,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
         </div>
       </div>
       <div class="coach feature reveal">
-        <div class="tom-photos single"><img class="main" src="img/alex-coach.jpg" alt="Alex Kang, PFL Senior Coach" loading="lazy"></div>
+        <div class="tom-photos">
+          <img class="main" src="img/alex-coach.jpg" alt="Alex Kang, PFL Senior Coach" loading="lazy">
+          <img src="img/alex-action-1.jpg" alt="Alex Kang in action for Heatherton United" loading="lazy">
+          <img src="img/alex-action-2.jpg" alt="Alex Kang on the ball under lights" loading="lazy">
+        </div>
         <div class="info">
           <div class="role">Senior Coach · Current player, Heatherton United</div>
           <h3>Alex Kang</h3>
