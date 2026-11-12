@@ -141,6 +141,27 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .gallery img{width:100%;height:240px;object-fit:cover;border:1px solid var(--line)}
 
 
+.contrast{margin-top:14px;border:1px solid var(--line);background:linear-gradient(135deg,#1a0c06 0%,#0d0d0d 45%,#06121a 100%);padding:44px 40px 40px;position:relative;overflow:hidden}
+.contrast::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#ff6a1a,#e8222b 35%,#2aa8ff 70%,#7fe3ff)}
+.ct-head{display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:end;margin-bottom:28px}
+.ct-head h3{font-family:var(--display);font-size:clamp(40px,5vw,64px);line-height:.95;text-transform:uppercase;margin-top:8px}
+.ct-head h3 span{background:linear-gradient(90deg,#ff6a1a,#2aa8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ct-head p{color:#bbb;font-size:15px;max-width:520px}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.ct{margin:0;position:relative;overflow:hidden;height:440px;border:1px solid var(--line)}
+.ct img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.ct:hover img{transform:scale(1.05)}
+.ct::after{content:"";position:absolute;inset:0;pointer-events:none}
+.ct.heat::after{background:linear-gradient(180deg,transparent 40%,rgba(120,40,5,.55) 75%,rgba(0,0,0,.9))}
+.ct.cold::after{background:linear-gradient(180deg,transparent 40%,rgba(5,50,95,.55) 75%,rgba(0,0,0,.9))}
+.ct.spa::after{background:linear-gradient(180deg,transparent 40%,rgba(5,70,70,.5) 75%,rgba(0,0,0,.9))}
+.ct figcaption{position:absolute;left:24px;right:24px;bottom:22px;z-index:1;display:flex;flex-direction:column}
+.ct .n{font-size:12px;font-weight:800;letter-spacing:.2em;opacity:.8}
+.ct b{font-family:var(--display);font-size:46px;line-height:1;text-transform:uppercase;font-weight:400}
+.ct.heat b{color:#ffb37a}.ct.cold b{color:#9fe0ff}.ct.spa b{color:#a8f0e6}
+.ct small{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ddd;margin-top:6px}
+@media(max-width:1000px){.ct-head{grid-template-columns:1fr;gap:12px}.ct{height:360px}}
+@media(max-width:640px){.contrast{padding:32px 18px 18px}.ct-grid{grid-template-columns:1fr}.ct{height:260px}.ct b{font-size:38px}}
 .pitch-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-top:14px}
 .pitch-row figure{margin:0;position:relative;overflow:hidden;height:340px;border:1px solid var(--line)}
 .pitch-row img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
@@ -692,10 +713,17 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
       <figure><img src="img/pitch-two.jpg" alt="Second indoor training pitch with goals and agility equipment" loading="lazy"><figcaption>Training pitch two</figcaption></figure>
       <figure><img src="img/pitch-net.jpg" alt="View of the pitch through the safety netting" loading="lazy"><figcaption>Fully netted, all weather</figcaption></figure>
     </div>
-    <div class="pitch-row reveal">
-      <figure class="w"><img src="img/recovery-spa.jpg" style="object-position:center 40%" alt="Hot spa with jets lit up next to the cold plunge ice bath" loading="lazy"><figcaption>Hot spa &amp; ice bath</figcaption></figure>
-      <figure><img src="img/recovery-sauna.jpg" alt="Cedar barrel sauna in the PFL recovery zone" loading="lazy" style="object-position:center 45%"><figcaption>Barrel sauna</figcaption></figure>
-      <figure><img src="img/recovery-sauna-plunge.jpg" alt="Barrel sauna beside the cold plunge tub" loading="lazy" style="object-position:center 55%"><figcaption>Sauna to ice bath</figcaption></figure>
+    <div class="contrast reveal">
+      <div class="ct-head">
+        <div><div class="eyebrow">Recovery zone</div>
+        <h3>Hot. Cold. <span>Repeat.</span></h3></div>
+        <p>Contrast therapy on site. Heat up in the barrel sauna, reset in the ice bath, then recover in the hot spa. Recovery habits that keep players fresh and on the pitch.</p>
+      </div>
+      <div class="ct-grid">
+        <figure class="ct heat"><img src="img/recovery-sauna.jpg" alt="Cedar barrel sauna in the PFL recovery zone" loading="lazy"><figcaption><span class="n">01</span><b>Heat</b><small>Barrel sauna</small></figcaption></figure>
+        <figure class="ct cold"><img src="img/recovery-ice.jpg" alt="Cold plunge ice bath" loading="lazy"><figcaption><span class="n">02</span><b>Ice</b><small>Cold plunge</small></figcaption></figure>
+        <figure class="ct spa"><img src="img/recovery-spa-detail.jpg" alt="Hot spa with massage jets" loading="lazy"><figcaption><span class="n">03</span><b>Recover</b><small>Hot spa</small></figcaption></figure>
+      </div>
     </div>
     <div class="gallery2 reveal">
       <figure class="w"><img src="img/rack-row.jpg" alt="Row of VERVE power racks and cable stations" loading="lazy"><figcaption>Power racks &amp; cable stations</figcaption></figure>
