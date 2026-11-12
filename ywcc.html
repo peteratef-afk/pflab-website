@@ -334,6 +334,20 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
 .y-btns svg{width:28px;height:28px;color:var(--red);flex:none}
 .y-btns small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
 .y-btns b{font-size:19px}
+.ny-grid{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:24px;margin-top:46px;align-items:stretch}
+.vid{border:1px solid var(--line);background:#000;position:relative}
+.vid video{width:100%;height:100%;max-height:640px;object-fit:cover;display:block}
+.ny-facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.ny-facts div{background:var(--black);padding:30px;display:flex;flex-direction:column;justify-content:flex-end}
+.ny-facts b{font-family:var(--display);font-weight:400;font-size:40px;text-transform:uppercase;line-height:1}
+.ny-facts span{color:var(--muted);font-size:15px;margin-top:8px}
+.gallery-y{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;grid-auto-flow:dense;gap:12px;margin-top:24px}
+.gallery-y .g{margin:0;overflow:hidden;border:1px solid var(--line)}
+.gallery-y .g.wide{grid-column:span 2}
+.gallery-y img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-y .g:hover img{transform:scale(1.05)}
+@media (max-width:1000px){.ny-grid{grid-template-columns:1fr}.vid video{max-height:none}.gallery-y{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.ny-facts b{font-size:30px}}
+@media (max-width:640px){.ny-facts{grid-template-columns:1fr}.ny-facts div{padding:22px}}
 @media (max-width:1000px){.y-hero .wrap,.y-contact .wrap{grid-template-columns:1fr}.y-hero img{max-width:220px;margin:0;order:-1}.y-grid{grid-template-columns:1fr}.hosts{grid-template-columns:1fr}}
 </style>
 </head>
@@ -386,6 +400,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <div class="cta-row">
         <a href="https://wa.me/61421441200?text=Hi%20PFL%2C%20I%27m%20interested%20in%20the%20Australia%20Youth%20World%20Cup%20Challenge%20squad." class="btn" target="_blank" rel="noopener">Register interest</a>
         <a href="https://www.instagram.com/aus_youthworldcupchallenge/" class="btn ghost" target="_blank" rel="noopener">Follow the squad</a>
+        <a href="#ny-2026" class="btn ghost">See New York 2026</a>
       </div>
     </div>
     <img src="img/ywcc-logo.png" alt="Australia Youth World Cup Challenge logo">
@@ -400,13 +415,48 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <p class="lead">The Youth World Cup Challenge brings young players from around the world together to compete in iconic football cities.</p>
     </div>
     <div class="hosts">
-      <div class="host ny reveal"><span class="yr">2026</span><div class="k">2026 edition</div><h3>New York</h3><p>United States</p></div>
-      <div class="host rio reveal"><span class="yr">2027</span><div class="k">2027 edition</div><h3>Rio de Janeiro</h3><p>Brazil</p></div>
+      <div class="host ny reveal"><span class="yr">2026</span><div class="k">2026 edition · Completed</div><h3>New York</h3><p>United States. Our squad competed in July 2026.</p></div>
+      <div class="host rio reveal"><span class="yr">2027</span><div class="k">2027 edition · Up next</div><h3>Rio de Janeiro</h3><p>Brazil. Register your interest now.</p></div>
     </div>
   </div>
 </section>
 
-<section style="background:var(--ink)">
+<section id="ny-2026" style="background:var(--ink)">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">New York 2026</div>
+      <h2>Our squad in New York</h2>
+      <p class="lead">In July 2026 our Australian squad travelled to New York, coached by Tom Reilly and Alex Kang. Players competed against teams from around the world, made new friends across nations, brought home medals, and soaked up the atmosphere of the FIFA World Cup in the United States.</p>
+    </div>
+    <div class="ny-grid">
+      <div class="vid reveal"><video src="media/ywcc-2026.mp4" poster="img/ywcc/video-poster.jpg" controls playsinline muted loop preload="none"></video></div>
+      <div class="ny-facts reveal">
+        <div><b>New York</b><span>Host city, July 2026</span></div>
+        <div><b>Tom &amp; Alex</b><span>PFL coaches led the Australian squad</span></div>
+        <div><b>Medals</b><span>Memories, medals and lifelong experiences</span></div>
+        <div><b>Friends forever</b><span>Teammates and rivals from around the world</span></div>
+      </div>
+    </div>
+    <div class="gallery-y">
+      <figure class="g wide"><img src="img/ywcc/team-medals.jpg" alt="Australian squad with medals and coaches Tom and Alex at the 2026 Youth World Challenge" loading="lazy"></figure>
+      <figure class="g "><img src="img/ywcc/team-talk.jpg" alt="Coach Tom Reilly giving a team talk" loading="lazy"></figure>
+      <figure class="g "><img src="img/ywcc/action-1.jpg" alt="Australia in action in New York" loading="lazy"></figure>
+      <figure class="g "><img src="img/ywcc/coaches-medals.jpg" alt="Coaches Tom Reilly and Alex Kang with a player" loading="lazy"></figure>
+      <figure class="g wide"><img src="img/ywcc/action-2.jpg" alt="Shot on goal against a YWC opponent" loading="lazy"></figure>
+      <figure class="g "><img src="img/ywcc/huddle.jpg" alt="Alex Kang with the team huddle" loading="lazy"></figure>
+      <figure class="g wide"><img src="img/ywcc/friendly.jpg" alt="Australia and Brazil players together after a match" loading="lazy"></figure>
+      <figure class="g "><img src="img/ywcc/signed-shirts.jpg" alt="Players with signed shirts" loading="lazy"></figure>
+      <figure class="g wide"><img src="img/ywcc/squad.jpg" alt="The squad with tournament staff" loading="lazy"></figure>
+      <figure class="g "><img src="img/ywcc/new-friends.jpg" alt="New friends from the Netherlands team" loading="lazy"></figure>
+      <figure class="g "><img src="img/ywcc/huddle-2.jpg" alt="Team huddle before kick-off" loading="lazy"></figure>
+      <figure class="g "><img src="img/ywcc/flex.jpg" alt="A proud Australian player" loading="lazy"></figure>
+      <figure class="g wide"><img src="img/ywcc/world-cup.jpg" alt="Australian families at a FIFA World Cup 2026 match" loading="lazy"></figure>
+      <figure class="g "><img src="img/ywcc/medal.jpg" alt="Player with his medal" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">Stay up to date</div>
