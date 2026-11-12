@@ -222,6 +222,18 @@ textarea{min-height:90px;resize:vertical}
 .consent{display:flex;gap:12px;align-items:flex-start;text-transform:none;letter-spacing:0;font-weight:500;font-size:14px;color:#ccc;margin:6px 0 0;cursor:pointer}
 .consent input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--red)}
 input.bad{border-color:var(--red)}
+.partners{background:#000;border-top:1px solid var(--line)}
+.main-sp{margin:50px auto 0;max-width:620px;text-align:center}
+.main-sp .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.sp{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:4px;padding:26px 30px;height:130px;transition:transform .25s,box-shadow .25s}
+.sp img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .25s}
+.sp img.wide{transform:scale(1.25)}
+.sp:has(img.wide){padding:20px 14px}
+.sp:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(237,32,36,.25)}
+.sp.big{height:190px;padding:34px 50px;outline:3px solid var(--red);outline-offset:4px}
+.sp-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:40px}
+@media (max-width:1000px){.sp-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.sp-grid{grid-template-columns:repeat(2,1fr)}.sp{height:100px;padding:18px}.sp.big{height:140px;padding:24px}}
 /* FAQ */
 .faq{background:var(--ink)}
 .faq-list{max-width:860px;margin-top:40px}
@@ -721,6 +733,29 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <details><summary>Is training affected by the weather?</summary><p>No. All sessions run in our indoor facility at 144-154 Haughton Road, Oakleigh, so training goes ahead all year round, rain, hail or heat.</p></details>
       <details><summary>What should my child bring?</summary><p>Indoor or turf-appropriate football boots or trainers, shin pads, a full water bottle and comfortable training clothes.</p></details>
       <details><summary>How do I book a session?</summary><p>Send an enquiry through this website, or call or text Coach Tom on 0416 121 596. We'll confirm a time that suits.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<section id="partners" class="partners">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center">
+      <div class="eyebrow" style="justify-content:center">Our partners</div>
+      <h2>Proudly supported by</h2>
+      <p class="lead" style="margin:0 auto">Thank you to the businesses that back our players and help us unlock potential.</p>
+    </div>
+    <div class="main-sp reveal">
+      <span class="tag">Main sponsor</span>
+      <div class="sp big"><img src="img/sponsors/stride.png" alt="STRIDE Reinforcement logo" loading="lazy"></div>
+    </div>
+    <div class="sp-grid reveal">
+        <a class="sp" href="https://www.yomg.com.au/" target="_blank" rel="noopener sponsored" aria-label="YOMG Yo My Goodness (opens in a new tab)"><img src="img/sponsors/yomg.png" alt="YOMG Yo My Goodness logo" loading="lazy"></a>
+        <a class="sp" href="https://www.chemistwarehouse.com.au/" target="_blank" rel="noopener sponsored" aria-label="Chemist Warehouse (opens in a new tab)"><img src="img/sponsors/chemist.png" alt="Chemist Warehouse logo" loading="lazy"></a>
+        <a class="sp" href="https://www.form700.com.au/" target="_blank" rel="noopener sponsored" aria-label="Form 700 (opens in a new tab)"><img class="wide" src="img/sponsors/form700.png" alt="Form 700 logo" loading="lazy"></a>
+        <a class="sp" href="https://dentology.au/" target="_blank" rel="noopener sponsored" aria-label="Dentology Dental Care (opens in a new tab)"><img src="img/sponsors/dentology.png" alt="Dentology Dental Care logo" loading="lazy"></a>
+        <a class="sp" href="https://www.belloconstructions.com.au/" target="_blank" rel="noopener sponsored" aria-label="Bello Constructions (opens in a new tab)"><img src="img/sponsors/bello.png" alt="Bello Constructions logo" loading="lazy"></a>
+        <a class="sp" href="https://cocoonfurniture.com.au/" target="_blank" rel="noopener sponsored" aria-label="Cocoon Furniture (opens in a new tab)"><img class="wide" src="img/sponsors/cocoon.png" alt="Cocoon Furniture logo" loading="lazy"></a>
     </div>
   </div>
 </section>
