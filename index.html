@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prodigy Futbol Lab | High-Performance Football Academy, Oakleigh</title>
+<meta name="description" content="Prodigy Futbol Lab (PFL) is a high-performance junior football academy in Oakleigh, Melbourne. Academy squads, 1:1 coaching, small-group training and athletic development in a premium indoor facility.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000;--ink:#0b0b0b;--panel:#121212;--line:#262626;--white:#fff;--muted:#a3a3a3;--red:#ED2024;--red-dark:#c4161a;
+  --display:'Anton',Impact,'Arial Narrow',sans-serif;--body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--black);color:var(--white);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--red)}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:1;letter-spacing:.01em}
+h2{font-size:clamp(40px,6vw,72px);margin:14px 0 18px}
+h3{font-size:28px}
+.lead{color:var(--muted);font-size:19px;max-width:640px}
+.red{color:var(--red)}
+section{padding:110px 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:16px 26px;border-radius:2px;border:2px solid var(--red);background:var(--red);color:#fff;cursor:pointer;transition:.2s;font-family:var(--body)}
+.btn:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.btn.ghost{background:transparent;border-color:#fff}
+.btn.ghost:hover{background:#fff;color:#000}
+.btn svg{width:18px;height:18px}
+
+/* NAV */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.25s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:48px;height:48px}
+.brand span{font-family:var(--display);font-size:20px;letter-spacing:.04em;line-height:1}
+.brand small{display:block;font-family:var(--body);font-size:10px;letter-spacing:.22em;color:var(--muted);margin-top:4px;font-weight:600}
+.links{display:flex;gap:28px;align-items:center}
+.links a{font-size:14px;font-weight:600;letter-spacing:.04em;color:#ddd}
+.links a:hover{color:var(--red)}
+.links .btn{padding:11px 18px;font-size:13px;color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer}
+.menu-btn svg{width:30px;height:30px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 0 90px;overflow:hidden;background:
+  radial-gradient(900px 600px at 85% 30%,rgba(237,32,36,.22),transparent 60%),
+  radial-gradient(700px 500px at 0% 100%,rgba(255,255,255,.05),transparent 60%),#000}
+.hero .pitch{position:absolute;inset:0;opacity:.09;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;position:relative}
+.hero h1{font-size:clamp(56px,9vw,128px);margin:20px 0 26px}
+.hero h1 .outline{-webkit-text-stroke:2px #fff;color:transparent}
+.hero p{font-size:20px;color:#cfcfcf;max-width:600px;margin-bottom:36px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.hero-crest{width:100%;max-width:420px;margin-left:auto;filter:drop-shadow(0 30px 60px rgba(237,32,36,.25))}
+.hero-crest img{width:100%;height:auto}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
+
+/* STRIP */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink);padding:0}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:34px 24px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font-family:var(--display);font-size:38px;font-weight:400;line-height:1;margin-bottom:8px}
+.stat span{color:var(--muted);font-size:14px}
+
+/* METHOD */
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line)}
+.pillar{background:var(--black);padding:30px 26px}
+.pillar .num{font-family:var(--display);color:var(--red);font-size:20px}
+.pillar h3{font-size:24px;margin:10px 0 10px}
+.pillar p{color:var(--muted);font-size:15px}
+.quote{margin-top:36px;border-left:3px solid var(--red);padding:6px 0 6px 22px;font-size:20px;font-weight:600}
+
+/* PROGRAMS */
+.programs{background:var(--ink)}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.card{background:var(--black);border:1px solid var(--line);padding:34px 30px;display:flex;flex-direction:column;transition:.25s;position:relative;overflow:hidden}
+.card:hover{border-color:var(--red);transform:translateY(-4px)}
+.card .tag{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.card h3{margin:14px 0 14px}
+.card p{color:var(--muted);font-size:15px;flex:1}
+.card ul{list-style:none;margin:18px 0 24px}
+.card li{font-size:14px;padding:7px 0 7px 22px;position:relative;border-top:1px solid var(--line)}
+.card li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:2px;background:var(--red)}
+.card .go{font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.card.feature{grid-column:span 3;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;padding:46px;background:linear-gradient(120deg,#160304,#000 60%);border-color:#3a0d0e}
+.card.feature h3{font-size:44px}
+.card.feature .badge{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:800;letter-spacing:.14em;padding:6px 10px;text-transform:uppercase}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:50px;border:1px solid var(--line)}
+.price{padding:44px 34px;border-left:1px solid var(--line);position:relative}
+.price:first-child{border-left:0}
+.price.pop{background:#fff;color:#000}
+.price.pop .muted,.price.pop li{color:#333}
+.price .pop-tag{position:absolute;top:0;right:0;background:var(--red);color:#fff;font-size:11px;font-weight:800;letter-spacing:.14em;padding:7px 12px;text-transform:uppercase}
+.price h3{font-size:30px}
+.price .muted{color:var(--muted);font-size:14px;margin-top:6px}
+.price .amt{font-family:var(--display);font-size:84px;line-height:1;margin:26px 0 4px}
+.price .amt sup{font-size:34px;vertical-align:top;margin-right:2px}
+.price .per{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.price ul{list-style:none;margin:26px 0 30px}
+.price li{font-size:15px;color:#ccc;padding:6px 0}
+.price li::before{content:"✓";color:var(--red);font-weight:800;margin-right:10px}
+.price .btn{width:100%;justify-content:center}
+.price.pop .btn.ghost{border-color:#000;color:#000}
+.price.pop .btn.ghost:hover{background:#000;color:#fff}
+.note{color:var(--muted);font-size:14px;margin-top:20px}
+
+/* FACILITY */
+.facility{background:var(--ink)}
+.fac-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:260px;gap:14px;margin-top:50px}
+.tile{position:relative;overflow:hidden;background:#151515;border:1px solid var(--line);display:flex;align-items:flex-end;padding:24px}
+.tile.big{grid-column:span 2;grid-row:span 2}
+.tile.wide{grid-column:span 2}
+.tile svg.bg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.85))}
+.tile div{position:relative;z-index:1}
+.tile h3{font-size:26px;margin-bottom:6px}
+.tile p{color:#bbb;font-size:14px;max-width:360px}
+.tile.big h3{font-size:40px}
+
+/* COACHES */
+.coach-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
+.coach{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--line);background:var(--ink)}
+.coach .ph{background:linear-gradient(160deg,#1d1d1d,#090909);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:72px;color:#2c2c2c;position:relative}
+.coach .ph::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--red)}
+.coach .info{padding:32px}
+.coach .role{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.coach h3{font-size:36px;margin:8px 0 12px}
+.coach p{color:var(--muted);font-size:15px}
+
+/* PATHWAY */
+.pathway{background:var(--red);color:#fff;padding:90px 0}
+.pathway .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.pathway h2{color:#fff}
+.pathway .eyebrow{color:#fff}.pathway .eyebrow::before{background:#fff}
+.steps{counter-reset:s;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,.35)}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--display);font-size:32px;line-height:1}
+.steps b{display:block;font-size:18px}
+.steps span{opacity:.88;font-size:15px}
+
+/* TRIALS / FORM */
+.form-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+.checks{list-style:none;margin-top:26px}
+.checks li{padding:10px 0 10px 34px;position:relative;border-top:1px solid var(--line);color:#ddd}
+.checks li::before{content:"";position:absolute;left:0;top:15px;width:18px;height:18px;border:2px solid var(--red);border-radius:50%}
+.checks li::after{content:"";position:absolute;left:6px;top:21px;width:6px;height:6px;background:var(--red);border-radius:50%}
+form{background:var(--ink);border:1px solid var(--line);padding:38px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin:0 0 8px}
+.field{margin-bottom:18px}
+input,select,textarea{width:100%;background:#000;border:1px solid #333;color:#fff;font:inherit;font-size:16px;padding:14px;border-radius:2px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--red)}
+textarea{min-height:90px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.chips input:focus-visible+label{outline:2px solid #fff;outline-offset:2px}
+.chips label{margin:0;cursor:pointer;border:1px solid #333;padding:10px 14px;font-size:12px;color:#ddd;border-radius:2px}
+.chips input:checked+label{background:var(--red);border-color:var(--red);color:#fff}
+.form-foot{font-size:13px;color:var(--muted);margin-top:14px}
+.done{display:none;background:var(--ink);border:1px solid var(--red);padding:38px}
+.done.show{display:block}
+.done pre{white-space:pre-wrap;background:#000;border:1px solid var(--line);padding:18px;font-family:var(--body);font-size:14px;color:#ddd;margin:18px 0}
+.done .cta-row{margin-top:8px}
+
+/* FAQ */
+.faq{background:var(--ink)}
+.faq-list{max-width:860px;margin-top:40px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:24px 50px 24px 0;font-weight:700;font-size:19px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:18px;font-size:30px;color:var(--red);font-weight:400;transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding:0 0 24px;max-width:760px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.cbox{border:1px solid var(--line);padding:34px;background:var(--ink)}
+.cbox .k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.cbox .v{font-family:var(--display);font-size:40px;margin:10px 0 8px;line-height:1.05}
+.cbox p{color:var(--muted);font-size:15px}
+.cbox .cta-row{margin-top:20px}
+
+footer{border-top:1px solid var(--line);padding:56px 0 40px}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+.motto{font-family:var(--display);font-size:22px;letter-spacing:.02em;text-transform:uppercase}
+.motto span{color:var(--red)}
+.legal{color:#666;font-size:13px;margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* float CTA (mobile) */
+.float{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:60}
+.float .btn{width:100%;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:1000px){
+  .links{display:none}
+  .links.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#000;padding:24px;gap:18px;border-bottom:1px solid var(--line)}
+  .links.open a{font-size:18px}
+  .menu-btn{display:block}
+  .hero-grid,.method-grid,.form-grid,.pathway .wrap{grid-template-columns:1fr}
+  .hero-crest{max-width:260px;margin:0;order:-1}
+  .prog-grid{grid-template-columns:1fr 1fr}
+  .card.feature{grid-column:span 2;grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr}
+  .price{border-left:0;border-top:1px solid var(--line)}
+  .price:first-child{border-top:0}
+  .fac-grid{grid-template-columns:1fr 1fr}
+  .coach-grid,.contact-grid{grid-template-columns:1fr}
+  .strip .wrap{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  section{padding:80px 0}
+  .hero{padding-top:110px}
+  .hero-crest{max-width:180px}
+  .prog-grid{grid-template-columns:1fr}
+  .card.feature{grid-column:span 1;padding:32px}
+  .card.feature h3{font-size:36px}
+  .fac-grid{grid-template-columns:1fr;grid-auto-rows:220px}
+  .tile.big,.tile.wide{grid-column:span 1;grid-row:span 1}
+  .coach{grid-template-columns:1fr}
+  .coach .ph{height:180px}
+  .row{grid-template-columns:1fr}
+  form,.done{padding:26px}
+  .pillars{grid-template-columns:1fr}
+  .float{display:block}
+  footer{padding-bottom:100px}
+  .scroll-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Crest (vector rebuild of the PFL logo; swap for the official PNG when hosting) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+        <symbol id="pitchLines" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="#fff" stroke-width="2">
+        <rect x="20" y="20" width="560" height="360"/>
+        <line x1="300" y1="20" x2="300" y2="380"/>
+        <circle cx="300" cy="200" r="60"/>
+        <rect x="20" y="110" width="90" height="180"/>
+        <rect x="490" y="110" width="90" height="180"/>
+        <rect x="20" y="160" width="34" height="80"/>
+        <rect x="546" y="160" width="34" height="80"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#home" class="brand" aria-label="Prodigy Futbol Lab home">
+      <img src="logo.png" alt="Prodigy Futbol Lab crest">
+      <span>PRODIGY FUTBOL LAB<small>OAKLEIGH · MELBOURNE</small></span>
+    </a>
+    <nav class="links" id="links">
+      <a href="#method">Method</a>
+      <a href="#programs">Programs</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#facility">Facility</a>
+      <a href="#coaches">Coaches</a>
+      <a href="#faq">FAQ</a>
+      <a href="#enquire" class="btn">Book a session</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <svg class="pitch" style="width:100%;height:100%"><use href="#pitchLines"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">High-performance football academy · Oakleigh</div>
+      <h1>Unlocking<br><span class="outline">Potential.</span></h1>
+      <p>Fast, high-intensity training that maximises reps, ball touches and decisions under pressure. Technical coaching, strength and conditioning and recovery, all under one roof in our premium indoor facility.</p>
+      <div class="cta-row">
+        <a href="#enquire" class="btn">Book a session <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#programs" class="btn ghost">Explore programs</a>
+      </div>
+    </div>
+    <div class="hero-crest"><img src="logo.png" alt="Prodigy Futbol Lab crest"></div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="stat"><b>U7–U12</b><span>Academy squads, entry by trial</span></div>
+    <div class="stat"><b>3 days</b><span>Academy training each week</span></div>
+    <div class="stat"><b>365</b><span>Days a year indoors, rain or shine</span></div>
+    <div class="stat"><b class="red">NPL1</b><span>Players progressing into NPL1 environments for 2026</span></div>
+  </div>
+</div>
+
+<!-- METHOD -->
+<section id="method">
+  <div class="wrap method-grid">
+    <div class="reveal">
+      <div class="eyebrow">The PFL Method</div>
+      <h2>Train harder.<br>Touch it <span class="red">more.</span></h2>
+      <p class="lead">Our program has been developed and refined over years with leading local and international technical directors. Every session is built to push players beyond their comfort zone with purposeful, challenging and consistent work.</p>
+      <div class="quote">More touches. More decisions. More reps at game speed. That is how players get better.</div>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar"><div class="num">01</div><h3>Technical</h3><p>First touch, ball mastery, passing, finishing and both feet, repeated at high tempo.</p></div>
+      <div class="pillar"><div class="num">02</div><h3>Tactical</h3><p>Scanning, positioning and decision-making under real pressure, not in isolation.</p></div>
+      <div class="pillar"><div class="num">03</div><h3>Athletic</h3><p>Speed, agility, coordination and strength built for young footballers.</p></div>
+      <div class="pillar"><div class="num">04</div><h3>Recovery</h3><p>Injury prevention and recovery habits, with hot and cold options and a sauna on site.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Programs</div>
+      <h2>Find the right fit</h2>
+      <p class="lead">From our academy squads to one-on-one sessions, every program runs on the same high-performance method. Players from any club are welcome in our private and small-group training.</p>
+    </div>
+    <div class="prog-grid">
+      <article class="card feature reveal">
+        <div>
+          <span class="badge">Trials open</span>
+          <h3 style="margin-top:18px">PFL Academy</h3>
+          <p>Our flagship program for ambitious young footballers who want to challenge themselves, train with intensity and maximise their potential in a structured player-development environment.</p>
+        </div>
+        <div>
+          <ul>
+            <li>U7 to U12 squads, entry by trial</li>
+            <li>3 training days per week</li>
+            <li>Technical, tactical and athletic development</li>
+            <li>A proven pathway into NPL environments</li>
+          </ul>
+          <a href="#enquire" class="btn" data-interest="Academy trial">Register for trials</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Personal coaching</span>
+        <h3>1:1 Coaching</h3>
+        <p>A session built entirely around one player's goals. The fastest way to fix a weakness or sharpen a strength.</p>
+        <ul><li>Tailored to position and level</li><li>Maximum touches per minute</li><li>Any club, any age</li></ul>
+        <a href="#enquire" class="go" data-interest="1:1 coaching">Book 1:1 →</a>
+      </article>
+      <article class="card reveal">
+        <span class="tag">2 to 4 players</span>
+        <h3>Small Group</h3>
+        <p>Train with a teammate or friends. Personal attention with the competitive edge of training alongside others.</p>
+        <ul><li>Bring your own group</li><li>Game-realistic pressure</li><li>Great value per player</li></ul>
+        <a href="#enquire" class="go" data-interest="Small group">Book small group →</a>
+      </article>
+      <article class="card reveal">
+        <span class="tag">5+ players</span>
+        <h3>Group Training</h3>
+        <p>High-tempo sessions with plenty of reps, small-sided games and decision-making under pressure.</p>
+        <ul><li>Fast-paced and competitive</li><li>Ideal for teams and squads</li><li>Our most affordable option</li></ul>
+        <a href="#enquire" class="go" data-interest="Group training">Book group →</a>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Speed · Strength · Agility</span>
+        <h3>Athletic Development</h3>
+        <p>Strength and conditioning designed for young footballers. Get quicker, stronger and more robust, and reduce the risk of injury.</p>
+        <ul><li>S&amp;C and gym on site</li><li>Speed and agility work</li><li>Injury prevention</li></ul>
+        <a href="#enquire" class="go" data-interest="Athletic development">Enquire →</a>
+      </article>
+      <article class="card reveal">
+        <span class="tag">School holidays</span>
+        <h3>Holiday Clinics</h3>
+        <p>Intensive training blocks during the school holidays, indoors and unaffected by the weather.</p>
+        <ul><li>Summer program coming soon</li><li>Limited places</li><li>Register interest now</li></ul>
+        <a href="#enquire" class="go" data-interest="Holiday clinic">Register interest →</a>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Clubs &amp; schools</span>
+        <h3>Partnerships</h3>
+        <p>We work with clubs, schools and sporting organisations on player development programs for their players.</p>
+        <ul><li>Team sessions</li><li>Pre-season blocks</li><li>School programs</li></ul>
+        <a href="#enquire" class="go" data-interest="Club / school partnership">Talk to us →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Session pricing</div>
+      <h2>Simple pricing</h2>
+      <p class="lead">Clear per-session pricing for private and group training.</p>
+    </div>
+    <div class="price-grid reveal">
+      <div class="price">
+        <h3>Group</h3><div class="muted">5 or more players</div>
+        <div class="amt"><sup>$</sup>55</div><div class="per">Per player · per session</div>
+        <ul><li>High-tempo group session</li><li>Small-sided games</li><li>Indoor, all weather</li></ul>
+        <a href="#enquire" class="btn ghost" data-interest="Group training">Book group</a>
+      </div>
+      <div class="price pop">
+        <span class="pop-tag">Most personal</span>
+        <h3>1:1 Coaching</h3><div class="muted">One player, one coach</div>
+        <div class="amt"><sup>$</sup>120</div><div class="per">Per session</div>
+        <ul><li>Fully tailored plan</li><li>Maximum touches and feedback</li><li>Open to players from any club</li></ul>
+        <a href="#enquire" class="btn" data-interest="1:1 coaching">Book 1:1</a>
+      </div>
+      <div class="price">
+        <h3>Small Group</h3><div class="muted">2 to 4 players</div>
+        <div class="amt"><sup>$</sup>80</div><div class="per">Per player · per session</div>
+        <ul><li>Train with teammates</li><li>Personal attention</li><li>Competitive reps</li></ul>
+        <a href="#enquire" class="btn ghost" data-interest="Small group">Book small group</a>
+      </div>
+    </div>
+    <p class="note">Academy program fees are provided after trials. Prices in AUD.</p>
+  </div>
+</section>
+
+<!-- FACILITY -->
+<section class="facility" id="facility">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">The facility</div>
+      <h2>Built for performance</h2>
+      <p class="lead">A premium indoor facility in Oakleigh with everything a developing player needs under one roof. Consistent, year-round training regardless of Melbourne's weather.</p>
+    </div>
+    <div class="fac-grid">
+      <div class="tile big reveal"><svg class="bg"><use href="#pitchLines"/></svg><div><h3>Indoor Technical Pitches</h3><p>Dedicated pitches for high-rep technical work and small-sided games, all year round.</p></div></div>
+      <div class="tile reveal"><div><h3>Strength &amp; Conditioning</h3><p>Purpose-built S&amp;C area for speed, power and agility.</p></div></div>
+      <div class="tile reveal"><div><h3>Gym</h3><p>Age-appropriate strength training, coached.</p></div></div>
+      <div class="tile wide reveal" style="background:linear-gradient(120deg,#2a0607,#111)"><div><h3>Recovery Zone</h3><p>Hot and cold recovery options and a sauna to help players recover and stay injury-free.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHES -->
+<section id="coaches">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Coaching team</div>
+      <h2>Coached by experts</h2>
+      <p class="lead">Highly qualified, experienced coaches who demand standards and care about every player's development.</p>
+    </div>
+    <div class="coach-grid">
+      <div class="coach reveal">
+        <div class="ph">TR</div>
+        <div class="info"><div class="role">Head Coach</div><h3>Tom Rilley</h3><p>Tom leads the PFL coaching program and academy, and personally oversees player development across our squads and private sessions.</p></div>
+      </div>
+      <div class="coach reveal">
+        <div class="ph">A</div>
+        <div class="info"><div class="role">Senior Coach</div><h3>Alex</h3><p>Alex runs our small-group and group sessions, bringing intensity, detail and high standards to every session.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATHWAY -->
+<section class="pathway">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Getting started</div>
+      <h2>Your first session in 3 steps</h2>
+      <p style="font-size:18px;opacity:.92;max-width:480px">Prodigy has a proven track record of developing players and creating opportunities for progression. It starts with one session.</p>
+    </div>
+    <ol class="steps reveal">
+      <li><div><b>Send an enquiry</b><span>Fill in the form below or text Coach Tom directly.</span></div></li>
+      <li><div><b>We match the program</b><span>We'll recommend the right option for your child's age, level and goals.</span></div></li>
+      <li><div><b>Train at PFL</b><span>Come in, meet the coaches and experience the intensity of a PFL session.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ENQUIRE -->
+<section id="enquire">
+  <div class="wrap form-grid">
+    <div class="reveal">
+      <div class="eyebrow">Book &amp; enquire</div>
+      <h2>Start training</h2>
+      <p class="lead">Tell us a little about your player and Coach Tom will get back to you to lock in a time.</p>
+      <ul class="checks">
+        <li>Bookings for 1:1, small-group and group sessions</li>
+        <li>Academy trial registrations (U7 to U12)</li>
+        <li>Holiday clinic interest</li>
+        <li>Club, school and partnership enquiries</li>
+      </ul>
+      <p class="note" style="margin-top:26px">Prefer to talk? Call or text Coach Tom on <b style="color:#fff">0416 121 596</b>.</p>
+    </div>
+    <div class="reveal">
+      <form id="enqForm" novalidate>
+        <div class="row">
+          <div class="field"><label for="pname">Parent / guardian name</label><input id="pname" required autocomplete="name"></div>
+          <div class="field"><label for="phone">Mobile</label><input id="phone" type="tel" required autocomplete="tel" placeholder="04xx xxx xxx"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="child">Player's name</label><input id="child" required></div>
+          <div class="field"><label for="age">Player's age</label>
+            <select id="age" required><option value="">Select</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17+</option></select></div>
+        </div>
+        <div class="field"><label for="club">Current club (if any)</label><input id="club" placeholder="e.g. Oakleigh Cannons"></div>
+        <div class="field"><label>I'm interested in</label>
+          <div class="chips" id="chips">
+            <input type="checkbox" id="i1" value="Academy trial"><label for="i1">Academy trial</label>
+            <input type="checkbox" id="i2" value="1:1 coaching"><label for="i2">1:1</label>
+            <input type="checkbox" id="i3" value="Small group"><label for="i3">Small group</label>
+            <input type="checkbox" id="i4" value="Group training"><label for="i4">Group</label>
+            <input type="checkbox" id="i5" value="Athletic development"><label for="i5">Athletic dev</label>
+            <input type="checkbox" id="i6" value="Holiday clinic"><label for="i6">Holiday clinic</label>
+            <input type="checkbox" id="i7" value="Club / school partnership"><label for="i7">Club / school</label>
+          </div>
+        </div>
+        <div class="field"><label for="hear">How did you hear about us?</label>
+          <select id="hear"><option value="">Select</option><option>Instagram</option><option>Google</option><option>Friend or family</option><option>My club</option><option>School</option><option>Other</option></select></div>
+        <div class="field"><label for="msg">Goals or anything we should know</label><textarea id="msg" placeholder="Position, goals, preferred days and times"></textarea></div>
+        <button class="btn" type="submit" style="width:100%;justify-content:center">Send enquiry</button>
+        <p class="form-foot" id="formErr" style="color:var(--red);display:none">Please fill in your name, mobile, player's name and age.</p>
+        <p class="form-foot">We only use your details to respond to your enquiry.</p>
+      </form>
+      <div class="done" id="done">
+        <div class="eyebrow">Almost there</div>
+        <h3 style="font-size:36px;margin:12px 0 6px">Send it to Coach Tom</h3>
+        <p style="color:var(--muted)">Your enquiry is ready. Tap below to send it as a text to <b style="color:#fff">0416 121 596</b>, or copy it and send it however you like.</p>
+        <pre id="summary"></pre>
+        <div class="cta-row">
+          <a class="btn" id="smsLink" href="sms:0416121596">Text Coach Tom</a>
+          <button class="btn ghost" id="copyBtn" type="button">Copy message</button>
+          <button class="btn ghost" id="editBtn" type="button">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2>Questions</h2>
+    <div class="faq-list">
+      <details><summary>What ages do you coach?</summary><p>Our academy squads are U7 to U12, with entry by trial. Private 1:1, small-group and group sessions are open to a wider range of ages. Tell us your player's age in the enquiry form and we'll recommend the right option.</p></details>
+      <details><summary>Does my child need to be at a club?</summary><p>No. Private and group training is open to players from any club, or no club at all. Many of our players train with us alongside their club football.</p></details>
+      <details><summary>How do academy trials work?</summary><p>Register through the enquiry form and select "Academy trial". We'll be in touch with trial details. The academy is designed for ambitious players who enjoy being challenged and want to train with intensity, three days per week.</p></details>
+      <details><summary>Is training affected by the weather?</summary><p>No. All sessions run in our indoor facility at 144-154 Haughton Road, Oakleigh, so training goes ahead all year round, rain, hail or heat.</p></details>
+      <details><summary>What should my child bring?</summary><p>Indoor or turf-appropriate football boots or trainers, shin pads, a full water bottle and comfortable training clothes.</p></details>
+      <details><summary>How do I book a session?</summary><p>Send an enquiry through this website, or call or text Coach Tom on 0416 121 596. We'll confirm a time that suits.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Come and train</h2>
+    <div class="contact-grid">
+      <div class="cbox">
+        <div class="k">Bookings · Coach Tom</div>
+        <div class="v">0416 121 596</div>
+        <p>Call or text to book a session or ask a question.</p>
+        <div class="cta-row"><a class="btn" href="tel:0416121596">Call</a><a class="btn ghost" href="sms:0416121596">Text</a></div>
+      </div>
+      <div class="cbox">
+        <div class="k">Location</div>
+        <div class="v">144-154 Haughton Road<br>Oakleigh VIC 3166</div>
+        <p>Premium indoor facility in Oakleigh, serving families across Melbourne's south-east and east.</p>
+        <div class="cta-row"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=144-154+Haughton+Road+Oakleigh+VIC+3166" target="_blank" rel="noopener">Get directions</a><a class="btn ghost" href="https://www.instagram.com/prodigyfutbollab/" target="_blank" rel="noopener">@prodigyfutbollab</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#home" class="brand"><img src="logo.png" alt="Prodigy Futbol Lab crest"><span>PRODIGY FUTBOL LAB<small>UNLOCKING POTENTIAL</small></span></a>
+      <div class="motto">Together we train. Together we grow. <span>Together we succeed.</span></div>
+    </div>
+    <div class="legal"><span>© 2026 Prodigy Futbol Lab Pty Ltd. All rights reserved.</span><span>144-154 Haughton Road, Oakleigh VIC 3166</span></div>
+  </div>
+</footer>
+
+<div class="float"><a href="#enquire" class="btn">Book a session</a></div>
+
+<script>
+(function(){
+  var header=document.querySelector('header');
+  function onScroll(){header.classList.toggle('scrolled',window.scrollY>30)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var links=document.getElementById('links');
+  document.getElementById('menuBtn').addEventListener('click',function(){links.classList.toggle('open')});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')links.classList.remove('open')});
+
+  // reveal on scroll
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+
+  // program buttons pre-select interest
+  document.querySelectorAll('[data-interest]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var v=a.getAttribute('data-interest');
+      document.querySelectorAll('#chips input').forEach(function(c){if(c.value===v)c.checked=true});
+    });
+  });
+
+  var form=document.getElementById('enqForm'),done=document.getElementById('done'),err=document.getElementById('formErr');
+  function val(id){return document.getElementById(id).value.trim()}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!val('pname')||!val('phone')||!val('child')||!val('age')){err.style.display='block';return}
+    err.style.display='none';
+    var ints=[].slice.call(document.querySelectorAll('#chips input:checked')).map(function(c){return c.value});
+    var lines=['Hi Coach Tom, PFL website enquiry:',
+      'Parent: '+val('pname')+' ('+val('phone')+')',
+      'Player: '+val('child')+', age '+val('age')+(val('club')?', '+val('club'):''),
+      'Interested in: '+(ints.length?ints.join(', '):'Not sure yet'),
+      val('hear')?'Heard about PFL via: '+val('hear'):'',
+      val('msg')?'Notes: '+val('msg'):''].filter(Boolean);
+    var text=lines.join('\n');
+    document.getElementById('summary').textContent=text;
+    document.getElementById('smsLink').setAttribute('href','sms:0416121596?&body='+encodeURIComponent(text));
+    form.style.display='none';done.classList.add('show');
+    done.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  document.getElementById('editBtn').addEventListener('click',function(){done.classList.remove('show');form.style.display='block'});
+  document.getElementById('copyBtn').addEventListener('click',function(){
+    var b=this,t=document.getElementById('summary').textContent;
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},function(){b.textContent='Select text above to copy'})}
+    catch(x){b.textContent='Select text above to copy'}
+  });
+})();
+</script>
+</body>
+</html>
