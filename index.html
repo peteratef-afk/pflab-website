@@ -136,6 +136,12 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .gallery img{width:100%;height:240px;object-fit:cover;border:1px solid var(--line)}
 
 
+.pitch-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-top:14px}
+.pitch-row figure{margin:0;position:relative;overflow:hidden;height:340px;border:1px solid var(--line)}
+.pitch-row img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pitch-row figure:hover img{transform:scale(1.04)}
+.pitch-row figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+@media (max-width:1000px){.pitch-row{grid-template-columns:1fr 1fr}.pitch-row .w{grid-column:span 2}.pitch-row figure{height:230px}}
 .gallery2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-top:14px}
 .gallery2 figure{margin:0;position:relative;overflow:hidden;height:300px;border:1px solid var(--line)}
 .gallery2 img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
@@ -518,8 +524,13 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <div class="tile big reveal"><img class="photo" src="img/pfl-wall.jpg" alt="The PFL strength and conditioning room with the PFL crest" loading="lazy"><div><h3>Strength &amp; Conditioning</h3><p>Our own performance room, built for footballers: Olympic lifting, power and speed work, with turf next to the weights.</p></div></div>
       <div class="tile reveal"><img class="photo" src="img/dumbbell-zone.jpg" alt="Full dumbbell range and adjustable benches" loading="lazy"><div><h3>Gym</h3><p>Full dumbbell range, coached strength work.</p></div></div>
       <div class="tile reveal"><img class="photo" src="img/sprint-lane.jpg" alt="Indoor turf sprint lane at PFL" loading="lazy"><div><h3>Speed Lane</h3><p>Indoor turf for acceleration, sprint and agility work.</p></div></div>
-      <div class="tile reveal"><svg class="bg"><use href="#pitchLines"/></svg><div><h3>Technical Pitches</h3><p>Indoor pitches for high-rep technical work and small-sided games.</p></div></div>
+      <div class="tile reveal"><img class="photo" src="img/pitch-centre.jpg" alt="PFL indoor technical pitch from the centre circle" loading="lazy"><div><h3>Technical Pitches</h3><p>Indoor pitches for high-rep technical work and small-sided games.</p></div></div>
       <div class="tile reveal" style="background:linear-gradient(120deg,#2a0607,#111)"><div><h3>Recovery Zone</h3><p>Hot and cold options and a sauna to help players recover.</p></div></div>
+    </div>
+    <div class="pitch-row reveal">
+      <figure class="w"><img src="img/pitch-crest-wall.jpg" alt="Main indoor pitch with the PFL crest and partner boards" loading="lazy"><figcaption>Main pitch</figcaption></figure>
+      <figure><img src="img/pitch-two.jpg" alt="Second indoor training pitch with goals and agility equipment" loading="lazy"><figcaption>Training pitch two</figcaption></figure>
+      <figure><img src="img/pitch-net.jpg" alt="View of the pitch through the safety netting" loading="lazy"><figcaption>Fully netted, all weather</figcaption></figure>
     </div>
     <div class="gallery2 reveal">
       <figure class="w"><img src="img/rack-row.jpg" alt="Row of VERVE power racks and cable stations" loading="lazy"><figcaption>Power racks &amp; cable stations</figcaption></figure>
