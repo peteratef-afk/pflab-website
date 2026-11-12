@@ -202,6 +202,13 @@ textarea{min-height:90px;resize:vertical}
 .ywcc-band .wrap{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:center}
 .ywcc-band img{width:100%;max-width:260px;filter:drop-shadow(0 20px 50px rgba(237,32,36,.3))}
 .ywcc-band .cta-row{margin-top:26px}
+.join{border-top:1px solid var(--line)}
+.fh{font-size:22px;margin:6px 0 14px;padding-top:14px;border-top:1px solid var(--line)}
+.fh:first-of-type{border-top:0;padding-top:0}
+.fh span{font-family:var(--body);font-size:13px;text-transform:none;color:var(--muted);letter-spacing:0}
+.consent{display:flex;gap:12px;align-items:flex-start;text-transform:none;letter-spacing:0;font-weight:500;font-size:14px;color:#ccc;margin:6px 0 0;cursor:pointer}
+.consent input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--red)}
+input.bad{border-color:var(--red)}
 /* FAQ */
 .faq{background:var(--ink)}
 .faq-list{max-width:860px;margin-top:40px}
@@ -334,6 +341,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <a href="#facility">Facility</a>
       <a href="#coaches">Coaches</a>
       <a href="#faq">FAQ</a>
+      <a href="#join">Mailing list</a>
       <a href="ywcc.html" class="ywcc-link">Youth World Cup</a>
       <a href="#enquire" class="btn">Book a session</a>
     </nav>
@@ -662,6 +670,66 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   </div>
 </section>
 
+<!-- MAILING LIST -->
+<section id="join" class="join">
+  <div class="wrap form-grid">
+    <div class="reveal">
+      <div class="eyebrow">Mailing list</div>
+      <h2>Stay in the loop</h2>
+      <p class="lead">Join the PFL mailing list for news on trials, holiday clinics, programs and international tournaments like the Youth World Cup.</p>
+      <ul class="checks">
+        <li>Trial dates and selection news</li>
+        <li>Holiday clinic and program updates</li>
+        <li>Youth World Cup Rio 2027 information</li>
+      </ul>
+      <p class="note" style="margin-top:26px"><b style="color:#fff">One form per child.</b> If you have more than one player, submit the form again for each child.</p>
+    </div>
+    <div class="reveal">
+      <form id="joinForm" novalidate>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <h3 class="fh">Primary guardian</h3>
+        <div class="field"><label for="pg_name">First &amp; last name *</label><input id="pg_name" name="Primary guardian name" required autocomplete="name"></div>
+        <div class="row">
+          <div class="field"><label for="pg_email">Email address *</label><input id="pg_email" name="Primary guardian email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="pg_mobile">Mobile number *</label><input id="pg_mobile" name="Primary guardian mobile" type="tel" required autocomplete="tel" placeholder="04xx xxx xxx"></div>
+        </div>
+        <h3 class="fh">Secondary guardian <span>(optional)</span></h3>
+        <div class="field"><label for="sg_name">First &amp; last name</label><input id="sg_name" name="Secondary guardian name"></div>
+        <div class="row">
+          <div class="field"><label for="sg_email">Email address</label><input id="sg_email" name="Secondary guardian email" type="email"></div>
+          <div class="field"><label for="sg_mobile">Mobile number</label><input id="sg_mobile" name="Secondary guardian mobile" type="tel" placeholder="04xx xxx xxx"></div>
+        </div>
+        <h3 class="fh">Player</h3>
+        <div class="row">
+          <div class="field"><label for="pl_name">First &amp; last name *</label><input id="pl_name" name="Player name" required></div>
+          <div class="field"><label for="pl_dob">Date of birth *</label><input id="pl_dob" name="Player date of birth" required placeholder="DD/MM/YY" inputmode="numeric" maxlength="8"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="pl_grade">Current grading</label><input id="pl_grade" name="Current grading" placeholder="e.g. Kangas"></div>
+          <div class="field"><label for="pl_pos">Preferred playing position</label>
+            <select id="pl_pos" name="Preferred position"><option value="">Select</option><option>Goalkeeper</option><option>Defender</option><option>Midfielder</option><option>Winger</option><option>Striker</option><option>Not sure yet</option></select></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="pl_foot">Primary foot</label>
+            <select id="pl_foot" name="Primary foot"><option value="">Select</option><option>Right</option><option>Left</option><option>Both</option></select></div>
+          <div class="field"><label for="pl_club">Previous club</label><input id="pl_club" name="Previous club"></div>
+        </div>
+        <div class="field"><label for="pl_ffv">FFV number</label><input id="pl_ffv" name="FFV number" inputmode="numeric" placeholder="If known"></div>
+        <label class="consent"><input type="checkbox" id="j_consent" required> I agree to receive email and SMS updates from Prodigy Futbol Lab. I can unsubscribe at any time.</label>
+        <button class="btn" type="submit" id="joinBtn" style="width:100%;justify-content:center;margin-top:18px">Join the mailing list</button>
+        <p class="form-foot" id="joinErr" style="color:var(--red);display:none"></p>
+        <p class="form-foot">Your details are only used by PFL to send you updates and are never shared.</p>
+      </form>
+      <div class="done" id="joinDone">
+        <div class="eyebrow">You're on the list</div>
+        <h3 style="font-size:36px;margin:12px 0 6px">Thanks, <span id="joinChild">we've got it</span>.</h3>
+        <p style="color:var(--muted)">We'll keep you updated on trials, programs and events. Have another player? Add them now.</p>
+        <div class="cta-row" style="margin-top:20px"><button class="btn" type="button" id="joinAnother">Add another child</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="wrap">
@@ -780,6 +848,33 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
     try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},function(){b.textContent='Select text above to copy'})}
     catch(x){b.textContent='Select text above to copy'}
   });
+
+  // mailing list
+  var jf=document.getElementById('joinForm');
+  if(jf){
+    var jd=document.getElementById('joinDone'),je=document.getElementById('joinErr'),jb=document.getElementById('joinBtn');
+    var dob=document.getElementById('pl_dob');
+    dob.addEventListener('input',function(){var d=dob.value.replace(/\D/g,'').slice(0,6);dob.value=d.length>4?d.slice(0,2)+'/'+d.slice(2,4)+'/'+d.slice(4):d.length>2?d.slice(0,2)+'/'+d.slice(2):d;});
+    jf.addEventListener('submit',function(e){
+      e.preventDefault();je.style.display='none';
+      var bad=[];jf.querySelectorAll('input[required]').forEach(function(i){var ok=i.type==='checkbox'?i.checked:i.value.trim()!=='';if(i.type==='email'&&ok)ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value.trim());if(i.id==='pl_dob'&&ok)ok=/^\d{2}\/\d{2}\/\d{2}$/.test(i.value);i.classList.toggle('bad',!ok&&i.type!=='checkbox');if(!ok)bad.push(i)});
+      var se=document.getElementById('sg_email');if(se.value.trim()&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(se.value.trim())){se.classList.add('bad');bad.push(se)}
+      if(bad.length){je.textContent=document.getElementById('j_consent').checked?'Please complete the highlighted fields (date of birth as DD/MM/YY).':'Please complete the highlighted fields and tick the consent box.';je.style.display='block';bad[0].focus();return}
+      var data={};jf.querySelectorAll('input[name],select[name]').forEach(function(i){data[i.name]=i.value.trim()});
+      if(data._honey)return;delete data._honey;
+      data._subject='PFL mailing list: '+data['Player name'];data._template='table';data._replyto=data['Primary guardian email'];
+      jb.disabled=true;jb.textContent='Sending...';
+      fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+        .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=='true')throw 0;})})
+        .then(function(){document.getElementById('joinChild').textContent='we\'ve added '+data['Player name'].split(' ')[0];jf.style.display='none';jd.classList.add('show');jd.scrollIntoView({behavior:'smooth',block:'start'})})
+        .catch(function(){je.innerHTML='Sorry, that didn\'t send. Please try again, or email <a href="mailto:info@pflab.com.au" style="color:#fff">info@pflab.com.au</a>.';je.style.display='block'})
+        .then(function(){jb.disabled=false;jb.textContent='Join the mailing list'});
+    });
+    document.getElementById('joinAnother').addEventListener('click',function(){
+      ['pl_name','pl_dob','pl_grade','pl_pos','pl_foot','pl_club','pl_ffv'].forEach(function(id){document.getElementById(id).value=''});
+      jd.classList.remove('show');jf.style.display='block';document.getElementById('pl_name').focus();
+    });
+  }
 })();
 </script>
 </body>
