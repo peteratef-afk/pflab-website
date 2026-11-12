@@ -1015,7 +1015,7 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
       val('hear')?'Heard about PFL via: '+val('hear'):'',
       val('msg')?'Notes: '+val('msg'):''].filter(Boolean);
     var text=lines.join('\n');
-    try{fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'PFL website enquiry: '+val('child'),_template:'table',Parent:val('pname'),Mobile:val('phone'),Player:val('child'),Age:val('age'),Club:val('club')||'-','Interested in':ints.length?ints.join(', '):'Not sure yet','Heard about PFL via':val('hear')||'-',Notes:val('msg')||'-',Page:location.pathname})}).catch(function(){})}catch(x){}
+    try{fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'PFL website enquiry: '+val('child'),_template:'table',_cc:'tom@pflab.com.au',Parent:val('pname'),Mobile:val('phone'),Player:val('child'),Age:val('age'),Club:val('club')||'-','Interested in':ints.length?ints.join(', '):'Not sure yet','Heard about PFL via':val('hear')||'-',Notes:val('msg')||'-',Page:location.pathname})}).catch(function(){})}catch(x){}
     document.getElementById('summary').textContent=text;
     document.getElementById('smsLink').setAttribute('href','sms:0416121596?&body='+encodeURIComponent(text));
     form.style.display='none';done.classList.add('show');if(typeof fbq==='function')fbq('track','Lead',{content_name:'Booking enquiry'});
@@ -1090,7 +1090,7 @@ document.addEventListener('click',function(e){
   function close(){qd.classList.remove('show');pending=null;var t=qd.querySelector('.qd-thanks');if(t){t.remove();[].forEach.call(qd.querySelector('.qd-box').children,function(c){c.style.display=''});['qdName','qdMob'].forEach(function(id){document.getElementById(id).value=''})}}
   function go(log){var a=pending;if(!a)return;var n=document.getElementById('qdName'),m=document.getElementById('qdMob'),x=document.querySelector('#qdExtra input');
     if(log){var ok=true;[n,m].forEach(function(i){var b=!i.value.trim()||(i===m&&!okPhone(i.value));i.classList.toggle('bad',b);if(b)ok=false});if(!ok){(n.classList.contains('bad')?n:m).focus();return}
-      var v=a.dataset.log==='venue';var d={_subject:(v?'PFL venue hire enquiry: ':'PFL booking enquiry: ')+n.value.trim(),_template:'table',Name:n.value.trim(),Mobile:m.value.trim(),'Contacted via':v?(a.href.indexOf('mailto:')===0?'Email':'PFL WhatsApp'):'Text to Coach Tom'};
+      var v=a.dataset.log==='venue';var d={_subject:(v?'PFL venue hire enquiry: ':'PFL booking enquiry: ')+n.value.trim(),_template:'table',_cc:'tom@pflab.com.au',Name:n.value.trim(),Mobile:m.value.trim(),'Contacted via':v?(a.href.indexOf('mailto:')===0?'Email':'PFL WhatsApp'):'Text to Coach Tom'};
       d[v?'Event':'Player']=x&&x.value.trim()?x.value.trim():'-';
       try{fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)}).catch(function(){})}catch(e){}
       if(typeof fbq==='function')fbq('track','Lead',{content_name:v?'Venue hire':'Booking (text)'})}

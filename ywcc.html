@@ -786,7 +786,7 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
       val('hear')?'Heard about PFL via: '+val('hear'):'',
       val('msg')?'Notes: '+val('msg'):''].filter(Boolean);
     var text=lines.join('\n');
-    try{fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'PFL website enquiry: '+val('child'),_template:'table',Parent:val('pname'),Mobile:val('phone'),Player:val('child'),Age:val('age'),Club:val('club')||'-','Interested in':ints.length?ints.join(', '):'Not sure yet','Heard about PFL via':val('hear')||'-',Notes:val('msg')||'-',Page:location.pathname})}).catch(function(){})}catch(x){}
+    try{fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'PFL website enquiry: '+val('child'),_template:'table',_cc:'tom@pflab.com.au',Parent:val('pname'),Mobile:val('phone'),Player:val('child'),Age:val('age'),Club:val('club')||'-','Interested in':ints.length?ints.join(', '):'Not sure yet','Heard about PFL via':val('hear')||'-',Notes:val('msg')||'-',Page:location.pathname})}).catch(function(){})}catch(x){}
     document.getElementById('summary').textContent=text;
     document.getElementById('smsLink').setAttribute('href','sms:0416121596?&body='+encodeURIComponent(text));
     form.style.display='none';done.classList.add('show');if(typeof fbq==='function')fbq('track','Lead',{content_name:'Booking enquiry'});
