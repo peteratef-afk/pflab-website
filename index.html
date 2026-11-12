@@ -136,7 +136,7 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 
 
 /* COACHES */
-.coach-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
+.coach-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:50px}
 .coach{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--line);background:var(--ink)}
 .coach .ph{background:linear-gradient(160deg,#1d1d1d,#090909);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:72px;color:#2c2c2c;position:relative}
 .coach .ph::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--red)}
@@ -144,6 +144,19 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .coach .role{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
 .coach h3{font-size:36px;margin:8px 0 12px}
 .coach p{color:var(--muted);font-size:15px}
+.coach.feature{grid-column:1/-1;grid-template-columns:minmax(280px,420px) 1fr}
+.tom-photos{display:grid;grid-template-rows:1.4fr 1fr;gap:2px;background:var(--line);position:relative}
+.tom-photos img{width:100%;height:100%;object-fit:cover;min-height:0}
+.tom-photos::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--red)}
+.coach.feature .info{padding:44px}
+.coach.feature h3{font-size:56px}
+.coach.feature p{font-size:16px;margin-bottom:14px;color:#c9c9c9}
+.career{list-style:none;display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);margin:24px 0}
+.career li{flex:1 1 180px;background:var(--black);padding:14px 16px;font-size:14px;font-weight:600}
+.career b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.mission{border-left:3px solid var(--red);padding:6px 0 6px 20px;font-family:var(--display);font-size:30px;line-height:1.1;text-transform:uppercase}
+.mission span{display:block;font-family:var(--body);font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--red);margin-bottom:8px}
+
 
 /* PATHWAY */
 .pathway{background:var(--red);color:#fff;padding:90px 0}
@@ -263,7 +276,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   .tile.big{grid-row:span 1;min-height:360px}
   .tile.big h3{font-size:32px}
   .gallery img{height:180px}
-  .coach{grid-template-columns:1fr}
+  .coach,.coach.feature{grid-template-columns:1fr}
+  .tom-photos{grid-template-rows:none;grid-template-columns:1fr 1fr;height:260px}
+  .coach.feature .info{padding:28px}
+  .coach.feature h3{font-size:42px}
+  .mission{font-size:24px}
   .coach .ph{height:180px}
   .row{grid-template-columns:1fr}
   form,.done{padding:26px}
@@ -493,12 +510,29 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
     <div class="reveal">
       <div class="eyebrow">Coaching team</div>
       <h2>Coached by experts</h2>
-      <p class="lead">Highly qualified, experienced coaches who demand standards and care about every player's development.</p>
+      <p class="lead">Led by a former professional footballer, our coaches demand high standards and care about every player's development.</p>
     </div>
     <div class="coach-grid">
-      <div class="coach reveal">
-        <div class="ph">TR</div>
-        <div class="info"><div class="role">Head Coach</div><h3>Tom Rilley</h3><p>Tom leads the PFL coaching program and academy, and personally oversees player development across our squads and private sessions.</p></div>
+      <div class="coach feature reveal">
+        <div class="tom-photos">
+          <img src="img/tom-1.jpg" alt="Tom Reilly playing for Accrington Stanley" loading="lazy">
+          <img src="img/tom-2.jpg" alt="Tom Reilly celebrating a goal" loading="lazy">
+        </div>
+        <div class="info">
+          <div class="role">Head Coach · Former professional footballer</div>
+          <h3>Tom Reilly</h3>
+          <p>Tom spent fifteen years inside England's professional academy system, from the age of 6 to 21. He came through the academies at Blackburn Rovers and Liverpool before earning a full-time scholarship and then a professional contract at Accrington Stanley.</p>
+          <p>His senior career took him to Sweden with Eskilstuna City in the second division, then to the Welsh Premier League with Bangor City and Cefn Druids, both of which qualified for the UEFA Europa League. He went on to win the Northern Premier League title in English non-league football before moving to Australia.</p>
+          <p>That journey shapes every PFL session. Tom brings the standards, intensity and attention to detail of English professional academies to Melbourne, and he knows from the inside what it takes for a young player to make the next step: the habits, the work rate and the decisions under pressure.</p>
+          <ul class="career">
+            <li><b>Academy</b>Blackburn Rovers · Liverpool</li>
+            <li><b>Pro contract</b>Accrington Stanley</li>
+            <li><b>Sweden</b>Eskilstuna City</li>
+            <li><b>Welsh Premier League</b>Bangor City · Cefn Druids</li>
+            <li><b>Champion</b>Northern Premier League</li>
+          </ul>
+          <div class="mission"><span>Tom's mission</span>To give every child the opportunity he never had.</div>
+        </div>
       </div>
       <div class="coach reveal">
         <div class="ph">AK</div>
