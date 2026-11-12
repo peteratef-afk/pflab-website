@@ -192,7 +192,23 @@ details[open] summary::after{transform:rotate(45deg)}
 details p{color:var(--muted);padding:0 0 24px;max-width:760px}
 
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.cbox .v.sm{font-size:30px}
+.clist{list-style:none;margin:16px 0 14px}
+.clist li a{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line);transition:.2s}
+.clist li:first-child a{border-top:0}
+.clist li a:hover{color:var(--red)}
+.clist svg{width:26px;height:26px;flex:none;color:var(--red)}
+.clist span{font-weight:700;font-size:17px;line-height:1.25}
+.clist small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.socials{margin-top:24px;border:1px solid var(--line);background:var(--ink);padding:26px 34px;display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.socials .k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.clist.row{display:flex;gap:40px;flex-wrap:wrap;margin:0}
+.clist.row li a{border:0;padding:4px 0}
+.ficons{display:flex;gap:16px}
+.ficons a{width:40px;height:40px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.2s}
+.ficons a:hover{border-color:var(--red);color:var(--red)}
+.ficons svg{width:18px;height:18px}
 .cbox{border:1px solid var(--line);padding:34px;background:var(--ink)}
 .cbox .k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
 .cbox .v{font-family:var(--display);font-size:40px;margin:10px 0 8px;line-height:1.05}
@@ -228,6 +244,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   .fac-grid{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr 1fr}
   .coach-grid,.contact-grid{grid-template-columns:1fr}
+  .socials{flex-direction:column;align-items:flex-start;gap:16px;padding:26px}
+  .clist.row{flex-direction:column;gap:12px}
   .strip .wrap{grid-template-columns:1fr 1fr}
   .stat:nth-child(3){border-left:0}
   .stat:nth-child(n+3){border-top:1px solid var(--line)}
@@ -406,7 +424,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
         <h3>Partnerships</h3>
         <p>We work with clubs, schools and sporting organisations on player development programs for their players.</p>
         <ul><li>Team sessions</li><li>Pre-season blocks</li><li>School programs</li></ul>
-        <a href="#enquire" class="go" data-interest="Club / school partnership">Talk to us →</a>
+        <a href="#contact" class="go">Talk to us →</a>
       </article>
     </div>
   </div>
@@ -519,7 +537,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
         <li>Holiday clinic interest</li>
         <li>Club, school and partnership enquiries</li>
       </ul>
-      <p class="note" style="margin-top:26px">Prefer to talk? Call or text Coach Tom on <b style="color:#fff">0416 121 596</b>.</p>
+      <p class="note" style="margin-top:26px">Bookings: call or text Coach Tom on <b style="color:#fff">0416 121 596</b>.<br>All other enquiries: WhatsApp <b style="color:#fff">0421 441 200</b> or email <b style="color:#fff">info@pflab.com.au</b>.</p>
     </div>
     <div class="reveal">
       <form id="enqForm" novalidate>
@@ -551,6 +569,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
         <button class="btn" type="submit" style="width:100%;justify-content:center">Send enquiry</button>
         <p class="form-foot" id="formErr" style="color:var(--red);display:none">Please fill in your name, mobile, player's name and age.</p>
         <p class="form-foot">We only use your details to respond to your enquiry.</p>
+        <p class="form-foot">Not a booking? WhatsApp <a href="https://wa.me/61421441200" style="color:#fff">0421 441 200</a> or email <a href="mailto:info@pflab.com.au" style="color:#fff">info@pflab.com.au</a>.</p>
       </form>
       <div class="done" id="done">
         <div class="eyebrow">Almost there</div>
@@ -592,15 +611,31 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <div class="cbox">
         <div class="k">Bookings · Coach Tom</div>
         <div class="v">0416 121 596</div>
-        <p>Call or text to book a session or ask a question.</p>
+        <p>Call or text Coach Tom to book a session.</p>
         <div class="cta-row"><a class="btn" href="tel:0416121596">Call</a><a class="btn ghost" href="sms:0416121596">Text</a></div>
       </div>
       <div class="cbox">
-        <div class="k">Location</div>
-        <div class="v">144-154 Haughton Road<br>Oakleigh VIC 3166</div>
-        <p>Premium indoor facility in Oakleigh, serving families across Melbourne's south-east and east.</p>
-        <div class="cta-row"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=144-154+Haughton+Road+Oakleigh+VIC+3166" target="_blank" rel="noopener">Get directions</a><a class="btn ghost" href="https://www.instagram.com/prodigyfutbollab/" target="_blank" rel="noopener">@prodigyfutbollab</a></div>
+        <div class="k">General enquiries</div>
+        <ul class="clist">
+          <li><a href="https://wa.me/61421441200" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8zM20.5 3.5A11.8 11.8 0 001.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0024 12c0-3.2-1.2-6.1-3.5-8.5z"/></svg><span><small>WhatsApp</small>0421 441 200</span></a></li>
+          <li><a href="mailto:info@pflab.com.au"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3z M3 6l9 7 9-7"/></svg><span><small>Email</small>info@pflab.com.au</span></a></li>
+        </ul>
+        <p>Programs, trials, partnerships and everything else.</p>
       </div>
+      <div class="cbox">
+        <div class="k">Location</div>
+        <div class="v sm">144-154 Haughton Road<br>Oakleigh VIC 3166</div>
+        <p>Premium indoor facility serving families across Melbourne's south-east and east.</p>
+        <div class="cta-row"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=144-154+Haughton+Road+Oakleigh+VIC+3166" target="_blank" rel="noopener">Get directions</a></div>
+      </div>
+    </div>
+    <div class="socials">
+      <div class="k">Follow PFL</div>
+      <ul class="clist row">
+        <li><a href="https://www.instagram.com/prodigyfutbollab/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1C2.7 8.5 2.7 8.9 2.7 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg><span><small>Instagram</small>@prodigyfutbollab</span></a></li>
+        <li><a href="https://www.facebook.com/share/19tCSBQqZa/?mibextid=wwXIfr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12a12 12 0 10-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0024 12z"/></svg><span><small>Facebook</small>Prodigy Futbol Lab</span></a></li>
+        <li><a href="https://www.youtube.com/@ProdigyFutbolLab" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg><span><small>YouTube</small>@ProdigyFutbolLab</span></a></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -611,6 +646,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
     <div class="foot">
       <a href="#home" class="brand"><img src="logo.png" alt="Prodigy Futbol Lab crest"><span>PRODIGY FUTBOL LAB<small>UNLOCKING POTENTIAL</small></span></a>
       <div class="motto">Together we train. Together we grow. <span>Together we succeed.</span></div>
+      <div class="ficons"><a href="https://www.instagram.com/prodigyfutbollab/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1C2.7 8.5 2.7 8.9 2.7 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg></a><a href="https://www.facebook.com/share/19tCSBQqZa/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12a12 12 0 10-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0024 12z"/></svg></a><a href="https://www.youtube.com/@ProdigyFutbolLab" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a><a href="https://wa.me/61421441200" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8zM20.5 3.5A11.8 11.8 0 001.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0024 12c0-3.2-1.2-6.1-3.5-8.5z"/></svg></a><a href="mailto:info@pflab.com.au" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3z M3 6l9 7 9-7"/></svg></a></div>
     </div>
     <div class="legal"><span>© 2026 Prodigy Futbol Lab Pty Ltd. All rights reserved.</span><span>144-154 Haughton Road, Oakleigh VIC 3166</span></div>
   </div>
