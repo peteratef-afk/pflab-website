@@ -43,7 +43,8 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .brand img{width:48px;height:48px}
 .brand span{font-family:var(--display);font-size:20px;letter-spacing:.04em;line-height:1}
 .brand small{display:block;font-family:var(--body);font-size:10px;letter-spacing:.22em;color:var(--muted);margin-top:4px;font-weight:600}
-.links{display:flex;gap:28px;align-items:center}
+.links{display:flex;gap:22px;align-items:center}
+.links a{white-space:nowrap}
 .links a{font-size:14px;font-weight:600;letter-spacing:.04em;color:#ddd}
 .links a:hover{color:var(--red)}
 .links .btn{padding:11px 18px;font-size:13px;color:#fff}
@@ -251,7 +252,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-@media (max-width:1000px){
+@media (max-width:1180px){
   .links{display:none}
   .links.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#000;padding:24px;gap:18px;border-bottom:1px solid var(--line)}
   .links.open a{font-size:18px}
@@ -361,6 +362,77 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
 .ny-facts div{background:var(--black);padding:30px;display:flex;flex-direction:column;justify-content:flex-end}
 .ny-facts b{font-family:var(--display);font-weight:400;font-size:40px;text-transform:uppercase;line-height:1}
 .ny-facts span{color:var(--muted);font-size:15px;margin-top:8px}
+.story{background:#000;padding:0}
+.st-hero{position:relative;overflow:hidden;background:#000}
+.st-hero>img{display:block;width:100%;height:78vh;min-height:460px;object-fit:cover;object-position:center 25%}
+.st-hero::after{content:"";position:absolute;left:0;right:0;top:0;height:78vh;min-height:460px;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,#000 100%);pointer-events:none}
+.st-hero-txt{position:relative;z-index:1;margin-top:-110px;padding-bottom:20px;width:100%}
+.st-hero h2{font-size:clamp(52px,8vw,118px);margin:16px 0}
+.st-hero p{max-width:620px;font-size:19px;color:#ddd}
+.st-chapters{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.st-chapters a{border:1px solid rgba(255,255,255,.3);padding:10px 16px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(6px);background:rgba(0,0,0,.35);transition:.2s}
+.st-chapters a:hover{border-color:var(--red);background:var(--red)}
+.st-chapters b{color:var(--red);margin-right:8px}.st-chapters a:hover b{color:#fff}
+.chapter{padding:110px 0}
+.chapter.dark{background:var(--ink)}
+.ch-no{font-family:var(--display);font-size:84px;line-height:.9;color:transparent;-webkit-text-stroke:2px var(--red);display:block}
+.chapter h3{font-size:clamp(40px,5vw,64px);margin:12px 0 16px}
+.chapter p{color:#bdbdbd;font-size:18px;max-width:560px}
+.ch-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.ch-grid.rev .ch-txt{order:2}
+.ch-txt blockquote{margin-top:26px;border-left:3px solid var(--red);padding-left:20px;font-family:var(--display);font-size:28px;text-transform:uppercase;line-height:1.15}
+.tag-line{margin-top:24px;font-family:var(--display);font-size:30px!important;text-transform:uppercase;color:#fff!important}
+.ch-head{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:end;margin-bottom:40px}
+.ch-head h3{margin-top:0}
+.ph{margin:0;overflow:hidden;position:relative;background:#111;cursor:zoom-in}
+.ph img,.ph video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.ph:hover img{transform:scale(1.05)}
+.ph.vid{cursor:default}
+.ph figcaption{position:absolute;left:0;right:0;top:0;padding:12px 14px 30px;background:linear-gradient(rgba(0,0,0,.75),transparent);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
+.col-prep{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:260px 260px 220px;gap:12px}
+.col-prep .tall{grid-row:span 2}
+.col-prep .wide{grid-column:span 2}
+.col-action{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:12px}
+.col-action .feat{grid-row:span 2}
+.col-action .wide{grid-column:span 2}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px max(24px,calc((100vw - 1200px)/2 + 24px));scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip .ph{flex:0 0 min(420px,78vw);height:280px;scroll-snap-align:start}
+.strip-hint{color:var(--muted);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-top:10px}
+.st-pano{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;margin-top:-110px}
+.st-pano>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.st-pano::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.92))}
+.st-pano .wrap{position:relative;z-index:1;padding-bottom:50px;width:100%}
+.st-pano p{color:#ddd}
+.col-wc{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:300px 520px;gap:12px;margin-top:12px}
+.col-wc .anthem{grid-column:span 4}.col-wc .fam{grid-column:span 2}
+.col-wc .vid{grid-column:span 2}
+.col-friends{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:280px 280px 240px;gap:12px}
+.col-friends .tall{grid-row:span 2}
+.col-friends .wide{grid-column:span 2}
+.col-medals{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:300px 300px;gap:12px}
+.col-medals .mhero{grid-column:span 2;grid-row:span 2}
+.st-end{text-align:center;margin-top:80px;padding:60px 24px;border-top:1px solid var(--line)}
+.st-end p{margin:0 auto;font-size:18px;color:var(--muted)}
+.st-end h3{margin:10px 0 28px}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.94);display:flex;align-items:center;justify-content:center;padding:30px}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:100%;object-fit:contain}
+.lb button{position:absolute;top:16px;right:22px;background:none;border:0;color:#fff;font-size:44px;cursor:pointer;line-height:1}
+@media (max-width:1000px){
+ .ch-grid{grid-template-columns:1fr;gap:34px}.ch-grid.rev .ch-txt{order:0}
+ .ch-head{grid-template-columns:1fr;gap:0}
+ .col-action{grid-template-columns:1fr 1fr;grid-template-rows:300px 200px 200px}.col-action .feat{grid-column:span 2;grid-row:span 1}.col-action .wide{grid-column:span 2}
+ .col-wc{grid-template-columns:1fr 1fr;grid-template-rows:240px 200px auto}.col-wc .anthem{grid-column:span 2}.col-wc .fam{grid-column:span 2}.col-wc .vid{grid-column:span 1;aspect-ratio:9/16}
+ .col-wc .vid:last-child{grid-column:span 2;aspect-ratio:auto;height:420px}
+ .col-medals{grid-template-columns:1fr 1fr;grid-template-rows:280px 200px 200px}.col-medals .mhero{grid-row:span 1}
+}
+@media (max-width:640px){
+ .chapter{padding:80px 0}.ch-no{font-size:64px}
+ .col-prep{grid-template-rows:200px 200px 180px}
+ .col-friends{grid-template-rows:220px 220px 200px}
+ .st-hero>img,.st-hero::after{height:52vh;min-height:300px}.st-hero-txt{margin-top:-60px}.st-pano{min-height:70vh}
+}
 .sub{font-size:28px;margin:44px 0 0}
 .vibes{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:24px}
 .vibes figure{margin:0;position:relative;overflow:hidden;border:1px solid var(--line);background:#000}
@@ -407,13 +479,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <span>PRODIGY FUTBOL LAB<small>OAKLEIGH · MELBOURNE</small></span>
     </a>
     <nav class="links" id="links">
-      <a href="index.html#method">Method</a>
       <a href="index.html#programs">Programs</a>
       <a href="index.html#pricing">Pricing</a>
       <a href="index.html#facility">Facility</a>
       <a href="index.html#coaches">Coaches</a>
       <a href="index.html#faq">FAQ</a>
-      <a href="index.html#join">Mailing list</a>
+      <a href="contact.html">Contact us</a>
       <a href="ywcc.html" class="ywcc-link" aria-current="page">Youth World Cup</a>
       <a href="index.html#enquire" class="btn">Book a session</a>
     </nav>
@@ -431,7 +502,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <div class="cta-row">
         <a href="#rio-2027" class="btn">Rio 2027 trials</a>
         <a href="https://www.instagram.com/aus_youthworldcupchallenge/" class="btn ghost" target="_blank" rel="noopener">Follow the squad</a>
-        <a href="#ny-2026" class="btn ghost">See New York 2026</a>
+        <a href="#ny-2026" class="btn ghost">Our New York story</a>
       </div>
     </div>
     <img src="img/ywcc-logo.png" alt="Australia Youth World Cup Challenge logo">
@@ -463,7 +534,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <a href="https://wa.me/61421441200?text=Hi%20PFL%2C%20I%27d%20like%20to%20apply%20for%20Youth%20World%20Cup%202027%20trials.%20Player%20name%3A%20%20Age%20group%3A%20" class="btn" target="_blank" rel="noopener">Apply via WhatsApp</a>
       <a href="mailto:info@pflab.com.au?subject=Youth%20World%20Cup%202027%20trials%20application" class="btn ghost">Apply via email</a>
     </div>
-    <p class="note" style="margin-top:14px">Want updates on Rio 2027? <a href="index.html#join" style="color:#fff;text-decoration:underline">Join our mailing list</a>. WhatsApp 0421 441 200 · info@pflab.com.au. Please include the player's name, age group and whether they're a boy or girl.</p>
+    <p class="note" style="margin-top:14px">Want updates on Rio 2027? <a href="contact.html#join" style="color:#fff;text-decoration:underline">Join our mailing list</a>. WhatsApp 0421 441 200 · info@pflab.com.au. Please include the player's name, age group and whether they're a boy or girl.</p>
   </div>
 </section>
 
@@ -481,67 +552,117 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   </div>
 </section>
 
-<section id="ny-2026" style="background:var(--ink)">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="eyebrow">New York 2026</div>
-      <h2>Our squad in New York</h2>
-      <p class="lead">In 2026 our Australian squad travelled to New York, coached by Tom Reilly and Alex Kang. Players competed against teams from around the world, made new friends across nations, brought home medals, and soaked up the atmosphere of the FIFA World Cup in the United States.</p>
-    </div>
-    <div class="ny-grid">
-      <div class="vid reveal"><video src="media/ywcc-2026.mp4" poster="img/ywcc/video-poster.jpg" controls playsinline muted loop preload="none"></video></div>
-      <div class="ny-facts reveal">
-        <div><b>New York</b><span>Host city, 2026</span></div>
-        <div><b>Tom &amp; Alex</b><span>PFL coaches led the Australian squad</span></div>
-        <div><b>Medals</b><span>Memories, medals and lifelong experiences</span></div>
-        <div><b>Friends forever</b><span>Teammates and rivals from around the world</span></div>
+<section id="ny-2026" class="story">
+  <!-- CH1 HERO -->
+  <div class="st-hero">
+    <img src="img/ywcc/stage-team.jpg" alt="The Australian squad with coaches Tom Reilly and Alex Kang on the Youth World Challenge stage">
+    <div class="wrap st-hero-txt">
+      <div class="eyebrow">The story of New York 2026</div>
+      <h2>From Oakleigh<br>to <span class="red">New York</span></h2>
+      <p>In 2026 a squad of young Australians, led by PFL coaches Tom Reilly and Alex Kang, pulled on the green and gold and took on the world. This is their journey.</p>
+      <div class="st-chapters">
+        <a href="#ch-prep"><b>01</b>The preparation</a>
+        <a href="#ch-action"><b>02</b>Match day</a>
+        <a href="#ch-wc"><b>03</b>The World Cup</a>
+        <a href="#ch-friends"><b>04</b>Friends forever</a>
+        <a href="#ch-medals"><b>05</b>Medals &amp; memories</a>
       </div>
     </div>
-    <h3 class="sub reveal">World Cup vibes</h3>
-    <p class="lead reveal" style="margin-top:10px">Beyond the tournament, our families soaked up the FIFA World Cup 2026 atmosphere: the pre-match ceremony at Australia vs Paraguay in the San Francisco Bay Area, and the energy of Times Square in New York.</p>
-    <div class="vibes reveal">
-      <figure class="g big"><img src="img/ywcc/wc-flags.jpg" alt="Giant Australian and Paraguayan flags on the pitch before Australia vs Paraguay at FIFA World Cup 2026" loading="lazy"><figcaption>Pre-match ceremony · Australia vs Paraguay</figcaption></figure>
-      <figure class="g big"><img src="img/ywcc/wc-anthem.jpg" alt="Australian fans in gold during the national anthems at FIFA World Cup 2026" loading="lazy"><figcaption>A sea of gold for the anthems</figcaption></figure>
-      <figure class="v"><video src="media/stadium-crowd.mp4" poster="img/ywcc/stadium-crowd-poster.jpg" controls playsinline muted loop preload="none"></video><figcaption>Match-day atmosphere</figcaption></figure>
-      <figure class="v"><video src="media/times-square-2.mp4" poster="img/ywcc/times-square-2-poster.jpg" controls playsinline muted loop preload="none"></video><figcaption>Times Square, New York</figcaption></figure>
-      <figure class="v"><video src="media/times-square-1.mp4" poster="img/ywcc/times-square-1-poster.jpg" controls playsinline muted loop preload="none"></video><figcaption>World Cup nights in New York</figcaption></figure>
+  </div>
+
+  <!-- CH2 PREP -->
+  <div class="wrap chapter" id="ch-prep">
+    <div class="ch-grid">
+      <div class="ch-txt reveal">
+        <span class="ch-no">01</span>
+        <h3>The preparation</h3>
+        <p>Every game started in a huddle. Tom and Alex brought the same detail and intensity they bring to every PFL session in Oakleigh: clear roles, tactics on the whiteboard and belief in every player.</p>
+        <blockquote>"Clear roles. Play with courage. Look after each other."</blockquote>
+      </div>
+      <div class="col-prep reveal">
+        <figure class="ph tall"><img src="img/ywcc/sky-huddle.jpg" alt="Team huddle from below with Tom Reilly" loading="lazy"></figure>
+        <figure class="ph "><img src="img/ywcc/pfl-team-talk.jpg" alt="Tom Reilly running a tactics talk" loading="lazy"></figure>
+        <figure class="ph "><img src="img/ywcc/huddle-4.jpg" alt="Alex Kang leading a team huddle" loading="lazy"></figure>
+        <figure class="ph wide"><img src="img/ywcc/team-talk.jpg" alt="Team talk on the sideline" loading="lazy"></figure>
+      </div>
     </div>
-    <h3 class="sub reveal">Match action</h3>
-    <div class="gallery-y">
-      <figure class="g"><img src="img/ywcc/act-strike.jpg" alt="Australian player lining up a shot" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/act-dribble.jpg" alt="Australian player driving forward with the ball" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/act-break.jpg" alt="Breaking away from defenders" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/act-wing.jpg" alt="Taking on a defender down the wing" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/act-shot.jpg" alt="Striking the ball on the run" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/act-header.jpg" alt="Heading clear from a corner" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/act-sprint.jpg" alt="Sprinting onto a through ball" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/act-duel.jpg" alt="Winning a one-on-one duel" loading="lazy"></figure>
+  </div>
+
+  <!-- CH3 ACTION -->
+  <div class="chapter dark" id="ch-action">
+    <div class="wrap">
+      <div class="ch-head reveal"><span class="ch-no">02</span><div><h3>Match day</h3><p>Against teams from around the world, our players showed exactly what PFL training is built for: speed, skill and courage on the ball.</p></div></div>
+      <div class="col-action reveal">
+        <figure class="ph feat"><img src="img/ywcc/act-break.jpg" alt="Breaking away from defenders" loading="lazy"></figure>
+        <figure class="ph "><img src="img/ywcc/act-strike.jpg" alt="Lining up a shot" loading="lazy"></figure>
+        <figure class="ph "><img src="img/ywcc/action-2.jpg" alt="Shot on goal under pressure" loading="lazy"></figure>
+        <figure class="ph wide"><img src="img/ywcc/act-header.jpg" alt="Heading clear from a corner" loading="lazy"></figure>
+      </div>
     </div>
-    <h3 class="sub reveal">On and off the pitch</h3>
-    <div class="gallery-y">
-      <figure class="g wide"><img src="img/ywcc/stage-team.jpg" alt="The Australian squad with coaches Tom Reilly and Alex Kang on the Youth World Challenge stage" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/sky-huddle.jpg" alt="Team huddle from below" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/huddle-3.jpg" alt="Tom and Alex with the team between games" loading="lazy"></figure>
-      <figure class="g wide"><img src="img/ywcc/team-photo.jpg" alt="Australian squad team photo with coaches" loading="lazy"></figure>
-      <figure class="g wide"><img src="img/ywcc/pfl-team-talk.jpg" alt="Tom Reilly running a tactics talk with PFL players" loading="lazy"></figure>
-      <figure class="g"><img src="img/ywcc/huddle-4.jpg" alt="Alex Kang leading a team huddle" loading="lazy"></figure>
-      <figure class="g wide"><img src="img/ywcc/team-medals.jpg" alt="Australian squad with medals and coaches Tom and Alex at the 2026 Youth World Challenge" loading="lazy"></figure>
-      <figure class="g "><img src="img/ywcc/team-talk.jpg" alt="Coach Tom Reilly giving a team talk" loading="lazy"></figure>
-      <figure class="g "><img src="img/ywcc/action-1.jpg" alt="Australia in action in New York" loading="lazy"></figure>
-      <figure class="g "><img src="img/ywcc/coaches-medals.jpg" alt="Coaches Tom Reilly and Alex Kang with a player" loading="lazy"></figure>
-      <figure class="g wide"><img src="img/ywcc/action-2.jpg" alt="Shot on goal against a YWC opponent" loading="lazy"></figure>
-      <figure class="g "><img src="img/ywcc/huddle.jpg" alt="Alex Kang with the team huddle" loading="lazy"></figure>
-      <figure class="g wide"><img src="img/ywcc/friendly.jpg" alt="Australia and Brazil players together after a match" loading="lazy"></figure>
-      <figure class="g "><img src="img/ywcc/signed-shirts.jpg" alt="Players with signed shirts" loading="lazy"></figure>
-      <figure class="g wide"><img src="img/ywcc/squad.jpg" alt="The squad with tournament staff" loading="lazy"></figure>
-      <figure class="g "><img src="img/ywcc/new-friends.jpg" alt="New friends from the Netherlands team" loading="lazy"></figure>
-      <figure class="g "><img src="img/ywcc/huddle-2.jpg" alt="Team huddle before kick-off" loading="lazy"></figure>
-      <figure class="g "><img src="img/ywcc/flex.jpg" alt="A proud Australian player" loading="lazy"></figure>
-      <figure class="g wide"><img src="img/ywcc/world-cup.jpg" alt="Australian families at a FIFA World Cup 2026 match" loading="lazy"></figure>
-      <figure class="g "><img src="img/ywcc/medal.jpg" alt="Player with his medal" loading="lazy"></figure>
+    <div class="strip reveal" aria-label="More match action, scroll sideways">
+      <figure class="ph "><img src="img/ywcc/act-dribble.jpg" alt="Driving forward with the ball" loading="lazy"></figure>
+      <figure class="ph "><img src="img/ywcc/act-wing.jpg" alt="Taking on a defender down the wing" loading="lazy"></figure>
+      <figure class="ph "><img src="img/ywcc/act-sprint.jpg" alt="Sprinting onto a through ball" loading="lazy"></figure>
+      <figure class="ph "><img src="img/ywcc/act-duel.jpg" alt="Winning a one-on-one duel" loading="lazy"></figure>
+      <figure class="ph "><img src="img/ywcc/act-shot.jpg" alt="Striking the ball on the run" loading="lazy"></figure>
+      <figure class="ph "><img src="img/ywcc/action-1.jpg" alt="Australia in action" loading="lazy"></figure>
+    </div>
+    <p class="wrap strip-hint">Swipe for more →</p>
+  </div>
+
+  <!-- CH4 WORLD CUP -->
+  <div class="chapter" id="ch-wc">
+    <div class="st-pano reveal">
+      <img src="img/ywcc/wc-flags.jpg" alt="Giant Australian and Paraguayan flags before Australia vs Paraguay at FIFA World Cup 2026" loading="lazy">
+      <div class="wrap"><span class="ch-no">03</span><h3>Living the World Cup</h3><p>Off the pitch, the squad and their families were swept up in FIFA World Cup 2026: a sea of gold for Australia vs Paraguay, and electric nights in Times Square.</p></div>
+    </div>
+    <div class="wrap col-wc reveal">
+      <figure class="ph anthem"><img src="img/ywcc/wc-anthem.jpg" alt="Australian fans in gold during the anthems" loading="lazy"></figure>
+      <figure class="ph fam"><img src="img/ywcc/world-cup.jpg" alt="Australian families at a FIFA World Cup 2026 match" loading="lazy"></figure>
+      <figure class="ph vid "><video src="media/stadium-crowd.mp4" poster="img/ywcc/stadium-crowd-poster.jpg" controls playsinline muted loop preload="none"></video><figcaption>Match-day atmosphere</figcaption></figure>
+      <figure class="ph vid "><video src="media/times-square-2.mp4" poster="img/ywcc/times-square-2-poster.jpg" controls playsinline muted loop preload="none"></video><figcaption>Times Square</figcaption></figure>
+      <figure class="ph vid "><video src="media/times-square-1.mp4" poster="img/ywcc/times-square-1-poster.jpg" controls playsinline muted loop preload="none"></video><figcaption>World Cup nights</figcaption></figure>
+    </div>
+  </div>
+
+  <!-- CH5 FRIENDS -->
+  <div class="chapter dark" id="ch-friends">
+    <div class="wrap ch-grid rev">
+      <div class="ch-txt reveal">
+        <span class="ch-no">04</span>
+        <h3>Friends forever</h3>
+        <p>Rivals on the pitch, friends off it. Shirts were swapped and signed, new mates were made from the Netherlands to Brazil, and the squad came home closer than ever.</p>
+        <p class="tag-line">Same dream. Different flags.</p>
+      </div>
+      <div class="col-friends reveal">
+        <figure class="ph vid tall"><video src="media/ywcc-2026.mp4" poster="img/ywcc/video-poster.jpg" controls playsinline muted loop preload="none"></video><figcaption>Friends forever</figcaption></figure>
+        <figure class="ph "><img src="img/ywcc/new-friends.jpg" alt="New friends from the Netherlands team" loading="lazy"></figure>
+        <figure class="ph "><img src="img/ywcc/signed-shirts.jpg" alt="Players with signed shirts" loading="lazy"></figure>
+        <figure class="ph wide"><img src="img/ywcc/friendly.jpg" alt="Australia and Brazil players together" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- CH6 MEDALS -->
+  <div class="chapter" id="ch-medals">
+    <div class="wrap">
+      <div class="ch-head reveal"><span class="ch-no">05</span><div><h3>Medals &amp; memories</h3><p>Every player came home with a medal around their neck, and memories that will last a lifetime.</p></div></div>
+      <div class="col-medals reveal">
+        <figure class="ph mhero"><img src="img/ywcc/team-medals.jpg" alt="The squad with their medals and coaches" loading="lazy"></figure>
+        <figure class="ph "><img src="img/ywcc/coaches-medals.jpg" alt="Tom Reilly and Alex Kang with a player" loading="lazy"></figure>
+        <figure class="ph "><img src="img/ywcc/medal.jpg" alt="Player with his medal" loading="lazy"></figure>
+        <figure class="ph "><img src="img/ywcc/flex.jpg" alt="A proud Australian player" loading="lazy"></figure>
+        <figure class="ph "><img src="img/ywcc/team-photo.jpg" alt="Squad photo with coaches" loading="lazy"></figure>
+      </div>
+      <div class="st-end reveal">
+        <p>New York was just the beginning.</p>
+        <h3>Next stop: <span class="red">Rio de Janeiro 2027</span></h3>
+        <a href="#rio-2027" class="btn">Apply for Rio 2027 trials</a>
+      </div>
     </div>
   </div>
 </section>
+<div class="lb" id="lb" hidden><button aria-label="Close">&times;</button><img alt=""></div>
 
 <section>
   <div class="wrap">
@@ -636,6 +757,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
     catch(x){b.textContent='Select text above to copy'}
   });
 })();
+</script>
+<script>
+(function(){var lb=document.getElementById('lb');if(!lb)return;var im=lb.querySelector('img');
+document.querySelectorAll('.story .ph:not(.vid) img').forEach(function(i){i.addEventListener('click',function(){im.src=i.src;im.alt=i.alt;lb.hidden=false})});
+function c(){lb.hidden=true;im.src=''}lb.addEventListener('click',function(e){if(e.target!==im)c()});document.addEventListener('keydown',function(e){if(e.key==='Escape')c()});})();
 </script>
 </body>
 </html>
