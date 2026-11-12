@@ -129,6 +129,11 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .tile h3{font-size:26px;margin-bottom:6px}
 .tile p{color:#bbb;font-size:14px;max-width:360px}
 .tile.big h3{font-size:40px}
+.tile img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tile:hover img.photo{transform:scale(1.04)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+.gallery img{width:100%;height:240px;object-fit:cover;border:1px solid var(--line)}
+
 
 /* COACHES */
 .coach-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
@@ -221,6 +226,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   .price{border-left:0;border-top:1px solid var(--line)}
   .price:first-child{border-top:0}
   .fac-grid{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr 1fr}
   .coach-grid,.contact-grid{grid-template-columns:1fr}
   .strip .wrap{grid-template-columns:1fr 1fr}
   .stat:nth-child(3){border-left:0}
@@ -234,8 +240,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   .prog-grid{grid-template-columns:1fr}
   .card.feature{grid-column:span 1;padding:32px}
   .card.feature h3{font-size:36px}
-  .fac-grid{grid-template-columns:1fr;grid-auto-rows:220px}
+  .fac-grid{grid-template-columns:1fr;grid-auto-rows:minmax(240px,auto)}
   .tile.big,.tile.wide{grid-column:span 1;grid-row:span 1}
+  .tile.big{grid-row:span 1;min-height:360px}
+  .tile.big h3{font-size:32px}
+  .gallery img{height:180px}
   .coach{grid-template-columns:1fr}
   .coach .ph{height:180px}
   .row{grid-template-columns:1fr}
@@ -445,10 +454,17 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <p class="lead">A premium indoor facility in Oakleigh with everything a developing player needs under one roof. Consistent, year-round training regardless of Melbourne's weather.</p>
     </div>
     <div class="fac-grid">
-      <div class="tile big reveal"><svg class="bg"><use href="#pitchLines"/></svg><div><h3>Indoor Technical Pitches</h3><p>Dedicated pitches for high-rep technical work and small-sided games, all year round.</p></div></div>
-      <div class="tile reveal"><div><h3>Strength &amp; Conditioning</h3><p>Purpose-built S&amp;C area for speed, power and agility.</p></div></div>
-      <div class="tile reveal"><div><h3>Gym</h3><p>Age-appropriate strength training, coached.</p></div></div>
-      <div class="tile wide reveal" style="background:linear-gradient(120deg,#2a0607,#111)"><div><h3>Recovery Zone</h3><p>Hot and cold recovery options and a sauna to help players recover and stay injury-free.</p></div></div>
+      <div class="tile big reveal"><img class="photo" src="img/sc-zone.jpg" alt="PFL strength and conditioning zone with racks and turf sprint lane" loading="lazy"><div><h3>Strength &amp; Conditioning</h3><p>A fully equipped S&amp;C zone with power racks, cable stations and a turf sprint lane, built for speed, power and agility.</p></div></div>
+      <div class="tile reveal"><img class="photo" src="img/dumbbells-rack.jpg" alt="Dumbbell racks in the PFL gym" loading="lazy"><div><h3>Gym</h3><p>Age-appropriate strength training, coached.</p></div></div>
+      <div class="tile reveal"><img class="photo" src="img/sprint-lane.jpg" alt="Indoor turf sprint lane at PFL" loading="lazy"><div><h3>Speed Lane</h3><p>Indoor turf for acceleration, sprint and agility work.</p></div></div>
+      <div class="tile reveal"><svg class="bg"><use href="#pitchLines"/></svg><div><h3>Technical Pitches</h3><p>Indoor pitches for high-rep technical work and small-sided games.</p></div></div>
+      <div class="tile reveal" style="background:linear-gradient(120deg,#2a0607,#111)"><div><h3>Recovery Zone</h3><p>Hot and cold options and a sauna to help players recover.</p></div></div>
+    </div>
+    <div class="gallery reveal">
+      <img src="img/med-balls.jpg" alt="Medicine balls, slam balls and kettlebells" loading="lazy">
+      <img src="img/barbell-rack.jpg" alt="Barbell and power rack" loading="lazy">
+      <img src="img/cable-racks.jpg" alt="Cable stations and benches" loading="lazy">
+      <img src="img/gym-mirror.jpg" alt="Benches and dumbbells in the PFL gym" loading="lazy">
     </div>
   </div>
 </section>
