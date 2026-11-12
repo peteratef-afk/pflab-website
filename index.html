@@ -421,6 +421,16 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   footer{padding-bottom:100px}
   .scroll-hint{display:none}
 }
+.qd{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.78);padding:18px}
+.qd.show{display:flex}
+.qd-box{background:#0d0d0d;border:1px solid var(--line);border-top:4px solid var(--red);width:100%;max-width:440px;padding:30px 26px 24px;position:relative}
+.qd-box h3{font-size:30px;margin-bottom:6px}.qd-box p{color:#bbb;font-size:14px;margin-bottom:18px}
+.qd-box label{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#aaa;margin:12px 0 6px}
+.qd-box input{width:100%;background:#000;border:1px solid var(--line);color:#fff;padding:13px 14px;font:16px var(--body)}
+.qd-box input.bad{border-color:var(--red)}
+.qd-box .btn{width:100%;justify-content:center;margin-top:20px}
+.qd-x{position:absolute;top:10px;right:12px;background:none;border:0;color:#aaa;font-size:26px;cursor:pointer;line-height:1}
+.qd-skip{display:block;text-align:center;margin-top:12px;font-size:13px;color:#888;text-decoration:underline;cursor:pointer;background:none;border:0;width:100%}
 </style>
 <meta name="facebook-domain-verification" content="x940sv9g287y3fxhh9yb6754q3ik5v" />
 <!-- Meta Pixel Code -->
@@ -775,8 +785,8 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
     <div class="vh-cta reveal">
       <div><h3>Make an enquiry</h3><p>Tell us the type of event, date, time and number of people, and we'll come back to you with availability and pricing.</p></div>
       <div class="vh-btns">
-        <a href="https://wa.me/61421441200?text=Hi%20PFL%2C%20I%27d%20like%20to%20enquire%20about%20venue%20hire.%20Event%20type%3A%20%20Date%3A%20%20Time%3A%20%20Number%20of%20people%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8zM20.5 3.5A11.8 11.8 0 001.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0024 12c0-3.2-1.2-6.1-3.5-8.5z"/></svg><span><small>WhatsApp</small>0421 441 200</span></a>
-        <a href="mailto:info@pflab.com.au?subject=Venue%20hire%20enquiry&body=Event%20type%3A%0ADate%3A%0ATime%3A%0ANumber%20of%20people%3A%0ASpaces%20needed%3A"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3z M3 6l9 7 9-7"/></svg><span><small>Email</small>info@pflab.com.au</span></a>
+        <a data-log="venue" href="https://wa.me/61421441200?text=Hi%20PFL%2C%20I%27d%20like%20to%20enquire%20about%20venue%20hire.%20Event%20type%3A%20%20Date%3A%20%20Time%3A%20%20Number%20of%20people%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8zM20.5 3.5A11.8 11.8 0 001.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0024 12c0-3.2-1.2-6.1-3.5-8.5z"/></svg><span><small>WhatsApp</small>0421 441 200</span></a>
+        <a data-log="venue" href="mailto:info@pflab.com.au?subject=Venue%20hire%20enquiry&body=Event%20type%3A%0ADate%3A%0ATime%3A%0ANumber%20of%20people%3A%0ASpaces%20needed%3A"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3z M3 6l9 7 9-7"/></svg><span><small>Email</small>info@pflab.com.au</span></a>
       </div>
     </div>
   </div>
@@ -922,7 +932,7 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
         <div class="k">Bookings · Coach Tom</div>
         <div class="v">0416 121 596</div>
         <p>Call or text Coach Tom to book a session.</p>
-        <div class="cta-row"><a class="btn" href="tel:0416121596">Call</a><a class="btn ghost" href="sms:0416121596">Text</a></div>
+        <div class="cta-row"><a class="btn" href="tel:0416121596">Call</a><a class="btn ghost" href="sms:0416121596" data-log="booking">Text</a></div>
       </div>
       <div class="cbox">
         <div class="k">General enquiries</div>
@@ -1053,6 +1063,42 @@ document.addEventListener('click',function(e){
   if(h.indexOf('wa.me')>-1)m='WhatsApp';else if(h.indexOf('tel:')===0)m='Call';else if(h.indexOf('sms:')===0)m='Text';else if(h.indexOf('mailto:')===0)m='Email';
   if(m)fbq('track','Contact',{content_name:m,content_category:document.title});
 },true);
+</script>
+<div class="qd" id="qd" role="dialog" aria-modal="true" aria-labelledby="qdT"><div class="qd-box">
+  <button class="qd-x" type="button" id="qdX" aria-label="Close">&times;</button>
+  <h3 id="qdT">Quick details</h3><p id="qdP">So we can get back to you, even if the message doesn't come through.</p>
+  <label for="qdName">Your name</label><input id="qdName" autocomplete="name">
+  <label for="qdMob">Mobile</label><input id="qdMob" type="tel" inputmode="tel" autocomplete="tel" placeholder="04xx xxx xxx">
+  <div id="qdExtra"></div>
+  <button class="btn" type="button" id="qdGo">Continue</button>
+  <button class="qd-skip" type="button" id="qdSkip">Skip and continue</button>
+</div></div>
+<script>
+/* Quick-details step: logs booking (text Tom) and venue hire enquiries to info@ before opening the app */
+(function(){
+  var qd=document.getElementById('qd');if(!qd)return;var pending=null;
+  function open(a){pending=a;var v=a.dataset.log==='venue';
+    document.getElementById('qdT').textContent=v?'Venue hire enquiry':'Book a session';
+    document.getElementById('qdExtra').innerHTML=v?'<label for="qdEv">Event type and date (optional)</label><input id="qdEv" placeholder="e.g. Birthday party, Sat 6 Dec">':'<label for="qdPl">Player name and age (optional)</label><input id="qdPl" placeholder="e.g. Leo, 10">';
+    document.getElementById('qdGo').textContent=v?(a.href.indexOf('mailto:')===0?'Continue to email':'Continue to WhatsApp'):'Continue to text Coach Tom';
+    qd.classList.add('show');setTimeout(function(){document.getElementById('qdName').focus()},50)}
+  function close(){qd.classList.remove('show');pending=null}
+  function go(log){var a=pending;if(!a)return;var n=document.getElementById('qdName'),m=document.getElementById('qdMob'),x=document.querySelector('#qdExtra input');
+    if(log){var ok=true;[n,m].forEach(function(i){var b=!i.value.trim();i.classList.toggle('bad',b);if(b)ok=false});if(!ok)return;
+      var v=a.dataset.log==='venue';var d={_subject:(v?'PFL venue hire enquiry: ':'PFL booking enquiry: ')+n.value.trim(),_template:'table',Name:n.value.trim(),Mobile:m.value.trim(),'Contacted via':v?(a.href.indexOf('mailto:')===0?'Email':'PFL WhatsApp'):'Text to Coach Tom'};
+      d[v?'Event':'Player']=x&&x.value.trim()?x.value.trim():'-';
+      try{fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)}).catch(function(){})}catch(e){}
+      if(typeof fbq==='function')fbq('track','Lead',{content_name:v?'Venue hire':'Booking (text)'})}
+    var href=a.getAttribute('href');
+    if(log&&!a.dataset.log.match(/venue/)){var body='Hi Coach Tom, it\'s '+n.value.trim()+'. I\'d like to book a session'+(x&&x.value.trim()?' for '+x.value.trim():'')+'.';href='sms:0416121596?&body='+encodeURIComponent(body)}
+    close();if(href.indexOf('http')===0)window.open(href,'_blank','noopener');else window.location.href=href}
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-log]');if(!a)return;e.preventDefault();e.stopPropagation();open(a)},true);
+  document.getElementById('qdGo').addEventListener('click',function(){go(true)});
+  document.getElementById('qdSkip').addEventListener('click',function(){go(false)});
+  document.getElementById('qdX').addEventListener('click',close);
+  qd.addEventListener('click',function(e){if(e.target===qd)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&qd.classList.contains('show'))close()});
+})();
 </script>
 </body>
 </html>
