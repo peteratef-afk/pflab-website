@@ -197,6 +197,11 @@ textarea{min-height:90px;resize:vertical}
 .done pre{white-space:pre-wrap;background:#000;border:1px solid var(--line);padding:18px;font-family:var(--body);font-size:14px;color:#ddd;margin:18px 0}
 .done .cta-row{margin-top:8px}
 
+.ywcc-link{color:#fff!important;border-bottom:2px solid var(--red);padding-bottom:2px}
+.ywcc-band{background:linear-gradient(120deg,#0b1240 0%,#000 55%,#2a0607 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:90px 0}
+.ywcc-band .wrap{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:center}
+.ywcc-band img{width:100%;max-width:260px;filter:drop-shadow(0 20px 50px rgba(237,32,36,.3))}
+.ywcc-band .cta-row{margin-top:26px}
 /* FAQ */
 .faq{background:var(--ink)}
 .faq-list{max-width:860px;margin-top:40px}
@@ -251,7 +256,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   .links.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#000;padding:24px;gap:18px;border-bottom:1px solid var(--line)}
   .links.open a{font-size:18px}
   .menu-btn{display:block}
-  .hero-grid,.method-grid,.form-grid,.pathway .wrap{grid-template-columns:1fr}
+  .hero-grid,.method-grid,.form-grid,.pathway .wrap,.ywcc-band .wrap{grid-template-columns:1fr}
+  .ywcc-band img{max-width:170px}
   .hero-crest{max-width:260px;margin:0;order:-1}
   .prog-grid{grid-template-columns:1fr 1fr}
   .card.feature{grid-column:span 2;grid-template-columns:1fr}
@@ -328,6 +334,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <a href="#facility">Facility</a>
       <a href="#coaches">Coaches</a>
       <a href="#faq">FAQ</a>
+      <a href="ywcc.html" class="ywcc-link">Youth World Cup</a>
       <a href="#enquire" class="btn">Book a session</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
@@ -560,6 +567,19 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- YWCC TEASER -->
+<section class="ywcc-band">
+  <div class="wrap">
+    <img src="img/ywcc-logo.png" alt="Australia Youth World Cup Challenge logo" loading="lazy">
+    <div>
+      <div class="eyebrow">Represent Australia</div>
+      <h2>Youth World Cup Challenge</h2>
+      <p class="lead">PFL is the local representative for the Australian squad competing in the Youth World Cup Challenge: New York 2026 and Rio de Janeiro 2027.</p>
+      <div class="cta-row"><a href="ywcc.html" class="btn">Find out more</a><a href="https://www.instagram.com/aus_youthworldcupchallenge/" class="btn ghost" target="_blank" rel="noopener">Follow @aus_youthworldcupchallenge</a></div>
     </div>
   </div>
 </section>
