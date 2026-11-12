@@ -775,7 +775,8 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
   function val(id){return document.getElementById(id).value.trim()}
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    if(!val('pname')||!val('phone')||!val('child')||!val('age')){err.style.display='block';return}
+    if(!val('pname')||!val('phone')||!val('child')||!val('age')){err.textContent='Please fill in your name, mobile, player\'s name and age.';err.style.display='block';return}
+    if(!okPhone(val('phone'))){err.textContent='Please check the mobile number (e.g. 0412 345 678).';err.style.display='block';document.getElementById('phone').focus();return}
     err.style.display='none';
     var ints=[].slice.call(document.querySelectorAll('#chips input:checked')).map(function(c){return c.value});
     var lines=['Hi Coach Tom, PFL website enquiry:',
@@ -804,6 +805,7 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
 document.querySelectorAll('.story .ph:not(.vid) img').forEach(function(i){i.addEventListener('click',function(){im.src=i.src;im.alt=i.alt;lb.hidden=false})});
 function c(){lb.hidden=true;im.src=''}lb.addEventListener('click',function(e){if(e.target!==im)c()});document.addEventListener('keydown',function(e){if(e.key==='Escape')c()});})();
 </script>
+<script>function okPhone(v){v=String(v||'').replace(/[\s\-()]/g,'').replace(/^\+?61/,'0');return /^0[23478]\d{8}$/.test(v)}</script>
 <script>
 /* Meta Pixel: track enquiry clicks */
 document.addEventListener('click',function(e){

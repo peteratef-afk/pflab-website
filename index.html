@@ -1004,7 +1004,8 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
   function val(id){return document.getElementById(id).value.trim()}
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    if(!val('pname')||!val('phone')||!val('child')||!val('age')){err.style.display='block';return}
+    if(!val('pname')||!val('phone')||!val('child')||!val('age')){err.textContent='Please fill in your name, mobile, player\'s name and age.';err.style.display='block';return}
+    if(!okPhone(val('phone'))){err.textContent='Please check the mobile number (e.g. 0412 345 678).';err.style.display='block';document.getElementById('phone').focus();return}
     err.style.display='none';
     var ints=[].slice.call(document.querySelectorAll('#chips input:checked')).map(function(c){return c.value});
     var lines=['Hi Coach Tom, PFL website enquiry:',
@@ -1035,9 +1036,10 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
     dob.addEventListener('input',function(){var d=dob.value.replace(/\D/g,'').slice(0,6);dob.value=d.length>4?d.slice(0,2)+'/'+d.slice(2,4)+'/'+d.slice(4):d.length>2?d.slice(0,2)+'/'+d.slice(2):d;});
     jf.addEventListener('submit',function(e){
       e.preventDefault();je.style.display='none';
-      var bad=[];jf.querySelectorAll('input[required]').forEach(function(i){var ok=i.type==='checkbox'?i.checked:i.value.trim()!=='';if(i.type==='email'&&ok)ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value.trim());if(i.id==='pl_dob'&&ok)ok=/^\d{2}\/\d{2}\/\d{2}$/.test(i.value);i.classList.toggle('bad',!ok&&i.type!=='checkbox');if(!ok)bad.push(i)});
+      var bad=[];jf.querySelectorAll('input[required]').forEach(function(i){var ok=i.type==='checkbox'?i.checked:i.value.trim()!=='';if(i.type==='email'&&ok)ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value.trim());if(i.id==='pg_mobile'&&ok)ok=okPhone(i.value);if(i.id==='pl_dob'&&ok)ok=/^\d{2}\/\d{2}\/\d{2}$/.test(i.value);i.classList.toggle('bad',!ok&&i.type!=='checkbox');if(!ok)bad.push(i)});
+      var sm=document.getElementById('sg_mobile');if(sm&&sm.value.trim()&&!okPhone(sm.value)){sm.classList.add('bad');bad.push(sm)}
       var se=document.getElementById('sg_email');if(se.value.trim()&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(se.value.trim())){se.classList.add('bad');bad.push(se)}
-      if(bad.length){je.textContent=document.getElementById('j_consent').checked?'Please complete the highlighted fields (date of birth as DD/MM/YY).':'Please complete the highlighted fields and tick the consent box.';je.style.display='block';bad[0].focus();return}
+      if(bad.length){je.textContent=document.getElementById('j_consent').checked?'Please check the highlighted fields (mobile as 04xx xxx xxx, date of birth as DD/MM/YY).':'Please complete the highlighted fields and tick the consent box.';je.style.display='block';bad[0].focus();return}
       var data={};jf.querySelectorAll('input[name],select[name]').forEach(function(i){data[i.name]=i.value.trim()});
       if(data._honey)return;delete data._honey;
       data._subject='PFL mailing list: '+data['Player name'];data._template='table';data._replyto=data['Primary guardian email'];
@@ -1055,6 +1057,7 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
   }
 })();
 </script>
+<script>function okPhone(v){v=String(v||'').replace(/[\s\-()]/g,'').replace(/^\+?61/,'0');return /^0[23478]\d{8}$/.test(v)}</script>
 <script>
 /* Meta Pixel: track enquiry clicks */
 document.addEventListener('click',function(e){
@@ -1077,19 +1080,22 @@ document.addEventListener('click',function(e){
 /* Quick-details step: logs booking (text Tom) and venue hire enquiries to info@ before opening the app */
 (function(){
   var qd=document.getElementById('qd');if(!qd)return;var pending=null;
-  function open(a){pending=a;var v=a.dataset.log==='venue';
+  function isPhone(){return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform))}
+  qd.addEventListener('keydown',function(e){if(e.key!=='Tab')return;var f=[].slice.call(qd.querySelectorAll('button,input,a[href]')).filter(function(x){return x.offsetParent!==null});if(!f.length)return;var first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
+  function open(a){pending=a;var v=a.dataset.log==='venue';document.getElementById('qdSkip').style.display=(!v&&!isPhone())?'none':'';
     document.getElementById('qdT').textContent=v?'Venue hire enquiry':'Book a session';
     document.getElementById('qdExtra').innerHTML=v?'<label for="qdEv">Event type and date (optional)</label><input id="qdEv" placeholder="e.g. Birthday party, Sat 6 Dec">':'<label for="qdPl">Player name and age (optional)</label><input id="qdPl" placeholder="e.g. Leo, 10">';
-    document.getElementById('qdGo').textContent=v?(a.href.indexOf('mailto:')===0?'Continue to email':'Continue to WhatsApp'):'Continue to text Coach Tom';
+    document.getElementById('qdGo').textContent=v?(a.href.indexOf('mailto:')===0?'Continue to email':'Continue to WhatsApp'):(isPhone()?'Continue to text Coach Tom':'Send to Coach Tom');
     qd.classList.add('show');setTimeout(function(){document.getElementById('qdName').focus()},50)}
-  function close(){qd.classList.remove('show');pending=null}
+  function close(){qd.classList.remove('show');pending=null;var t=qd.querySelector('.qd-thanks');if(t){t.remove();[].forEach.call(qd.querySelector('.qd-box').children,function(c){c.style.display=''});['qdName','qdMob'].forEach(function(id){document.getElementById(id).value=''})}}
   function go(log){var a=pending;if(!a)return;var n=document.getElementById('qdName'),m=document.getElementById('qdMob'),x=document.querySelector('#qdExtra input');
-    if(log){var ok=true;[n,m].forEach(function(i){var b=!i.value.trim();i.classList.toggle('bad',b);if(b)ok=false});if(!ok)return;
+    if(log){var ok=true;[n,m].forEach(function(i){var b=!i.value.trim()||(i===m&&!okPhone(i.value));i.classList.toggle('bad',b);if(b)ok=false});if(!ok){(n.classList.contains('bad')?n:m).focus();return}
       var v=a.dataset.log==='venue';var d={_subject:(v?'PFL venue hire enquiry: ':'PFL booking enquiry: ')+n.value.trim(),_template:'table',Name:n.value.trim(),Mobile:m.value.trim(),'Contacted via':v?(a.href.indexOf('mailto:')===0?'Email':'PFL WhatsApp'):'Text to Coach Tom'};
       d[v?'Event':'Player']=x&&x.value.trim()?x.value.trim():'-';
       try{fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)}).catch(function(){})}catch(e){}
       if(typeof fbq==='function')fbq('track','Lead',{content_name:v?'Venue hire':'Booking (text)'})}
     var href=a.getAttribute('href');
+    if(href.indexOf('sms:')===0&&!isPhone()){if(log){var bx=qd.querySelector('.qd-box');[].forEach.call(bx.children,function(c){if(!c.classList.contains('qd-x'))c.style.display='none'});var th=document.createElement('div');th.className='qd-thanks';th.innerHTML='<h3>Thanks, '+n.value.trim().split(' ')[0]+'</h3><p style="margin-bottom:6px">Coach Tom has your details and will contact you shortly on '+m.value.trim()+'.</p><p>Prefer to call? Ring Tom on <a href="tel:0416121596" style="color:#fff">0416 121 596</a>.</p>';bx.appendChild(th);document.getElementById('qdX').focus();return}}
     if(log&&!a.dataset.log.match(/venue/)){var body='Hi Coach Tom, it\'s '+n.value.trim()+'. I\'d like to book a session'+(x&&x.value.trim()?' for '+x.value.trim():'')+'.';href='sms:0416121596?&body='+encodeURIComponent(body)}
     close();if(href.indexOf('http')===0)window.open(href,'_blank','noopener');else window.location.href=href}
   document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-log]');if(!a)return;e.preventDefault();e.stopPropagation();open(a)},true);
