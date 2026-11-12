@@ -125,7 +125,7 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .tile.big{grid-column:span 2;grid-row:span 2}
 .tile.wide{grid-column:span 2}
 .tile svg.bg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
-.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.85))}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.92))}
 .tile div{position:relative;z-index:1}
 .tile h3{font-size:26px;margin-bottom:6px}
 .tile p{color:#bbb;font-size:14px;max-width:360px}
@@ -136,6 +136,12 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .gallery img{width:100%;height:240px;object-fit:cover;border:1px solid var(--line)}
 
 
+.gallery2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-top:14px}
+.gallery2 figure{margin:0;position:relative;overflow:hidden;height:300px;border:1px solid var(--line)}
+.gallery2 img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gallery2 figure:hover img{transform:scale(1.04)}
+.gallery2 figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+@media (max-width:1000px){.gallery2{grid-template-columns:1fr 1fr}.gallery2 .w{grid-column:span 2}.gallery2 figure{height:220px}}
 /* COACHES */
 .coach-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:50px}
 .coach{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--line);background:var(--ink)}
@@ -509,17 +515,16 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <p class="lead">A premium indoor facility in Oakleigh with everything a developing player needs under one roof. Consistent, year-round training regardless of Melbourne's weather.</p>
     </div>
     <div class="fac-grid">
-      <div class="tile big reveal"><img class="photo" src="img/sc-zone.jpg" alt="PFL strength and conditioning zone with racks and turf sprint lane" loading="lazy"><div><h3>Strength &amp; Conditioning</h3><p>A fully equipped S&amp;C zone with power racks, cable stations and a turf sprint lane, built for speed, power and agility.</p></div></div>
-      <div class="tile reveal"><img class="photo" src="img/dumbbells-rack.jpg" alt="Dumbbell racks in the PFL gym" loading="lazy"><div><h3>Gym</h3><p>Age-appropriate strength training, coached.</p></div></div>
+      <div class="tile big reveal"><img class="photo" src="img/pfl-wall.jpg" alt="The PFL strength and conditioning room with the PFL crest" loading="lazy"><div><h3>Strength &amp; Conditioning</h3><p>Our own performance room, built for footballers: Olympic lifting, power and speed work, with turf next to the weights.</p></div></div>
+      <div class="tile reveal"><img class="photo" src="img/dumbbell-zone.jpg" alt="Full dumbbell range and adjustable benches" loading="lazy"><div><h3>Gym</h3><p>Full dumbbell range, coached strength work.</p></div></div>
       <div class="tile reveal"><img class="photo" src="img/sprint-lane.jpg" alt="Indoor turf sprint lane at PFL" loading="lazy"><div><h3>Speed Lane</h3><p>Indoor turf for acceleration, sprint and agility work.</p></div></div>
       <div class="tile reveal"><svg class="bg"><use href="#pitchLines"/></svg><div><h3>Technical Pitches</h3><p>Indoor pitches for high-rep technical work and small-sided games.</p></div></div>
       <div class="tile reveal" style="background:linear-gradient(120deg,#2a0607,#111)"><div><h3>Recovery Zone</h3><p>Hot and cold options and a sauna to help players recover.</p></div></div>
     </div>
-    <div class="gallery reveal">
-      <img src="img/med-balls.jpg" alt="Medicine balls, slam balls and kettlebells" loading="lazy">
-      <img src="img/barbell-rack.jpg" alt="Barbell and power rack" loading="lazy">
-      <img src="img/cable-racks.jpg" alt="Cable stations and benches" loading="lazy">
-      <img src="img/gym-mirror.jpg" alt="Benches and dumbbells in the PFL gym" loading="lazy">
+    <div class="gallery2 reveal">
+      <figure class="w"><img src="img/rack-row.jpg" alt="Row of VERVE power racks and cable stations" loading="lazy"><figcaption>Power racks &amp; cable stations</figcaption></figure>
+      <figure><img src="img/verve-rack.jpg" alt="VERVE power rack with Olympic bars and bumper plates" loading="lazy"><figcaption>Olympic lifting</figcaption></figure>
+      <figure><img src="img/med-balls.jpg" alt="Medicine balls, slam balls and kettlebells" loading="lazy"><figcaption>Power &amp; plyo</figcaption></figure>
     </div>
   </div>
 </section>
