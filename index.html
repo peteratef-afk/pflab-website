@@ -145,7 +145,10 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .coach h3{font-size:36px;margin:8px 0 12px}
 .coach p{color:var(--muted);font-size:15px}
 .coach.feature{grid-column:1/-1;grid-template-columns:minmax(280px,420px) 1fr}
-.tom-photos{display:grid;grid-template-rows:1.4fr 1fr;gap:2px;background:var(--line);position:relative}
+.tom-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:2fr 1fr;gap:2px;background:var(--line);position:relative}
+.tom-photos img.main{grid-column:1/-1;object-position:center 20%}
+.tquote{margin:6px 0 4px;padding:22px 24px;border:1px solid #3a0d0e;background:linear-gradient(120deg,#160304,#0b0b0b);font-size:18px;font-style:italic;line-height:1.55;color:#eee}
+.tquote cite{display:block;margin-top:10px;font-style:normal;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
 .tom-photos img{width:100%;height:100%;object-fit:cover;min-height:0}
 .tom-photos::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--red)}
 .coach.feature .info{padding:44px}
@@ -277,7 +280,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   .tile.big h3{font-size:32px}
   .gallery img{height:180px}
   .coach,.coach.feature{grid-template-columns:1fr}
-  .tom-photos{grid-template-rows:none;grid-template-columns:1fr 1fr;height:260px}
+  .tom-photos{grid-template-rows:380px 180px}
   .coach.feature .info{padding:28px}
   .coach.feature h3{font-size:42px}
   .mission{font-size:24px}
@@ -354,7 +357,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
     <div class="stat"><b>U7–U12</b><span>Academy squads, entry by trial</span></div>
     <div class="stat"><b>3 days</b><span>Academy training each week</span></div>
     <div class="stat"><b>365</b><span>Days a year indoors, rain or shine</span></div>
-    <div class="stat"><b class="red">NPL1</b><span>Players progressing into NPL1 environments for 2026</span></div>
+    <div class="stat"><b class="red">20+</b><span>Players individually coached to NPL1 level in the past 12 months</span></div>
   </div>
 </div>
 
@@ -515,21 +518,25 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
     <div class="coach-grid">
       <div class="coach feature reveal">
         <div class="tom-photos">
+          <img class="main" src="img/tom-coach.jpg" alt="Tom Reilly, PFL Head Coach" loading="lazy">
           <img src="img/tom-1.jpg" alt="Tom Reilly playing for Accrington Stanley" loading="lazy">
           <img src="img/tom-2.jpg" alt="Tom Reilly celebrating a goal" loading="lazy">
         </div>
         <div class="info">
-          <div class="role">Head Coach · Former professional footballer</div>
+          <div class="role">Head Coach · Elite Player Development Coach</div>
           <h3>Tom Reilly</h3>
-          <p>Tom spent fifteen years inside England's professional academy system, from the age of 6 to 21. He came through the academies at Blackburn Rovers and Liverpool before earning a full-time scholarship and then a professional contract at Accrington Stanley.</p>
+          <p>Tom spent fifteen years inside England's professional academy system, from the age of 6 to 21. He came through the academies at Liverpool FC, where he was signed from U8 to U12, and Blackburn Rovers before earning a full-time scholarship and then a professional contract at Accrington Stanley.</p>
           <p>His senior career took him to Sweden with Eskilstuna City in the second division, then to the Welsh Premier League with Bangor City and Cefn Druids, both of which qualified for the UEFA Europa League. He went on to win the Northern Premier League title in English non-league football before moving to Australia.</p>
           <p>That journey shapes every PFL session. Tom brings the standards, intensity and attention to detail of English professional academies to Melbourne, and he knows from the inside what it takes for a young player to make the next step: the habits, the work rate and the decisions under pressure.</p>
+          <p>Today Tom works with boys and girls across all NPL age groups. In the last 12 months alone he has individually coached more than 20 players now competing at NPL1 level, with many more developing across the NPL system.</p>
+          <blockquote class="tquote">"My focus is in the details. I break the game down, work on the small margins and mould every player for maximum potential and output, on and off the pitch."<cite>Tom Reilly</cite></blockquote>
           <ul class="career">
-            <li><b>Academy</b>Blackburn Rovers · Liverpool</li>
+            <li><b>Academy</b>Liverpool FC (U8 to U12) · Blackburn Rovers</li>
             <li><b>Pro contract</b>Accrington Stanley</li>
             <li><b>Sweden</b>Eskilstuna City</li>
             <li><b>Welsh Premier League</b>Bangor City · Cefn Druids</li>
             <li><b>Champion</b>Northern Premier League</li>
+            <li><b>Proven impact</b>20+ players coached to NPL1 in 12 months</li>
           </ul>
           <div class="mission"><span>Tom's mission</span>To give every child the opportunity he never had.</div>
         </div>
