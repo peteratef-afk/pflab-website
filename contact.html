@@ -38,14 +38,14 @@ section{padding:110px 0;position:relative}
 /* NAV */
 header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.25s;border-bottom:1px solid transparent}
 header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bottom-color:var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:28px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{width:48px;height:48px}
 .brand span{font-family:var(--display);font-size:20px;letter-spacing:.04em;line-height:1;white-space:nowrap}
 .brand small{display:block;font-family:var(--body);font-size:10px;letter-spacing:.22em;color:var(--muted);margin-top:4px;font-weight:600}
-.links{display:flex;gap:18px;align-items:center}
+.links{display:flex;gap:15px;align-items:center}
 .links a{white-space:nowrap}
-.links a{font-size:14px;font-weight:600;letter-spacing:.04em;color:#ddd}
+.links a{font-size:13px;font-weight:600;letter-spacing:.02em;color:#ddd}
 .links a:hover{color:var(--red)}
 .links .btn{padding:11px 18px;font-size:13px;color:#fff}
 .menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer}
@@ -259,7 +259,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-@media (max-width:1280px){
+@media (max-width:1360px){
   .links{display:none}
   .links.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#000;padding:24px;gap:18px;border-bottom:1px solid var(--line);max-height:calc(100vh - 78px);overflow:auto}
   .links.open a{font-size:18px}
@@ -350,6 +350,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <a href="index.html#programs">Programs</a>
       <a href="index.html#pricing">Pricing</a>
       <a href="index.html#facility">Facility</a>
+      <a href="index.html#venue-hire">Venue Hire</a>
       <a href="index.html#coaches">Coaches</a>
       <a href="index.html#faq">FAQ</a>
       <a href="index.html#partners">Our Partners</a>
@@ -387,7 +388,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
           <li><a href="https://wa.me/61421441200" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8zM20.5 3.5A11.8 11.8 0 001.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0024 12c0-3.2-1.2-6.1-3.5-8.5z"/></svg><span><small>WhatsApp</small>0421 441 200</span></a></li>
           <li><a href="mailto:info@pflab.com.au"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3z M3 6l9 7 9-7"/></svg><span><small>Email</small>info@pflab.com.au</span></a></li>
         </ul>
-        <p>Programs, trials, partnerships and everything else.</p>
+        <p>Programs, trials, venue hire, partnerships and everything else.</p>
       </div>
       <div class="cbox">
         <div class="k">Location</div>
