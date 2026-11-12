@@ -41,9 +41,9 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{width:48px;height:48px}
-.brand span{font-family:var(--display);font-size:20px;letter-spacing:.04em;line-height:1}
+.brand span{font-family:var(--display);font-size:20px;letter-spacing:.04em;line-height:1;white-space:nowrap}
 .brand small{display:block;font-family:var(--body);font-size:10px;letter-spacing:.22em;color:var(--muted);margin-top:4px;font-weight:600}
-.links{display:flex;gap:22px;align-items:center}
+.links{display:flex;gap:18px;align-items:center}
 .links a{white-space:nowrap}
 .links a{font-size:14px;font-weight:600;letter-spacing:.04em;color:#ddd}
 .links a:hover{color:var(--red)}
@@ -259,11 +259,13 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-@media (max-width:1180px){
+@media (max-width:1280px){
   .links{display:none}
-  .links.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#000;padding:24px;gap:18px;border-bottom:1px solid var(--line)}
+  .links.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#000;padding:24px;gap:18px;border-bottom:1px solid var(--line);max-height:calc(100vh - 78px);overflow:auto}
   .links.open a{font-size:18px}
   .menu-btn{display:block}
+}
+@media (max-width:1000px){
   .hero-grid,.method-grid,.form-grid,.pathway .wrap,.ywcc-band .wrap{grid-template-columns:1fr}
   .ywcc-band img{max-width:170px}
   .hero-crest{max-width:260px;margin:0;order:-1}
@@ -350,6 +352,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <a href="index.html#facility">Facility</a>
       <a href="index.html#coaches">Coaches</a>
       <a href="index.html#faq">FAQ</a>
+      <a href="index.html#partners">Our Partners</a>
       <a href="contact.html" class="ywcc-link" aria-current="page">Contact us</a>
       <a href="ywcc.html">Youth World Cup</a>
       <a href="index.html#enquire" class="btn">Book a session</a>

@@ -41,9 +41,9 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{width:48px;height:48px}
-.brand span{font-family:var(--display);font-size:20px;letter-spacing:.04em;line-height:1}
+.brand span{font-family:var(--display);font-size:20px;letter-spacing:.04em;line-height:1;white-space:nowrap}
 .brand small{display:block;font-family:var(--body);font-size:10px;letter-spacing:.22em;color:var(--muted);margin-top:4px;font-weight:600}
-.links{display:flex;gap:22px;align-items:center}
+.links{display:flex;gap:18px;align-items:center}
 .links a{white-space:nowrap}
 .links a{font-size:14px;font-weight:600;letter-spacing:.04em;color:#ddd}
 .links a:hover{color:var(--red)}
@@ -222,17 +222,35 @@ textarea{min-height:90px;resize:vertical}
 .consent{display:flex;gap:12px;align-items:flex-start;text-transform:none;letter-spacing:0;font-weight:500;font-size:14px;color:#ccc;margin:6px 0 0;cursor:pointer}
 .consent input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--red)}
 input.bad{border-color:var(--red)}
-.partners{background:#000;border-top:1px solid var(--line)}
-.main-sp{margin:50px auto 0;max-width:620px;text-align:center}
-.main-sp .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
-.sp{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:4px;padding:26px 30px;height:130px;transition:transform .25s,box-shadow .25s}
-.sp img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .25s}
-.sp:has(img.wide){padding:20px 12px}
-.sp:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(237,32,36,.25)}
-.sp.big{height:190px;padding:34px 50px;outline:3px solid var(--red);outline-offset:4px}
-.sp-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:16px;margin-top:40px}
-@media (max-width:1000px){.sp-grid{grid-template-columns:repeat(4,1fr)}}
-@media (max-width:640px){.sp-grid{grid-template-columns:repeat(2,1fr)}.sp-grid .sp:last-child{grid-column:1/-1;width:calc(50% - 8px);justify-self:center}.sp{height:100px;padding:18px}.sp.big{height:140px;padding:24px}}
+.partners{background:linear-gradient(180deg,#0b0b0b,#000);border-top:1px solid var(--line)}
+.p-head{margin-bottom:46px}
+.p-head h2{margin-bottom:14px}
+.p-head .lead{max-width:620px}
+.p-head .lead{margin:0}
+.p-tier{display:flex;align-items:center;gap:16px;margin:0 0 18px;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.p-tier::after{content:"";flex:1;height:1px;background:var(--line)}
+.p-major{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:46px}
+.p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pc{display:flex;flex-direction:column;background:#141414;border:1px solid var(--line);overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.pc .pl{background:#fff;display:flex;align-items:center;justify-content:center;height:150px;padding:28px 36px}
+.pc .pl img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .35s}
+.pc.big .pl{height:230px;padding:40px 60px}
+.pc .pf{display:flex;align-items:center;gap:12px;padding:16px 20px;border-top:3px solid transparent;transition:border-color .3s}
+.pc .pf b{font-size:15px;font-weight:700}
+.pc .pf em{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:auto}
+.pc .pf svg{width:18px;height:18px;color:var(--red);flex:none;transition:transform .3s;margin-left:auto}
+.pc .pf em+svg{margin-left:0}
+.pc .pl img[src*="glux"]{max-height:62%}
+.pc .pl img[src*="cocoon"]{max-width:92%}
+a.pc:hover{transform:translateY(-6px);border-color:#3a0d0e;box-shadow:0 20px 40px rgba(0,0,0,.6)}
+a.pc:hover .pf{border-top-color:var(--red)}
+a.pc:hover .pl img{transform:scale(1.06)}
+a.pc:hover .pf svg{transform:translateX(4px)}
+.pc.big .pf b{font-size:18px}
+.p-cta{text-align:center;margin-top:46px;color:var(--muted)}
+.p-cta a{color:#fff;font-weight:700;border-bottom:2px solid var(--red);margin-left:6px}
+@media (max-width:1000px){.p-grid{grid-template-columns:1fr 1fr}.pc.big .pl{height:170px;padding:28px 34px}}
+@media (max-width:640px){.p-major{grid-template-columns:1fr}.pc .pl{height:110px;padding:18px 20px}.pc .pf{padding:12px 14px}.pc .pf b{font-size:13px}.pc .pf em{display:none}.pc .pf em+svg{margin-left:auto}}
 /* FAQ */
 .faq{background:var(--ink)}
 .faq-list{max-width:860px;margin-top:40px}
@@ -282,11 +300,13 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-@media (max-width:1180px){
+@media (max-width:1280px){
   .links{display:none}
-  .links.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#000;padding:24px;gap:18px;border-bottom:1px solid var(--line)}
+  .links.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#000;padding:24px;gap:18px;border-bottom:1px solid var(--line);max-height:calc(100vh - 78px);overflow:auto}
   .links.open a{font-size:18px}
   .menu-btn{display:block}
+}
+@media (max-width:1000px){
   .hero-grid,.method-grid,.form-grid,.pathway .wrap,.ywcc-band .wrap{grid-template-columns:1fr}
   .ywcc-band img{max-width:170px}
   .hero-crest{max-width:260px;margin:0;order:-1}
@@ -364,6 +384,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
       <a href="#facility">Facility</a>
       <a href="#coaches">Coaches</a>
       <a href="#faq">FAQ</a>
+      <a href="#partners">Our Partners</a>
       <a href="contact.html">Contact us</a>
       <a href="ywcc.html" class="ywcc-link">Youth World Cup</a>
       <a href="#enquire" class="btn">Book a session</a>
@@ -739,24 +760,22 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
 <!-- SPONSORS -->
 <section id="partners" class="partners">
   <div class="wrap">
-    <div class="reveal" style="text-align:center">
-      <div class="eyebrow" style="justify-content:center">Our partners</div>
-      <h2>Proudly supported by</h2>
-      <p class="lead" style="margin:0 auto">Thank you to the businesses that back our players and help us unlock potential.</p>
+    <div class="p-head reveal">
+      <div>
+        <div class="eyebrow">Our partners</div>
+        <h2>Proudly supported by</h2>
+      </div>
+      <p class="lead">The businesses backing our players and helping us unlock potential. Tap a logo to visit their website.</p>
     </div>
-    <div class="main-sp reveal">
-      <span class="tag">Main sponsor</span>
-      <div class="sp big"><img src="img/sponsors/stride.png" alt="STRIDE Reinforcement logo" loading="lazy"></div>
+    <div class="p-tier reveal"><span>Major partners</span></div>
+    <div class="p-major reveal">
+      <div class="pc big"><span class="pl"><img src="img/sponsors/stride.png" alt="STRIDE Reinforcement logo" loading="lazy"></span><span class="pf"><b>STRIDE Reinforcement</b><em>Main sponsor</em></span></div><a class="pc big" href="https://www.form700.com.au/" target="_blank" rel="noopener sponsored" aria-label="Form 700, visit website (opens in a new tab)"><span class="pl"><img src="img/sponsors/form700.png" alt="Form 700 logo" loading="lazy"></span><span class="pf"><b>Form 700</b><em>Major partner</em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
-    <div class="sp-grid reveal">
-        <a class="sp" href="https://www.glux.com.au/" target="_blank" rel="noopener sponsored" aria-label="G-LUX (opens in a new tab)"><img src="img/sponsors/glux.png" alt="G-LUX logo" loading="lazy"></a>
-        <a class="sp" href="https://www.yomg.com.au/" target="_blank" rel="noopener sponsored" aria-label="YOMG Yo My Goodness (opens in a new tab)"><img src="img/sponsors/yomg.png" alt="YOMG Yo My Goodness logo" loading="lazy"></a>
-        <a class="sp" href="https://www.chemistwarehouse.com.au/" target="_blank" rel="noopener sponsored" aria-label="Chemist Warehouse (opens in a new tab)"><img src="img/sponsors/chemist.png" alt="Chemist Warehouse logo" loading="lazy"></a>
-        <a class="sp" href="https://www.form700.com.au/" target="_blank" rel="noopener sponsored" aria-label="Form 700 (opens in a new tab)"><img class="wide" src="img/sponsors/form700.png" alt="Form 700 logo" loading="lazy"></a>
-        <a class="sp" href="https://dentology.au/" target="_blank" rel="noopener sponsored" aria-label="Dentology Dental Care (opens in a new tab)"><img src="img/sponsors/dentology.png" alt="Dentology Dental Care logo" loading="lazy"></a>
-        <a class="sp" href="https://www.belloconstructions.com.au/" target="_blank" rel="noopener sponsored" aria-label="Bello Constructions (opens in a new tab)"><img src="img/sponsors/bello.png" alt="Bello Constructions logo" loading="lazy"></a>
-        <a class="sp" href="https://cocoonfurniture.com.au/" target="_blank" rel="noopener sponsored" aria-label="Cocoon Furniture (opens in a new tab)"><img class="wide" src="img/sponsors/cocoon.png" alt="Cocoon Furniture logo" loading="lazy"></a>
+    <div class="p-tier reveal"><span>Partners</span></div>
+    <div class="p-grid reveal">
+      <a class="pc " href="https://www.yomg.com.au/" target="_blank" rel="noopener sponsored" aria-label="YOMG, visit website (opens in a new tab)"><span class="pl"><img src="img/sponsors/yomg.png" alt="YOMG logo" loading="lazy"></span><span class="pf"><b>YOMG</b><em>Partner</em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="pc " href="https://www.chemistwarehouse.com.au/" target="_blank" rel="noopener sponsored" aria-label="Chemist Warehouse, visit website (opens in a new tab)"><span class="pl"><img src="img/sponsors/chemist.png" alt="Chemist Warehouse logo" loading="lazy"></span><span class="pf"><b>Chemist Warehouse</b><em>Partner</em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="pc " href="https://dentology.au/" target="_blank" rel="noopener sponsored" aria-label="Dentology Dental Care, visit website (opens in a new tab)"><span class="pl"><img src="img/sponsors/dentology.png" alt="Dentology Dental Care logo" loading="lazy"></span><span class="pf"><b>Dentology Dental Care</b><em>Partner</em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="pc " href="https://www.belloconstructions.com.au/" target="_blank" rel="noopener sponsored" aria-label="Bello Constructions, visit website (opens in a new tab)"><span class="pl"><img src="img/sponsors/bello.png" alt="Bello Constructions logo" loading="lazy"></span><span class="pf"><b>Bello Constructions</b><em>Partner</em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="pc " href="https://cocoonfurniture.com.au/" target="_blank" rel="noopener sponsored" aria-label="Cocoon Furniture, visit website (opens in a new tab)"><span class="pl"><img src="img/sponsors/cocoon.png" alt="Cocoon Furniture logo" loading="lazy"></span><span class="pf"><b>Cocoon Furniture</b><em>Partner</em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="pc " href="https://www.glux.com.au/" target="_blank" rel="noopener sponsored" aria-label="G-LUX, visit website (opens in a new tab)"><span class="pl"><img src="img/sponsors/glux.png" alt="G-LUX logo" loading="lazy"></span><span class="pf"><b>G-LUX</b><em>Partner</em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
+    <p class="p-cta reveal">Interested in partnering with PFL? <a href="contact.html">Get in touch</a></p>
   </div>
 </section>
 
