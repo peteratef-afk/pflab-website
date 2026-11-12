@@ -147,6 +147,7 @@ header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bot
 .coach.feature{grid-column:1/-1;grid-template-columns:minmax(280px,420px) 1fr}
 .tom-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:2fr 1fr;gap:2px;background:var(--line);position:relative}
 .tom-photos img.main{grid-column:1/-1;object-position:center 20%}
+.tom-photos.single{grid-template-rows:1fr}
 .tquote{margin:6px 0 4px;padding:22px 24px;border:1px solid #3a0d0e;background:linear-gradient(120deg,#160304,#0b0b0b);font-size:18px;font-style:italic;line-height:1.55;color:#eee}
 .tquote cite{display:block;margin-top:10px;font-style:normal;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
 .tom-photos img{width:100%;height:100%;object-fit:cover;min-height:0}
@@ -281,6 +282,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
   .gallery img{height:180px}
   .coach,.coach.feature{grid-template-columns:1fr}
   .tom-photos{grid-template-rows:380px 180px}
+  .tom-photos.single{grid-template-rows:420px}
   .coach.feature .info{padding:28px}
   .coach.feature h3{font-size:42px}
   .mission{font-size:24px}
@@ -541,9 +543,22 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
           <div class="mission"><span>Tom's mission</span>To give every child the opportunity he never had.</div>
         </div>
       </div>
-      <div class="coach reveal">
-        <div class="ph">AK</div>
-        <div class="info"><div class="role">Senior Coach</div><h3>Alex Kang</h3><p>Alex runs our small-group and group sessions, bringing intensity, detail and high standards to every session.</p></div>
+      <div class="coach feature reveal">
+        <div class="tom-photos single"><img class="main" src="img/alex-coach.jpg" alt="Alex Kang, PFL Senior Coach" loading="lazy"></div>
+        <div class="info">
+          <div class="role">Senior Coach · Current player, Heatherton United</div>
+          <h3>Alex Kang</h3>
+          <p>Alex is a forward-thinking, sharp coach who keeps his head in the game by still playing, currently with Heatherton United. That keeps his coaching current and connected to what players face every weekend.</p>
+          <p>His sessions are built on high intensity, ball mastery and methodical repetition, driven by a relentless desire to make every player the best they can be. A number of players have reached NPL1 and NPL2 in the last 18 months under Alex's coaching, a testament to his training.</p>
+          <blockquote class="tquote">"My coaching is built on high intensity, smart work and relentless repetition, giving every player the tools to reach their true potential."<cite>Alex Kang</cite></blockquote>
+          <ul class="career">
+            <li><b>High intensity</b>Game-like intensity in every session</li>
+            <li><b>Ball mastery</b>Elite technical skills under pressure</li>
+            <li><b>Player development</b>Confidence, intelligence and consistency</li>
+            <li><b>Confidence on the ball</b>Express yourself. Take risks. Stand out.</li>
+            <li><b>Proven results</b>Players reaching NPL1 and NPL2 in the last 18 months</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
