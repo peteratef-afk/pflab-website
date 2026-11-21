@@ -421,6 +421,7 @@ fbq('track', 'PageView');
 .ck-form{display:none}.ck-form.on{display:block}
 .ck-form .intro{color:var(--muted);margin-bottom:22px}
 .ck-u18{display:none}.ck-u18.on{display:block}
+.ck-sats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:4px}.ck-sats label{display:flex;gap:8px;align-items:center;border:1px solid var(--line);padding:10px 12px;font-size:14px;text-transform:none;letter-spacing:0;font-weight:600;color:#ddd;cursor:pointer}.ck-sats label.bad{border-color:var(--red)}.ck-sats input{width:auto!important;height:auto;flex:none;margin:0;padding:0}.ck-sats label span{white-space:nowrap}.ck-note{font-size:13px;color:var(--muted);margin:8px 0 14px}@media (max-width:640px){.ck-sats{grid-template-columns:1fr 1fr}}
 .ck-done{display:none;background:var(--ink);border:1px solid var(--red);padding:34px}.ck-done.show{display:block}
 .ck-done h3{font-size:36px;margin-bottom:10px}
 .ck-pay{display:none;margin-top:22px;border:1px solid var(--line);background:#000;padding:24px}.ck-pay.on{display:block}
@@ -448,9 +449,9 @@ fbq('track', 'PageView');
     <div>
       <div class="eyebrow">5v5 Futsal · Hosted by Prodigy Futbol Lab</div>
       <h1>Earn the<br><span class="red">crown.</span></h1>
-      <p>Fast, nonstop 5v5 futsal with cash prizes for the winners. Walls in. No offside. Four divisions from U12 to 18+ Open, a weekly Saturday league from 30 January 2027, and Grand Finals at PFL Oakleigh in front of club scouts.</p>
+      <p data-ck="heroP">Fast, nonstop 5v5 futsal with cash prizes for the winners. Walls in. No offside. Four divisions from U12 to 18+ Open, a weekly Saturday league from 16 January 2027, and Grand Finals at PFL Oakleigh in front of club scouts.</p>
       <div class="cta-row">
-        <a href="#register" class="btn" data-ck-tab="interest">Register for the Launch Cup</a>
+        <a href="#register" class="btn" data-ck-tab="interest" data-ck="heroBtn">Register for the Launch Cup</a>
         <a href="https://www.instagram.com/cagekingsfootball/" class="btn ghost" target="_blank" rel="noopener">Follow @cagekingsfootball</a>
       </div>
     </div>
@@ -463,13 +464,13 @@ fbq('track', 'PageView');
     <div class="reveal">
       <div class="eyebrow">Registrations open · One-off launch event</div>
       <h2>The Launch Cup.<br><span class="red">Sunday 6 December.</span></h2>
-      <p class="lead">A one-off 5v5 futsal tournament to launch the Cage Kings Saturday league, a 20-week season starting 30 January 2027. Four divisions, full prize money, 8 teams per division.</p>
+      <p class="lead">A one-off 5v5 futsal tournament to launch the Cage Kings Saturday league, starting 16 January 2027. Four divisions, full prize money, 8 teams per division.</p>
     </div>
     <div class="ck-lc-grid reveal">
       <div><small>Venue</small><b>Moorabbin Indoor Sports<br>2/117 Cochranes Rd, Moorabbin</b></div>
       <div><small>12pm to 3pm</small><b>U12 to 13<br>U14 to 15</b></div>
       <div><small>3pm to 6pm</small><b>U16 to 18<br>18+ Open</b></div>
-      <div><small>Registrations close</small><b>Sun 29 Nov, 8pm<br>Payment due by then</b></div>
+      <div data-ck="lcClose"><small>Registrations close</small><b>Sun 29 Nov, 8pm<br>Payment due by then</b></div>
     </div>
     <p class="lead reveal" style="margin-top:26px">Bring the family: trampolines, play areas, a food truck and free entry for spectators.</p>
     <div class="cta-row reveal" style="margin-top:22px"><a href="#register" class="btn" data-ck-tab="interest">Register your team</a></div>
@@ -529,14 +530,14 @@ fbq('track', 'PageView');
     <div class="reveal">
       <div class="eyebrow">Seasons &amp; Grand Finals</div>
       <h2>Get seen.<br><span class="red">Get crowned.</span></h2>
-      <p class="lead">A weekly Saturday futsal league over a 20-week season, starting 30 January 2027, with a ladder in every division. The top 8 teams in each division play the Grand Finals at Prodigy Futbol Lab, Oakleigh, with club scouts watching.</p>
+      <p class="lead" data-ck="seasonP">Two 20-week Saturday seasons a year, following the school terms, starting 16 January 2027. Every Saturday earns ladder points in your division, and the top 8 teams play the Grand Final at the end of each season, with club scouts watching.</p>
     </div>
     <div class="ck-gf reveal"><span>Grand Final prizes</span><b>$5,000</b><small>18+ Open winners. Up to $3,000 for U16 to U18 and $2,000 for U12 to U15.</small></div>
   </div>
-  <div class="wrap solo">
+  <div class="wrap solo" data-ck="lcPromo">
     <div class="ck-launch reveal">
       <span class="tag">Registrations open</span>
-      <div><h3>The Launch Cup</h3><p>Sunday 6 December at Moorabbin Indoor Sports. A one-off futsal event before the 2027 season, with full prize money in all four divisions. Registrations close Sunday 29 November at 8pm.</p></div>
+      <div><h3>The Launch Cup</h3><p>Sunday 6 December at Moorabbin Indoor Sports. A one-off futsal event before the 2027 season, with full prize money in all four divisions. <span data-ck="lcPromoClose">Registrations close Sunday 29 November at 8pm.</span></p></div>
       <a href="#register" class="btn" data-ck-tab="interest">Register your team</a>
     </div>
   </div>
@@ -546,8 +547,8 @@ fbq('track', 'PageView');
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">Get involved</div>
-      <h2>Register for the <span class="red">Launch Cup</span></h2>
-      <p class="lead">Register your team for Sunday 6 December. Referees, sponsors and the mailing list are in the other tabs.</p>
+      <h2 data-ck="regH">Register for the <span class="red">Launch Cup</span></h2>
+      <p class="lead" data-ck="regLead">Register your team for Sunday 6 December. Referees, sponsors and the mailing list are in the other tabs.</p>
     </div>
     <div class="ck-tabs" role="tablist">
       <button type="button" role="tab" aria-selected="true" data-tab="interest">Team registration</button>
@@ -558,11 +559,14 @@ fbq('track', 'PageView');
     <div class="ck-forms">
 
       <form class="ck-form on" id="f-interest" data-subject="Launch Cup registration" novalidate>
-        <p class="intro">Register your team for the Launch Cup. As soon as you submit, you will see the bank transfer details. Payment is due by Sunday 29 November at 8pm to secure your place. No team yet? Register as an individual and we will help place you.</p>
+        <p class="intro" data-ck="formIntro">Register your team for the Launch Cup. As soon as you submit, you will see the bank transfer details. Payment is due by Sunday 29 November at 8pm to secure your place. No team yet? Register as an individual and we will help place you.</p>
         <div class="row">
-          <div class="field"><label>Registering as *</label><select name="Registering as" required><option value="">Select</option><option>A team</option><option>An individual player (place me in a team)</option></select></div>
+          <div class="field"><label>Registering as *</label><select name="Registering as" required data-ck="regAs"><option value="">Select</option><option>A team</option><option>An individual player (place me in a team)</option></select></div>
           <div class="field"><label>Division *</label><select name="Division" required data-div><option value="">Select</option><option>U12 to U13 (5v5)</option><option>U14 to U15 (5v5)</option><option>U16 to U18 (5v5)</option><option>18+ Open (5v5)</option></select></div>
         </div>
+        <div class="field" data-ck="seasonPick" hidden><label>Season *</label><select name="Season"></select></div>
+        <div class="field" data-ck="satPick" hidden><label>Saturdays *</label><div class="ck-sats"></div><p class="ck-note">Places are first paid, first in. If a Saturday is full when your payment arrives, it carries over to your next Saturday or puts you first on standby.</p></div>
+        <p class="ck-note" data-ck="regNote" hidden></p>
         <div class="row">
           <div class="field"><label>Team name * <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(teams only)</span></label><input name="Team name" data-teamreq></div>
           <div class="field"><label>Number of players * <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(minimum 5)</span></label><input data-teamreq name="Number of players" type="number" min="5" inputmode="numeric"></div>
@@ -585,13 +589,13 @@ fbq('track', 'PageView');
           <label class="consent"><input type="checkbox" name="Scout contact consent" value="Yes"> Cage Kings may share the player's name, age group and results with club scouts, and pass on scouts' contact requests to me. (Optional)</label>
         </div>
         <label class="consent"><input type="checkbox" name="Rules and waiver accepted" value="Yes" required> I accept the Cage Kings rules and participation waiver for myself and my team, and I will sign the captain's sheet on the day. *</label>
-        <label class="consent"><input type="checkbox" name="Payment terms accepted" value="Yes" data-teamreq> Teams: I understand payment is due by Sun 29 Nov, 8pm. Entry is refunded in full only if a division is called off, and not if a team withdraws. *</label>
+        <label class="consent"><input type="checkbox" name="Payment terms accepted" value="Yes" data-teamreq> Teams: <span data-ck="payTerms">I understand payment is due by Sun 29 Nov, 8pm. Entry is refunded in full only if a division is called off, and not if a team withdraws. *</span></label>
         <label class="consent"><input type="checkbox" name="Updates consent" value="Yes"> Send me email and SMS updates about future Cage Kings events from Prodigy Futbol Lab. I can unsubscribe at any time. (Optional)</label>
         <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Register</button>
       </form>
 
       <form class="ck-form" id="f-list" data-subject="Cage Kings mailing list" novalidate>
-        <p class="intro">Be first to hear about the Launch Cup, new venues and season dates.</p>
+        <p class="intro" data-ck="listIntro">Be first to hear about the Launch Cup, new venues and season dates.</p>
         <div class="field"><label>First &amp; last name *</label><input name="Name" required autocomplete="name"></div>
         <div class="row">
           <div class="field"><label>Email *</label><input name="Email" type="email" required autocomplete="email"></div>
@@ -641,7 +645,7 @@ fbq('track', 'PageView');
       <input type="text" id="ck_honey" style="display:none" tabindex="-1" autocomplete="off">
       <p class="form-foot" id="ckErr" style="color:var(--red);display:none"></p>
       <div class="ck-done" id="ckDone"><h3>You're in.</h3><p id="ckDoneMsg">Thanks. We've received your details and will be in touch.</p>
-        <div class="ck-pay" id="ckPay"><h4>Pay to secure your place</h4><dl><dt>Amount</dt><dd id="payAmt"></dd><dt>Account name</dt><dd id="payName"></dd><dt>BSB</dt><dd id="payBsb"></dd><dt>Account number</dt><dd id="payAcc"></dd><dt>Reference</dt><dd id="payRef"></dd></dl><p>Payment is due by Sunday 29 November at 8pm. Screenshot or note these details. We'll email you a confirmation shortly. Your place is confirmed once payment is received.</p></div><div class="cta-row" style="margin-top:18px"><a href="https://www.instagram.com/cagekingsfootball/" class="btn" target="_blank" rel="noopener">Follow @cagekingsfootball</a><button type="button" class="btn ghost" id="ckAgain">Submit another</button></div></div>
+        <div class="ck-pay" id="ckPay"><h4>Pay to secure your place</h4><dl><dt>Amount</dt><dd id="payAmt"></dd><dt>Account name</dt><dd id="payName"></dd><dt>BSB</dt><dd id="payBsb"></dd><dt>Account number</dt><dd id="payAcc"></dd><dt>Reference</dt><dd id="payRef"></dd></dl><p><span data-ck="payDue">Payment is due by Sunday 29 November at 8pm.</span> Screenshot or note these details. We'll email you a confirmation shortly. Your place is confirmed once payment is received.</p></div><div class="cta-row" style="margin-top:18px"><a href="https://www.instagram.com/cagekingsfootball/" class="btn" target="_blank" rel="noopener">Follow @cagekingsfootball</a><button type="button" class="btn ghost" id="ckAgain">Submit another</button></div></div>
       <p class="form-foot">Your details are only used by Prodigy Futbol Lab to run Cage Kings and are never sold. <a href="../privacy.html" style="color:inherit;text-decoration:underline">Privacy policy</a></p>
     </div>
   </div>
@@ -652,9 +656,9 @@ fbq('track', 'PageView');
     <div class="reveal"><div class="eyebrow">FAQ</div><h2>Questions</h2></div>
     <details><summary>Who runs Cage Kings?</summary><p>Cage Kings is run by Prodigy Futbol Lab, a high-performance football academy in Oakleigh, Melbourne.</p></details>
     <details><summary>How big is a squad?</summary><p>Every division plays 5v5 with rolling substitutions. Teams need at least 5 players, with no maximum squad size.</p></details>
-    <details><summary>How do I pay for the Launch Cup?</summary><p>Register your team on this page. The bank transfer details appear as soon as you submit, and we'll email you a confirmation shortly after. Payment is due by Sunday 29 November at 8pm. Entry is refunded in full only if a division is called off.</p></details>
+    <details data-ck="faqPay"><summary>How do I pay for the Launch Cup?</summary><p>Register your team on this page. The bank transfer details appear as soon as you submit, and we'll email you a confirmation shortly after. Payment is due by Sunday 29 November at 8pm. Entry is refunded in full only if a division is called off.</p></details>
     <details><summary>How are prizes paid?</summary><p>Prize money is paid to the winning team on the day.</p></details>
-    <details><summary>Where are the sessions?</summary><p>The Launch Cup is at Moorabbin Indoor Sports, 2/117 Cochranes Rd, Moorabbin. League venues for 2027 will be announced soon. Grand Finals are held at Prodigy Futbol Lab, 144-154 Haughton Road, Oakleigh.</p></details>
+    <details><summary>Where are the sessions?</summary><p data-ck="faqWhere">The Launch Cup is at Moorabbin Indoor Sports, 2/117 Cochranes Rd, Moorabbin. League venues for 2027 will be announced soon. Grand Finals are held at Prodigy Futbol Lab, 144-154 Haughton Road, Oakleigh.</p></details>
     <details><summary>Can I play without a team?</summary><p>Yes. Register as an individual player and we'll help place you in a team in your division.</p></details>
     <a class="ck-ig" href="https://www.instagram.com/cagekingsfootball/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1C2.7 8.5 2.7 8.9 2.7 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg><span><small>Results, dates and highlights</small><b>@cagekingsfootball</b></span></a>
   </div>
@@ -673,6 +677,77 @@ fbq('track', 'PageView');
   </div>
 </footer>
 
+<script>
+// Cage Kings registration phases (Melbourne time). Runs by date, no yearly edits needed.
+// cup: Launch Cup on time. late: after Sun 29 Nov 2026 8pm, late entries pay within 24 hours.
+// league: from Sun 6 Dec 2026, "Register for the 2027 League"; rolls to the next season every 15 Dec.
+// Preview any date with ?ckdate=2027-12-15T09:00:00+11:00
+var CK=(function(){
+  var now=Date.now(),q=null;try{q=new URLSearchParams(location.search).get('ckdate')}catch(e){}
+  if(q&&!isNaN(Date.parse(q)))now=Date.parse(q);
+  var LATE=Date.parse('2026-11-29T20:00:00+11:00'),END=Date.parse('2026-12-06T00:00:00+11:00');
+  var y=new Date(now+11*36e5).getUTCFullYear(),season=now>=Date.UTC(y,11,14,13)?y+1:y;if(season<2027)season=2027;
+  return {phase:now<LATE?'cup':now<END?'late':'league',season:season,now:now};
+})();
+// League dates. Add each new year's seasons here (Saturdays as YYYY-MM-DD, Grand Final Sunday).
+var CK_SEASONS=[
+  {name:'Season 1 2027',code:'S1',sats:['2027-01-16','2027-01-23','2027-01-30','2027-02-06','2027-02-13','2027-02-20','2027-02-27','2027-03-06','2027-03-13','2027-03-20','2027-04-17','2027-04-24','2027-05-01','2027-05-08','2027-05-15','2027-05-22','2027-05-29','2027-06-05','2027-06-12','2027-06-19'],gf:'2027-06-20'},
+  {name:'Season 2 2027',code:'S2',sats:['2027-07-17','2027-07-24','2027-07-31','2027-08-07','2027-08-14','2027-08-21','2027-08-28','2027-09-04','2027-09-11','2027-09-18','2027-10-09','2027-10-16','2027-10-23','2027-10-30','2027-11-06','2027-11-13','2027-11-20','2027-11-27','2027-12-04','2027-12-11'],gf:'2027-12-12'}
+];
+var CK_DISC=0.9;
+function money(n){return Number(n).toLocaleString('en-AU')}
+function nonTeamMsg(ra){return /^Standby/.test(ra)?'We will text you when a slot opens. Once we confirm your Saturday, pay the entry fee by bank transfer before stepping on court. If our confirmation reaches you less than 24 hours before the day, you can pay cash at the venue instead.':/^Individual/.test(ra)?'We will be in touch to place you in a squad.':'We will contact you as soon as the dates for the next season are confirmed.'}
+function ckFirstSun(y,m){var d=new Date(Date.UTC(y,m,1));return 1+((7-d.getUTCDay())%7)}
+function ckOff(iso){var p=iso.split('-').map(Number),y=p[0],m=p[1]-1,d=p[2];var dstEnd=ckFirstSun(y,3),dstStart=ckFirstSun(y,9);return (m<3||(m===3&&d<dstEnd)||m>9||(m===9&&d>=dstStart))?11:10}
+// A Saturday closes at 8pm the Friday before (Melbourne time)
+function ckCutoff(iso){var off=ckOff(iso);return Date.parse(iso+'T00:00:00Z')-off*36e5-4*36e5}
+function ckLabel(iso,long){var d=new Date(iso+'T12:00:00Z'),M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return (long?'Sat ':'')+d.getUTCDate()+' '+M[d.getUTCMonth()]+(long?' '+d.getUTCFullYear():'')}
+(function(){
+  function el(k){return document.querySelector('[data-ck="'+k+'"]')}
+  function set(k,h){var e=el(k);if(e)e.innerHTML=h}
+  function hide(k){var e=el(k);if(e)e.style.display='none'}
+  if(CK.phase==='late'){
+    set('lcClose','<small>Late entries</small><b>Open until Sat 5 Dec<br>Pay within 24 hours</b>');
+    set('lcPromoClose','Late entries are open until Saturday 5 December.');
+    set('formIntro','Register your team for the Launch Cup. As soon as you submit, you will see the bank transfer details. Late entry: payment is due within 24 hours to secure your place. No team yet? Register as an individual and we will help place you.');
+    set('payTerms','I understand this is a late entry and payment is due within 24 hours. Entry is refunded in full only if a division is called off, and not if a team withdraws. *');
+    set('payDue','Late entry: payment is due within 24 hours.');
+    set('faqPay','<summary>How do I pay for the Launch Cup?</summary><p>Register your team on this page. The bank transfer details appear as soon as you submit, and we will email you a confirmation shortly after. Late entries pay within 24 hours of registering. Entry is refunded in full only if a division is called off.</p>');
+  }
+  if(CK.phase==='league'){
+    var S=CK.season,first=S===2027;
+    var b=el('heroBtn');if(b)b.textContent='Register for the '+S+' League';
+    set('heroP','Fast, nonstop 5v5 futsal with cash prizes for the winners. Walls in. No offside. Four divisions from U12 to 18+ Open, a weekly Saturday league'+(first?' from 16 January 2027':'')+', and Grand Finals at PFL Oakleigh in front of club scouts.');
+    set('seasonP','Two 20-week Saturday seasons a year, following the school terms'+(first?', starting 16 January 2027':'')+'. Every Saturday earns ladder points in your division, and the top 8 teams play the Grand Final at the end of each season, with club scouts watching.');
+    var lc=document.getElementById('launch');if(lc)lc.style.display='none';
+    hide('lcPromo');
+    set('regH','Register for the <span class="red">'+S+' League</span>');
+    set('regLead','Sign up as a full-season team, a standby team or an individual player. Referees, sponsors and the mailing list are in the other tabs.');
+    set('formIntro','Register for the '+S+' Cage Kings Saturday league. Full-season teams lock in every Saturday with 10% off. Weekly teams pick their Saturdays. Standby teams are on call when a slot opens and pay only for the Saturdays they play. No team yet? Register as an individual and we will place you in a squad.');
+    set('regAs','<option value="">Select</option><option>Full-season team</option><option>Weekly team (pick your Saturdays)</option><option>Standby team (fill in on short notice)</option><option>Individual player (place me in a team)</option>');
+    var now=CK.now,seasons=CK_SEASONS.filter(function(x){return ckCutoff(x.sats[0])>now}),
+        sats=[];CK_SEASONS.forEach(function(x){x.sats.forEach(function(d){if(ckCutoff(d)>now)sats.push(d)})});sats=sats.slice(0,8);
+    var ss=document.querySelector('[data-ck="seasonPick"] select');
+    ss.innerHTML='<option value="">Select</option>'+seasons.map(function(x){return '<option value="'+x.name+'">'+x.name+': '+ckLabel(x.sats[0])+' to '+ckLabel(x.sats[19])+', Grand Final Sun '+ckLabel(x.gf)+'</option>'}).join('');
+    document.querySelector('.ck-sats').innerHTML=sats.map(function(d){return '<label><input type="checkbox" value="'+d+'"><span>Sat '+ckLabel(d)+'</span></label>'}).join('');
+    CK.seasonsOpen=seasons;CK.satsOpen=sats;
+    var ra=el('regAs'),note=el('regNote');
+    ra.addEventListener('change',function(){
+      var v=ra.value,fs=/^Full-season/.test(v),wk=/^Weekly/.test(v),sb=/^Standby/.test(v),msg='';
+      el('seasonPick').hidden=!(fs&&seasons.length);ss.required=fs&&seasons.length>0;
+      el('satPick').hidden=!(wk&&sats.length);
+      if(fs)msg=seasons.length?'Full-season teams pay 20 Saturdays upfront with 10% off. Payment is due before your first Saturday. The discount is only available before the season starts.':'Full-season entry for the next season opens once its dates are announced. Choose Weekly team for now, or register and we will contact you.';
+      if(wk&&!sats.length)msg='Saturday dates for the next season will be announced soon. Register and we will contact you.';
+      if(sb)msg='Standby teams pay only for the Saturdays they play. We will text you when a slot opens. Once confirmed, pay by bank transfer before stepping on court, or cash at the venue if we confirm less than 24 hours before the day.';
+      note.textContent=msg;note.hidden=!msg});
+    set('payTerms','I understand my place is confirmed only once payment is received, and all fees must be paid before stepping on court. Entry is not refunded if my team withdraws. *');
+    set('listIntro','Be first to hear about new venues, season dates and events.');
+    set('faqPay','<summary>How do I pay for the league?</summary><p>Full-season and weekly teams pay by bank transfer. The details appear as soon as you register, and we will email you a confirmation shortly after. Full-season teams get 10% off for paying 20 Saturdays upfront before the season starts. Places are first paid, first in. Standby teams pay once their Saturday is confirmed: by bank transfer, or cash at the venue if confirmed less than 24 hours before the day.</p>');
+    set('faqWhere','League venues for '+S+' will be announced soon. Grand Finals are held at Prodigy Futbol Lab, 144-154 Haughton Road, Oakleigh.');
+    var f=document.getElementById('f-interest');if(f)f.dataset.subject=S+' League registration';
+  }
+})();
+</script>
 <script>function okPhone(v){v=String(v||'').replace(/[\s\-()]/g,'').replace(/^\+?61/,'0');return /^0[23478]\d{8}$/.test(v)}</script>
 <script>
 // Bank details for Launch Cup payments
@@ -701,7 +776,7 @@ var CK_FEES={'U12 to U13 (5v5)':330,'U14 to U15 (5v5)':330,'U16 to U18 (5v5)':44
   document.querySelectorAll('.ck-form').forEach(function(f){
     f.addEventListener('submit',function(e){
       e.preventDefault();err.style.display='none';
-      var bad=[],isU18=f.id==='f-interest'&&u18.classList.contains('on'),isTeamReg=f.id==='f-interest'&&f.querySelector('[name="Registering as"]').value==='A team';
+      var bad=[],isU18=f.id==='f-interest'&&u18.classList.contains('on'),isTeamReg=f.id==='f-interest'&&/^(A team|Full-season|Weekly|Standby)/.test(f.querySelector('[name="Registering as"]').value);
       f.querySelectorAll('input,select,textarea').forEach(function(i){
         var req=i.required||(isU18&&i.hasAttribute('data-u18req'))||(isTeamReg&&i.hasAttribute('data-teamreq'));
         var v=i.type==='checkbox'?i.checked:i.value.trim()!=='';
@@ -710,24 +785,31 @@ var CK_FEES={'U12 to U13 (5v5)':330,'U14 to U15 (5v5)':330,'U16 to U18 (5v5)':44
         if(ok&&i.hasAttribute('data-phone')&&i.value.trim())ok=okPhone(i.value);
         if(ok&&isTeamReg&&i.name==='Number of players')ok=parseInt(i.value,10)>=5;
         if(i.type!=='checkbox')i.classList.toggle('bad',!ok);if(!ok)bad.push(i)});
+      var sp=f.querySelector('[data-ck="satPick"]');f.__sats=[];if(sp&&!sp.hidden){f.__sats=[].slice.call(sp.querySelectorAll('input:checked')).map(function(c){return c.value});sp.querySelectorAll('label').forEach(function(l){l.classList.toggle('bad',!f.__sats.length)});if(!f.__sats.length)bad.push(sp.querySelector('input'))}
       if(bad.length){err.textContent='Please complete the highlighted fields and required tick boxes (mobile as 04xx xxx xxx, teams need at least 5 players).';err.style.display='block';bad[0].focus();return}
       if(document.getElementById('ck_honey').value)return;
       var data={};f.querySelectorAll('input[name],select[name],textarea[name]').forEach(function(i){
-        if(i.closest('[data-u18]')&&!isU18)return;
+        if(i.closest('[data-u18]')&&!isU18)return;if(i.closest('[hidden]')||!i.name)return;
         data[i.name]=i.type==='checkbox'?(i.checked?'Yes':'No'):i.value.trim()});
+      if(f.__sats&&f.__sats.length)data['Saturdays']=f.__sats.map(function(d){return ckLabel(d,true)}).join(', ');
       var who=data['Team name']||data['Business']||data['Contact name']||data['Name']||'';
-      data._subject=f.dataset.subject+(data['Division']?' ('+data['Division']+')':'')+': '+who;
+      data._subject=f.dataset.subject+(data['Registering as']&&CK.phase==='league'?' ['+data['Registering as'].split(' (')[0]+(data['Season']?', '+data['Season']:'')+(data['Saturdays']?', '+data['Saturdays']:'')+']':'')+(data['Division']?' ('+data['Division']+')':'')+': '+who;
       data._template='table';data._replyto=data['Contact email']||data['Email'];
-      var isTeam=f.id==='f-interest'&&data['Registering as']==='A team',fee=CK_FEES[data['Division']]||'',ref=ckRef(data['Team name']||data['Contact name'],data['Division']);
+      var isLeague=f.id==='f-interest'&&CK.phase==='league',ra=data['Registering as']||'',lgFull=isLeague&&/^Full-season/.test(ra)&&!!data['Season'],lgWeek=isLeague&&/^Weekly/.test(ra)&&!!data['Saturdays'],
+        lgN=lgWeek?data['Saturdays'].split(', ').length:0,lgFee=CK_FEES[data['Division']]||0,
+        lgAmt=lgFull?Math.round(lgFee*20*CK_DISC):lgFee*lgN,lgCode=lgFull?(CK_SEASONS.filter(function(x){return x.name===data['Season']})[0]||{}).code:(lgWeek?ckLabel(f.__sats[0]).replace(' ','').toUpperCase():''),
+        isTeam=f.id==='f-interest'&&((!isLeague&&ra==='A team')||lgFull||lgWeek),due=CK.phase==='late'?'within 24 hours (late entry)':'by Sunday 29 November at 8pm',fee=isLeague?lgAmt:(CK_FEES[data['Division']]||''),ref=isLeague&&isTeam?('CK '+lgCode+' '+(data['Team name']||data['Contact name']||'')).slice(0,18):ckRef(data['Team name']||data['Contact name'],data['Division']);if(isLeague)data['Amount due']=isTeam?'$'+money(fee):(/^Standby/.test(ra)?'When called in: bank transfer, or cash at venue if confirmed under 24 hours before':'None yet');
       if(f.id==='f-interest'){data.email=data['Contact email'];
-        data._autoresponse=isTeam?('Thanks for registering '+(data['Team name']||'your team')+' for the Cage Kings Launch Cup, Sunday 6 December at Moorabbin Indoor Sports.\n\nTo secure your place, please pay $'+fee+' by bank transfer by Sunday 29 November at 8pm.\n\nAccount name: '+CK_BANK.name+'\nBSB: '+CK_BANK.bsb+'\nAccount number: '+CK_BANK.acc+'\nReference: '+ref+'\n\nYour place is confirmed once payment is received.\n\nRegards,\nPFL'):('Thanks for registering for the Cage Kings Launch Cup. We will be in touch to help place you in a team.\n\nRegards,\nPFL')}
+        data._autoresponse=isLeague?(isTeam?('Thanks for registering '+(data['Team name']||'your team')+' for the Cage Kings League, '+(lgFull?data['Season']+' (20 Saturdays, 10% off)':data['Saturdays'])+'.\n\nTo secure your place, please pay $'+money(fee)+' by bank transfer before your first Saturday. Places are first paid, first in.'+(lgFull?'':' If a Saturday is full when your payment arrives, it carries over to your next Saturday or puts you first on standby.')+'\n\nAccount name: '+CK_BANK.name+'\nBSB: '+CK_BANK.bsb+'\nAccount number: '+CK_BANK.acc+'\nReference: '+ref+'\n\nRegards,\nPFL'):('Thanks for registering for the '+CK.season+' Cage Kings League'+(data['Team name']?' ('+data['Team name']+')':'')+' as: '+ra+'.\n\n'+nonTeamMsg(ra)+(/^Standby/.test(ra)?'\n\nEntry fee: $'+money(CK_FEES[data['Division']]||0)+' per Saturday\nAccount name: '+CK_BANK.name+'\nBSB: '+CK_BANK.bsb+'\nAccount number: '+CK_BANK.acc+'\nReference: '+('CK SB '+(data['Team name']||data['Contact name']||'')).slice(0,18):'')+'\n\nRegards,\nPFL')):isTeam?('Thanks for registering '+(data['Team name']||'your team')+' for the Cage Kings Launch Cup, Sunday 6 December at Moorabbin Indoor Sports.\n\nTo secure your place, please pay $'+money(fee)+' by bank transfer '+due+'.\n\nAccount name: '+CK_BANK.name+'\nBSB: '+CK_BANK.bsb+'\nAccount number: '+CK_BANK.acc+'\nReference: '+ref+'\n\nYour place is confirmed once payment is received.\n\nRegards,\nPFL'):('Thanks for registering for the Cage Kings Launch Cup. We will be in touch to help place you in a team.\n\nRegards,\nPFL')}
       var btn=f.querySelector('button[type=submit]'),lbl=btn.textContent;btn.disabled=true;btn.textContent='Sending...';
       fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
         .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=='true')throw 0})})
         .then(function(){f.classList.remove('on');done.classList.add('show');
           var pay=document.getElementById('ckPay');pay.classList.toggle('on',isTeam);
-          if(isTeam){document.getElementById('payAmt').textContent='$'+fee;document.getElementById('payName').textContent=CK_BANK.name;document.getElementById('payBsb').textContent=CK_BANK.bsb;document.getElementById('payAcc').textContent=CK_BANK.acc;document.getElementById('payRef').textContent=ref;
-            document.getElementById('ckDoneMsg').textContent='Thanks. '+(data['Team name']||'Your team')+' is registered for the '+data['Division'].replace(' (5v5)','')+' division. One last step:'}document.querySelector('.ck-tabs').style.display='none';
+          if(isTeam){document.getElementById('payAmt').textContent='$'+money(fee);document.getElementById('payName').textContent=CK_BANK.name;document.getElementById('payBsb').textContent=CK_BANK.bsb;document.getElementById('payAcc').textContent=CK_BANK.acc;document.getElementById('payRef').textContent=ref;
+            document.getElementById('ckDoneMsg').textContent='Thanks. '+(data['Team name']||'Your team')+' is registered for the '+data['Division'].replace(' (5v5)','')+' division. One last step:'}if(isLeague){var dm=document.getElementById('ckDoneMsg'),pd=document.querySelector('#ckPay [data-ck="payDue"]');
+            if(isTeam){dm.textContent='Thanks. '+(data['Team name']||'Your team')+' is registered for '+(lgFull?data['Season']:data['Saturdays'])+' ('+data['Division'].replace(' (5v5)','')+'). One last step:';if(pd)pd.textContent=lgFull?'20 Saturdays with 10% off, due before your first Saturday. Your place is confirmed once payment is received.':'Due before your first Saturday. Places are first paid, first in.'}
+            else dm.textContent='Thanks. '+(data['Team name']||'You are')+(data['Team name']?' is':'')+' registered for the '+CK.season+' League ('+data['Division'].replace(' (5v5)','')+'). '+nonTeamMsg(ra)}document.querySelector('.ck-tabs').style.display='none';
           if(typeof fbq==='function')fbq('track','CompleteRegistration',{content_name:f.dataset.subject});done.scrollIntoView({behavior:'smooth',block:'center'})})
         .catch(function(){var body=Object.keys(data).filter(function(k){return k.charAt(0)!=='_'}).map(function(k){return k+': '+(data[k]||'-')}).join('\n');
           var ml='mailto:info@pflab.com.au?subject='+encodeURIComponent(data._subject)+'&body='+encodeURIComponent(body);
@@ -735,7 +817,7 @@ var CK_FEES={'U12 to U13 (5v5)':330,'U14 to U15 (5v5)':330,'U16 to U18 (5v5)':44
         .then(function(){btn.disabled=false;btn.textContent=lbl});
     });
   });
-  document.getElementById('ckAgain').addEventListener('click',function(){document.querySelectorAll('.ck-form').forEach(function(f){f.reset()});u18.classList.remove('on');document.querySelector('.ck-tabs').style.display='';var sel=document.querySelector('.ck-tabs [aria-selected=true]');show(sel?sel.dataset.tab:'interest')});
+  document.getElementById('ckAgain').addEventListener('click',function(){document.querySelectorAll('.ck-form').forEach(function(f){f.reset()});u18.classList.remove('on');var ra=document.querySelector('[data-ck="regAs"]');if(ra)ra.dispatchEvent(new Event('change'));document.querySelector('.ck-tabs').style.display='';var sel=document.querySelector('.ck-tabs [aria-selected=true]');show(sel?sel.dataset.tab:'interest')});
 })();
 </script>
 </body>
