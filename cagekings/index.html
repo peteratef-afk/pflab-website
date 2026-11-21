@@ -423,6 +423,14 @@ fbq('track', 'PageView');
 .ck-u18{display:none}.ck-u18.on{display:block}
 .ck-done{display:none;background:var(--ink);border:1px solid var(--red);padding:34px}.ck-done.show{display:block}
 .ck-done h3{font-size:36px;margin-bottom:10px}
+.ck-pay{display:none;margin-top:22px;border:1px solid var(--line);background:#000;padding:24px}.ck-pay.on{display:block}
+.ck-pay h4{font-family:var(--display);font-weight:400;font-size:26px;margin-bottom:12px;text-transform:uppercase}
+.ck-pay dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0}.ck-pay dt{color:var(--muted);font-size:14px}.ck-pay dd{margin:0;font-weight:700}
+.ck-pay p{color:var(--muted);font-size:14px;margin-top:14px}
+.ck-lc{background:linear-gradient(140deg,#2a0607,#0b0b0b 60%);border-top:1px solid #3a0d0e;border-bottom:1px solid #3a0d0e}
+.ck-lc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.ck-lc-grid div{background:#0b0b0b;padding:24px}.ck-lc-grid small{display:block;color:var(--muted);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:6px}.ck-lc-grid b{font-size:19px;line-height:1.35;display:block}
+@media (max-width:1000px){.ck-lc-grid{grid-template-columns:1fr 1fr}}@media (max-width:640px){.ck-lc-grid{grid-template-columns:1fr}}
 .ck-faq details{border-bottom:1px solid var(--line);padding:20px 0}
 .ck-faq summary{cursor:pointer;font-weight:700;font-size:18px}
 .ck-faq p{color:var(--muted);margin-top:10px;max-width:760px}
@@ -438,11 +446,11 @@ fbq('track', 'PageView');
 <section class="ck-hero" id="home">
   <div class="wrap">
     <div>
-      <div class="eyebrow">Cage Kings · Hosted by Prodigy Futbol Lab</div>
+      <div class="eyebrow">5v5 Futsal · Hosted by Prodigy Futbol Lab</div>
       <h1>Earn the<br><span class="red">crown.</span></h1>
-      <p>Fast, nonstop indoor football competitions with cash prizes for the winners. Walls in. No offside. Four divisions from U12 to 18+ Open, and season Grand Finals at PFL Oakleigh in front of club scouts.</p>
+      <p>Fast, nonstop 5v5 futsal with cash prizes for the winners. Walls in. No offside. Four divisions from U12 to 18+ Open, a weekly Saturday league from 30 January 2027, and Grand Finals at PFL Oakleigh in front of club scouts.</p>
       <div class="cta-row">
-        <a href="#register" class="btn" data-ck-tab="interest">Register interest</a>
+        <a href="#register" class="btn" data-ck-tab="interest">Register for the Launch Cup</a>
         <a href="https://www.instagram.com/cagekingsfootball/" class="btn ghost" target="_blank" rel="noopener">Follow @cagekingsfootball</a>
       </div>
     </div>
@@ -450,18 +458,36 @@ fbq('track', 'PageView');
   </div>
 </section>
 
+<section class="ck-lc" id="launch">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Registrations open · One-off launch event</div>
+      <h2>The Launch Cup.<br><span class="red">Sunday 6 December.</span></h2>
+      <p class="lead">A one-off 5v5 futsal tournament to launch the Cage Kings Saturday league, a 20-week season starting 30 January 2027. Four divisions, full prize money, 8 teams per division.</p>
+    </div>
+    <div class="ck-lc-grid reveal">
+      <div><small>Venue</small><b>Moorabbin Indoor Sports<br>2/117 Cochranes Rd, Moorabbin</b></div>
+      <div><small>12pm to 3pm</small><b>U12 to 13<br>U14 to 15</b></div>
+      <div><small>3pm to 6pm</small><b>U16 to 18<br>18+ Open</b></div>
+      <div><small>Registrations close</small><b>Sun 29 Nov, 8pm<br>Payment due by then</b></div>
+    </div>
+    <p class="lead reveal" style="margin-top:26px">Bring the family: trampolines, play areas, a food truck and free entry for spectators.</p>
+    <div class="cta-row reveal" style="margin-top:22px"><a href="#register" class="btn" data-ck-tab="interest">Register your team</a></div>
+  </div>
+</section>
+
 <section id="how">
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">How it works</div>
-      <h2>8 teams. One night.<br><span class="red">One king.</span></h2>
+      <h2>8 teams. One session.<br><span class="red">One king.</span></h2>
       <p class="lead">Every Cage Kings session is a full tournament in about three hours. Two groups of four, then quarter finals, semi finals and a final. The winning team takes the cash.</p>
     </div>
     <div class="ck-strip reveal">
       <div><b>8 teams</b><span>Two groups of four</span></div>
       <div><b>19 games</b><span>Groups, QF, SF and final</span></div>
       <div><b>8 minutes</b><span>Every game, 10-minute final</span></div>
-      <div><b>Cash</b><span>Paid to the winners on the night</span></div>
+      <div><b>Cash</b><span>Paid to the winners on the day</span></div>
     </div>
   </div>
 </section>
@@ -503,15 +529,15 @@ fbq('track', 'PageView');
     <div class="reveal">
       <div class="eyebrow">Seasons &amp; Grand Finals</div>
       <h2>Get seen.<br><span class="red">Get crowned.</span></h2>
-      <p class="lead">Two 20-week seasons a year with a ladder in every division. Sessions run at venues across Melbourne's south east and east. The top 8 teams in each division play the Grand Finals at Prodigy Futbol Lab, Oakleigh, with club scouts watching.</p>
+      <p class="lead">A weekly Saturday futsal league over a 20-week season, starting 30 January 2027, with a ladder in every division. The top 8 teams in each division play the Grand Finals at Prodigy Futbol Lab, Oakleigh, with club scouts watching.</p>
     </div>
     <div class="ck-gf reveal"><span>Grand Final prizes</span><b>$5,000</b><small>18+ Open winners. Up to $3,000 for U16 to U18 and $2,000 for U12 to U15.</small></div>
   </div>
   <div class="wrap solo">
     <div class="ck-launch reveal">
-      <span class="tag">Coming soon</span>
-      <div><h3>The Launch Cup</h3><p>Our first event is a one-off Launch Cup in December 2026 with full prize money in all four divisions. Season 1 starts in February 2027. Date and venue announced soon: register interest to hear first.</p></div>
-      <a href="#register" class="btn" data-ck-tab="interest">Get first access</a>
+      <span class="tag">Registrations open</span>
+      <div><h3>The Launch Cup</h3><p>Sunday 6 December at Moorabbin Indoor Sports. A one-off futsal event before the 2027 season, with full prize money in all four divisions. Registrations close Sunday 29 November at 8pm.</p></div>
+      <a href="#register" class="btn" data-ck-tab="interest">Register your team</a>
     </div>
   </div>
 </section>
@@ -520,25 +546,28 @@ fbq('track', 'PageView');
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">Get involved</div>
-      <h2>Register <span class="red">interest</span></h2>
-      <p class="lead">Teams and individual players, referees, sponsors, or just keep me posted. Choose an option below.</p>
+      <h2>Register for the <span class="red">Launch Cup</span></h2>
+      <p class="lead">Register your team for Sunday 6 December. Referees, sponsors and the mailing list are in the other tabs.</p>
     </div>
     <div class="ck-tabs" role="tablist">
-      <button type="button" role="tab" aria-selected="true" data-tab="interest">Teams &amp; players</button>
+      <button type="button" role="tab" aria-selected="true" data-tab="interest">Team registration</button>
       <button type="button" role="tab" aria-selected="false" data-tab="list">Mailing list</button>
       <button type="button" role="tab" aria-selected="false" data-tab="refs">Referees &amp; officials</button>
       <button type="button" role="tab" aria-selected="false" data-tab="sponsor">Sponsors</button>
     </div>
     <div class="ck-forms">
 
-      <form class="ck-form on" id="f-interest" data-subject="Cage Kings interest" novalidate>
-        <p class="intro">Register a team, or register as an individual and we'll help place you in a team. No payment now: we'll contact you when registrations open.</p>
+      <form class="ck-form on" id="f-interest" data-subject="Launch Cup registration" novalidate>
+        <p class="intro">Register your team for the Launch Cup. As soon as you submit, you will see the bank transfer details. Payment is due by Sunday 29 November at 8pm to secure your place. No team yet? Register as an individual and we will help place you.</p>
         <div class="row">
-          <div class="field"><label>Registering as *</label><select name="Registering as" required><option value="">Select</option><option>A team</option><option>An individual player</option></select></div>
+          <div class="field"><label>Registering as *</label><select name="Registering as" required><option value="">Select</option><option>A team</option><option>An individual player (place me in a team)</option></select></div>
           <div class="field"><label>Division *</label><select name="Division" required data-div><option value="">Select</option><option>U12 to U13 (5v5)</option><option>U14 to U15 (5v5)</option><option>U16 to U18 (5v5)</option><option>18+ Open (5v5)</option></select></div>
         </div>
-        <div class="field"><label>Team name <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(teams only)</span></label><input name="Team name"></div>
-        <h3 class="fh">Contact person</h3>
+        <div class="row">
+          <div class="field"><label>Team name <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(teams only)</span></label><input name="Team name"></div>
+          <div class="field"><label>Number of players <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(minimum 5)</span></label><input name="Number of players" type="number" min="1" inputmode="numeric"></div>
+        </div>
+        <h3 class="fh">Captain or team manager</h3>
         <div class="field"><label>First &amp; last name *</label><input name="Contact name" required autocomplete="name"></div>
         <div class="row">
           <div class="field"><label>Email *</label><input name="Contact email" type="email" required autocomplete="email"></div>
@@ -555,8 +584,10 @@ fbq('track', 'PageView');
           <label class="consent"><input type="checkbox" name="Media consent" value="Yes"> Photos and video of the player(s) may be used on Cage Kings and PFL social media and website. (Optional)</label>
           <label class="consent"><input type="checkbox" name="Scout contact consent" value="Yes"> Cage Kings may share the player's name, age group and results with club scouts, and pass on scouts' contact requests to me. (Optional)</label>
         </div>
+        <label class="consent"><input type="checkbox" name="Rules and waiver accepted" value="Yes" required> I accept the Cage Kings rules and participation waiver for myself and my team, and I will sign the captain's sheet on the day. *</label>
+        <label class="consent"><input type="checkbox" name="Payment terms accepted" value="Yes" required> I understand payment is due by Sun 29 Nov, 8pm. Entry is refunded in full only if a division is called off, and not if a team withdraws. *</label>
         <label class="consent"><input type="checkbox" name="Updates consent" value="Yes" required> I agree to receive email and SMS updates about Cage Kings from Prodigy Futbol Lab. I can unsubscribe at any time. *</label>
-        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Register interest</button>
+        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Register</button>
       </form>
 
       <form class="ck-form" id="f-list" data-subject="Cage Kings mailing list" novalidate>
@@ -607,7 +638,8 @@ fbq('track', 'PageView');
 
       <input type="text" id="ck_honey" style="display:none" tabindex="-1" autocomplete="off">
       <p class="form-foot" id="ckErr" style="color:var(--red);display:none"></p>
-      <div class="ck-done" id="ckDone"><h3>You're in.</h3><p id="ckDoneMsg">Thanks. We've received your details and will be in touch.</p><div class="cta-row" style="margin-top:18px"><a href="https://www.instagram.com/cagekingsfootball/" class="btn" target="_blank" rel="noopener">Follow @cagekingsfootball</a><button type="button" class="btn ghost" id="ckAgain">Submit another</button></div></div>
+      <div class="ck-done" id="ckDone"><h3>You're in.</h3><p id="ckDoneMsg">Thanks. We've received your details and will be in touch.</p>
+        <div class="ck-pay" id="ckPay"><h4>Pay to secure your place</h4><dl><dt>Amount</dt><dd id="payAmt"></dd><dt>Account name</dt><dd id="payName"></dd><dt>BSB</dt><dd id="payBsb"></dd><dt>Account number</dt><dd id="payAcc"></dd><dt>Reference</dt><dd id="payRef"></dd></dl><p>Payment is due by Sunday 29 November at 8pm. We have also emailed you these details. Your place is confirmed once payment is received.</p></div><div class="cta-row" style="margin-top:18px"><a href="https://www.instagram.com/cagekingsfootball/" class="btn" target="_blank" rel="noopener">Follow @cagekingsfootball</a><button type="button" class="btn ghost" id="ckAgain">Submit another</button></div></div>
       <p class="form-foot">Your details are only used by Prodigy Futbol Lab to run Cage Kings and are never sold. <a href="../privacy.html" style="color:inherit;text-decoration:underline">Privacy policy</a></p>
     </div>
   </div>
@@ -618,8 +650,9 @@ fbq('track', 'PageView');
     <div class="reveal"><div class="eyebrow">FAQ</div><h2>Questions</h2></div>
     <details><summary>Who runs Cage Kings?</summary><p>Cage Kings is run by Prodigy Futbol Lab, a high-performance football academy in Oakleigh, Melbourne.</p></details>
     <details><summary>How big is a squad?</summary><p>Every division plays 5v5 with rolling substitutions. Teams need at least 5 players, with no maximum squad size.</p></details>
-    <details><summary>How are prizes paid?</summary><p>Prize money is paid to the winning team on the night.</p></details>
-    <details><summary>Where are the sessions?</summary><p>Weekly sessions rotate between indoor venues across Melbourne's south east and east. Grand Finals are held at Prodigy Futbol Lab, 144-154 Haughton Road, Oakleigh.</p></details>
+    <details><summary>How do I pay for the Launch Cup?</summary><p>Register your team on this page. The bank transfer details appear as soon as you submit and are also emailed to you. Payment is due by Sunday 29 November at 8pm. Entry is refunded in full only if a division is called off.</p></details>
+    <details><summary>How are prizes paid?</summary><p>Prize money is paid to the winning team on the day.</p></details>
+    <details><summary>Where are the sessions?</summary><p>The Launch Cup is at Moorabbin Indoor Sports, 2/117 Cochranes Rd, Moorabbin. League venues for 2027 will be announced soon. Grand Finals are held at Prodigy Futbol Lab, 144-154 Haughton Road, Oakleigh.</p></details>
     <details><summary>Can I play without a team?</summary><p>Yes. Register as an individual player and we'll help place you in a team in your division.</p></details>
     <a class="ck-ig" href="https://www.instagram.com/cagekingsfootball/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1C2.7 8.5 2.7 8.9 2.7 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg><span><small>Results, dates and highlights</small><b>@cagekingsfootball</b></span></a>
   </div>
@@ -640,6 +673,9 @@ fbq('track', 'PageView');
 
 <script>function okPhone(v){v=String(v||'').replace(/[\s\-()]/g,'').replace(/^\+?61/,'0');return /^0[23478]\d{8}$/.test(v)}</script>
 <script>
+// Bank details for Launch Cup payments: replace the two ADD_ values below
+var CK_BANK={name:'PRODIGY FUTBOL LAB PTY LTD',bsb:'ADD_BSB',acc:'ADD_ACCOUNT_NUMBER'};
+var CK_FEES={'U12 to U13 (5v5)':330,'U14 to U15 (5v5)':330,'U16 to U18 (5v5)':440,'18+ Open (5v5)':550};
 (function(){
   var header=document.querySelector('header');
   function onScroll(){header.classList.toggle('scrolled',window.scrollY>30)}
@@ -678,10 +714,16 @@ fbq('track', 'PageView');
       var who=data['Team name']||data['Business']||data['Contact name']||data['Name']||'';
       data._subject=f.dataset.subject+(data['Division']?' ('+data['Division']+')':'')+': '+who;
       data._template='table';data._replyto=data['Contact email']||data['Email'];
+      var isTeam=f.id==='f-interest'&&data['Registering as']==='A team',fee=CK_FEES[data['Division']]||'',ref=(data['Team name']||data['Contact name']||'').slice(0,18);
+      if(f.id==='f-interest'){data.email=data['Contact email'];
+        data._autoresponse=isTeam?('Thanks for registering '+(data['Team name']||'your team')+' for the Cage Kings Launch Cup, Sunday 6 December at Moorabbin Indoor Sports.\n\nTo secure your place, please pay $'+fee+' by bank transfer by Sunday 29 November at 8pm.\n\nAccount name: '+CK_BANK.name+'\nBSB: '+CK_BANK.bsb+'\nAccount number: '+CK_BANK.acc+'\nReference: '+ref+'\n\nYour place is confirmed once payment is received.\n\nRegards,\nPFL'):('Thanks for registering for the Cage Kings Launch Cup. We will be in touch to help place you in a team.\n\nRegards,\nPFL')}
       var btn=f.querySelector('button[type=submit]'),lbl=btn.textContent;btn.disabled=true;btn.textContent='Sending...';
       fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
         .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=='true')throw 0})})
-        .then(function(){f.classList.remove('on');done.classList.add('show');document.querySelector('.ck-tabs').style.display='none';
+        .then(function(){f.classList.remove('on');done.classList.add('show');
+          var pay=document.getElementById('ckPay');pay.classList.toggle('on',isTeam);
+          if(isTeam){document.getElementById('payAmt').textContent='$'+fee;document.getElementById('payName').textContent=CK_BANK.name;document.getElementById('payBsb').textContent=CK_BANK.bsb;document.getElementById('payAcc').textContent=CK_BANK.acc;document.getElementById('payRef').textContent=ref;
+            document.getElementById('ckDoneMsg').textContent='Thanks. '+(data['Team name']||'Your team')+' is registered for the '+data['Division'].replace(' (5v5)','')+' division. One last step:'}document.querySelector('.ck-tabs').style.display='none';
           if(typeof fbq==='function')fbq('track','CompleteRegistration',{content_name:f.dataset.subject});done.scrollIntoView({behavior:'smooth',block:'center'})})
         .catch(function(){var body=Object.keys(data).filter(function(k){return k.charAt(0)!=='_'}).map(function(k){return k+': '+(data[k]||'-')}).join('\n');
           var ml='mailto:info@pflab.com.au?subject='+encodeURIComponent(data._subject)+'&body='+encodeURIComponent(body);
