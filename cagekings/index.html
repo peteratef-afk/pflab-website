@@ -815,11 +815,11 @@ var CK_FEES={'U12 to U13 (5v5)':330,'U14 to U15 (5v5)':330,'U16 to U18 (5v5)':44
           if(!ok){err.innerHTML='We could not confirm we received your registration. Please <a href="'+mailLink()+'" style="color:#fff;text-decoration:underline">tap here to email us a copy</a> so we have your details.';err.style.display='block'}
           else if(typeof fbq==='function')fbq('track','CompleteRegistration',{content_name:f.dataset.subject});
           done.scrollIntoView({behavior:'smooth',block:'center'})}catch(e){if(!ok)showErr()}}
-      var btn=f.querySelector('button[type=submit]'),lbl=btn.textContent;btn.disabled=true;btn.textContent='Sending...';
+      var btn=f.querySelector('button[type=submit]'),lbl=btn.textContent;btn.disabled=true;btn.textContent='Sending...';var wait=f.querySelector('.ck-wait');if(!wait){wait=document.createElement('p');wait.className='ck-note ck-wait';wait.style.textAlign='center';wait.textContent='This can take up to a minute. Please don\'t close the page.';btn.insertAdjacentElement('afterend',wait)}wait.hidden=false;
       fetch('https://formsubmit.co/ajax/info@pflab.com.au',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
         .then(function(r){if(!r.ok)throw 0;return r.text().then(function(t){var j=null;try{j=JSON.parse(t)}catch(e){}if(j&&String(j.success)==='false')throw 0})})
         .then(function(){showDone(true)},function(){if(isTeam)showDone(false);else showErr()})
-        .then(function(){btn.disabled=false;btn.textContent=lbl});
+        .then(function(){btn.disabled=false;btn.textContent=lbl;wait.hidden=true});
     });
   });
   document.getElementById('ckAgain').addEventListener('click',function(){document.querySelectorAll('.ck-form').forEach(function(f){f.reset()});u18.classList.remove('on');var ra=document.querySelector('[data-ck="regAs"]');if(ra)ra.dispatchEvent(new Event('change'));document.querySelector('.ck-tabs').style.display='';var sel=document.querySelector('.ck-tabs [aria-selected=true]');show(sel?sel.dataset.tab:'interest')});
