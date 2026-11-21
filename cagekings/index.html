@@ -564,8 +564,8 @@ fbq('track', 'PageView');
           <div class="field"><label>Division *</label><select name="Division" required data-div><option value="">Select</option><option>U12 to U13 (5v5)</option><option>U14 to U15 (5v5)</option><option>U16 to U18 (5v5)</option><option>18+ Open (5v5)</option></select></div>
         </div>
         <div class="row">
-          <div class="field"><label>Team name <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(teams only)</span></label><input name="Team name"></div>
-          <div class="field"><label>Number of players <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(minimum 5)</span></label><input name="Number of players" type="number" min="1" inputmode="numeric"></div>
+          <div class="field"><label>Team name * <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(teams only)</span></label><input name="Team name" data-teamreq></div>
+          <div class="field"><label>Number of players * <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(minimum 5)</span></label><input data-teamreq name="Number of players" type="number" min="5" inputmode="numeric"></div>
         </div>
         <h3 class="fh">Captain or team manager</h3>
         <div class="field"><label>First &amp; last name *</label><input name="Contact name" required autocomplete="name"></div>
@@ -585,8 +585,8 @@ fbq('track', 'PageView');
           <label class="consent"><input type="checkbox" name="Scout contact consent" value="Yes"> Cage Kings may share the player's name, age group and results with club scouts, and pass on scouts' contact requests to me. (Optional)</label>
         </div>
         <label class="consent"><input type="checkbox" name="Rules and waiver accepted" value="Yes" required> I accept the Cage Kings rules and participation waiver for myself and my team, and I will sign the captain's sheet on the day. *</label>
-        <label class="consent"><input type="checkbox" name="Payment terms accepted" value="Yes" required> I understand payment is due by Sun 29 Nov, 8pm. Entry is refunded in full only if a division is called off, and not if a team withdraws. *</label>
-        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes" required> I agree to receive email and SMS updates about Cage Kings from Prodigy Futbol Lab. I can unsubscribe at any time. *</label>
+        <label class="consent"><input type="checkbox" name="Payment terms accepted" value="Yes" data-teamreq> Teams: I understand payment is due by Sun 29 Nov, 8pm. Entry is refunded in full only if a division is called off, and not if a team withdraws. *</label>
+        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes"> Send me email and SMS updates about future Cage Kings events from Prodigy Futbol Lab. I can unsubscribe at any time. (Optional)</label>
         <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Register</button>
       </form>
 
@@ -675,8 +675,9 @@ fbq('track', 'PageView');
 
 <script>function okPhone(v){v=String(v||'').replace(/[\s\-()]/g,'').replace(/^\+?61/,'0');return /^0[23478]\d{8}$/.test(v)}</script>
 <script>
-// Bank details for Launch Cup payments: replace the two ADD_ values below
+// Bank details for Launch Cup payments
 var CK_BANK={name:'PRODIGY FUTBOL LAB PTY LTD',bsb:'083266',acc:'501097197'};
+function ckRef(t,d){var c={'U12 to U13 (5v5)':'U12-13','U14 to U15 (5v5)':'U14-15','U16 to U18 (5v5)':'U16-18','18+ Open (5v5)':'Open'}[d]||'';t=String(t||'').replace(/[^A-Za-z0-9 ]/g,'').replace(/\s+/g,' ').trim();return (t.slice(0,17-c.length).trim()+' '+c).trim()}
 var CK_FEES={'U12 to U13 (5v5)':330,'U14 to U15 (5v5)':330,'U16 to U18 (5v5)':440,'18+ Open (5v5)':550};
 (function(){
   var header=document.querySelector('header');
@@ -700,15 +701,16 @@ var CK_FEES={'U12 to U13 (5v5)':330,'U14 to U15 (5v5)':330,'U16 to U18 (5v5)':44
   document.querySelectorAll('.ck-form').forEach(function(f){
     f.addEventListener('submit',function(e){
       e.preventDefault();err.style.display='none';
-      var bad=[],isU18=f.id==='f-interest'&&u18.classList.contains('on');
+      var bad=[],isU18=f.id==='f-interest'&&u18.classList.contains('on'),isTeamReg=f.id==='f-interest'&&f.querySelector('[name="Registering as"]').value==='A team';
       f.querySelectorAll('input,select,textarea').forEach(function(i){
-        var req=i.required||(isU18&&i.hasAttribute('data-u18req'));
+        var req=i.required||(isU18&&i.hasAttribute('data-u18req'))||(isTeamReg&&i.hasAttribute('data-teamreq'));
         var v=i.type==='checkbox'?i.checked:i.value.trim()!=='';
         var ok=req?v:true;
         if(ok&&i.type==='email'&&i.value.trim())ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value.trim());
         if(ok&&i.hasAttribute('data-phone')&&i.value.trim())ok=okPhone(i.value);
+        if(ok&&isTeamReg&&i.name==='Number of players')ok=parseInt(i.value,10)>=5;
         if(i.type!=='checkbox')i.classList.toggle('bad',!ok);if(!ok)bad.push(i)});
-      if(bad.length){err.textContent='Please complete the highlighted fields and required tick boxes (mobile as 04xx xxx xxx).';err.style.display='block';bad[0].focus();return}
+      if(bad.length){err.textContent='Please complete the highlighted fields and required tick boxes (mobile as 04xx xxx xxx, teams need at least 5 players).';err.style.display='block';bad[0].focus();return}
       if(document.getElementById('ck_honey').value)return;
       var data={};f.querySelectorAll('input[name],select[name],textarea[name]').forEach(function(i){
         if(i.closest('[data-u18]')&&!isU18)return;
@@ -716,7 +718,7 @@ var CK_FEES={'U12 to U13 (5v5)':330,'U14 to U15 (5v5)':330,'U16 to U18 (5v5)':44
       var who=data['Team name']||data['Business']||data['Contact name']||data['Name']||'';
       data._subject=f.dataset.subject+(data['Division']?' ('+data['Division']+')':'')+': '+who;
       data._template='table';data._replyto=data['Contact email']||data['Email'];
-      var isTeam=f.id==='f-interest'&&data['Registering as']==='A team',fee=CK_FEES[data['Division']]||'',ref=(data['Team name']||data['Contact name']||'').slice(0,18);
+      var isTeam=f.id==='f-interest'&&data['Registering as']==='A team',fee=CK_FEES[data['Division']]||'',ref=ckRef(data['Team name']||data['Contact name'],data['Division']);
       if(f.id==='f-interest'){data.email=data['Contact email'];
         data._autoresponse=isTeam?('Thanks for registering '+(data['Team name']||'your team')+' for the Cage Kings Launch Cup, Sunday 6 December at Moorabbin Indoor Sports.\n\nTo secure your place, please pay $'+fee+' by bank transfer by Sunday 29 November at 8pm.\n\nAccount name: '+CK_BANK.name+'\nBSB: '+CK_BANK.bsb+'\nAccount number: '+CK_BANK.acc+'\nReference: '+ref+'\n\nYour place is confirmed once payment is received.\n\nRegards,\nPFL'):('Thanks for registering for the Cage Kings Launch Cup. We will be in touch to help place you in a team.\n\nRegards,\nPFL')}
       var btn=f.querySelector('button[type=submit]'),lbl=btn.textContent;btn.disabled=true;btn.textContent='Sending...';
