@@ -449,7 +449,7 @@ fbq('track', 'PageView');
     <div>
       <div class="eyebrow">5v5 Futsal · Hosted by Prodigy Futbol Lab</div>
       <h1>Earn the<br><span class="red">crown.</span></h1>
-      <p data-ck="heroP">Fast, nonstop 5v5 futsal with cash prizes for the winners. Walls in. No offside. Four divisions from U12 to 18+ Open, a weekly Saturday league from 16 January 2027, and Grand Finals at PFL Oakleigh in front of club scouts.</p>
+      <p data-ck="heroP">Fast, nonstop 5v5 futsal with cash prizes for the winners. Walls in. No offside. Four divisions from U12 to 18+ Open, a weekly Saturday league from 23 January 2027, and Grand Finals at PFL Oakleigh in front of club scouts.</p>
       <div class="cta-row">
         <a href="#register" class="btn" data-ck-tab="interest" data-ck="heroBtn">Register for the Launch Cup</a>
         <a href="https://www.instagram.com/cagekingsfootball/" class="btn ghost" target="_blank" rel="noopener">Follow @cagekingsfootball</a>
@@ -464,7 +464,7 @@ fbq('track', 'PageView');
     <div class="reveal">
       <div class="eyebrow">Registrations open · One-off launch event</div>
       <h2>The Launch Cup.<br><span class="red">Sunday 6 December.</span></h2>
-      <p class="lead">A one-off 5v5 futsal tournament to launch the Cage Kings Saturday league, starting 16 January 2027. Four divisions, full prize money, 8 teams per division.</p>
+      <p class="lead">A one-off 5v5 futsal tournament to launch the Cage Kings Saturday league, starting 23 January 2027. Four divisions, full prize money, 8 teams per division.</p>
     </div>
     <div class="ck-lc-grid reveal">
       <div><small>Venue</small><b>Moorabbin Indoor Sports<br>2/117 Cochranes Rd, Moorabbin</b></div>
@@ -531,7 +531,7 @@ fbq('track', 'PageView');
     <div class="reveal">
       <div class="eyebrow">Seasons &amp; Grand Finals</div>
       <h2>Get seen.<br><span class="red">Get crowned.</span></h2>
-      <p class="lead" data-ck="seasonP">Two 20-week Saturday seasons a year, following the school terms, starting 16 January 2027. Every Saturday earns ladder points in your division, and the top 8 teams play the Grand Final at the end of each season, with club scouts watching.</p>
+      <p class="lead" data-ck="seasonP">Two 20-week Saturday seasons a year, following the school terms, starting 23 January 2027. Every Saturday earns ladder points in your division, and the top 8 teams play the Grand Final at the end of each season, with club scouts watching.</p>
     </div>
     <div class="ck-gf reveal"><span>Grand Final prizes</span><b>$5,000</b><small>18+ Open winners. Up to $3,000 for U16 to U18 and $2,000 for U12 to U15.</small></div>
   </div>
@@ -693,7 +693,7 @@ var CK=(function(){
 })();
 // League dates. Add each new year's seasons here (Saturdays as YYYY-MM-DD, Grand Final Sunday).
 var CK_SEASONS=[
-  {name:'Season 1 2027',code:'S1',sats:['2027-01-16','2027-01-23','2027-01-30','2027-02-06','2027-02-13','2027-02-20','2027-02-27','2027-03-06','2027-03-13','2027-03-20','2027-04-17','2027-04-24','2027-05-01','2027-05-08','2027-05-15','2027-05-22','2027-05-29','2027-06-05','2027-06-12','2027-06-19'],gf:'2027-06-20'},
+  {name:'Season 1 2027',code:'S1',sats:['2027-01-23','2027-01-30','2027-02-06','2027-02-13','2027-02-20','2027-02-27','2027-03-06','2027-03-13','2027-03-20','2027-04-10','2027-04-17','2027-04-24','2027-05-01','2027-05-08','2027-05-15','2027-05-22','2027-05-29','2027-06-05','2027-06-12','2027-06-19'],gf:'2027-06-20'},
   {name:'Season 2 2027',code:'S2',sats:['2027-07-17','2027-07-24','2027-07-31','2027-08-07','2027-08-14','2027-08-21','2027-08-28','2027-09-04','2027-09-11','2027-09-18','2027-10-09','2027-10-16','2027-10-23','2027-10-30','2027-11-06','2027-11-13','2027-11-20','2027-11-27','2027-12-04','2027-12-11'],gf:'2027-12-12'}
 ];
 var CK_DISC=0.9;
@@ -719,8 +719,8 @@ function ckLabel(iso,long){var d=new Date(iso+'T12:00:00Z'),M=['Jan','Feb','Mar'
   if(CK.phase==='league'){
     var S=CK.season,first=S===2027;
     var b=el('heroBtn');if(b)b.textContent='Register for the '+S+' League';
-    set('heroP','Fast, nonstop 5v5 futsal with cash prizes for the winners. Walls in. No offside. Four divisions from U12 to 18+ Open, a weekly Saturday league'+(first?' from 16 January 2027':'')+', and Grand Finals at PFL Oakleigh in front of club scouts.');
-    set('seasonP','Two 20-week Saturday seasons a year, following the school terms'+(first?', starting 16 January 2027':'')+'. Every Saturday earns ladder points in your division, and the top 8 teams play the Grand Final at the end of each season, with club scouts watching.');
+    set('heroP','Fast, nonstop 5v5 futsal with cash prizes for the winners. Walls in. No offside. Four divisions from U12 to 18+ Open, a weekly Saturday league'+(first?' from 23 January 2027':'')+', and Grand Finals at PFL Oakleigh in front of club scouts.');
+    set('seasonP','Two 20-week Saturday seasons a year, following the school terms'+(first?', starting 23 January 2027':'')+'. Every Saturday earns ladder points in your division, and the top 8 teams play the Grand Final at the end of each season, with club scouts watching.');
     var lc=document.getElementById('launch');if(lc)lc.style.display='none';
     hide('lcPromo');
     set('regH','Register for the <span class="red">'+S+' League</span>');
