@@ -109,7 +109,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
           <option value="U17" data-min="2010" data-max="2010">U17: born 2010</option>
           <option value="U18" data-min="2009" data-max="2009">U18: born 2009</option>
           <option value="18+ Open" data-min="0" data-max="2008">18+ Open: born 2008 or earlier</option>
-        </select></div>
+        </select><small data-ck27 style="display:block;margin-top:6px;color:#fff;font-weight:600;font-size:13px">Launch Cup uses 2027 age groups: the age players turn in 2027 (born 2015 is U12).</small></div>
         <div class="field"><label>Event *</label><select name="Event" required><option>Launch Cup, Sun 6 Dec 2026</option><option>Cage Kings League 2027</option></select></div>
         <div class="field"><label>Club or academy (if any)</label><input name="Club"></div>
       </div>
@@ -159,7 +159,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
 // Age groups: U-number = age-group year minus birth year. Until 31 Dec 2026 the Launch Cup uses 2027 age groups; from 1 Jan 2027 it is always the current calendar year (rolls over every 1 January).
 function ckAgeYear(){var d=new Date(),y=d.getFullYear();return y<2027?2027:y}
-function ckApplyAgeYears(root){var Y=ckAgeYear();(root||document).querySelectorAll('[data-by]').forEach(function(e){var v=e.getAttribute('data-by');
+function ckApplyAgeYears(root){var Y=ckAgeYear();(root||document).querySelectorAll('[data-ck27]').forEach(function(e){e.hidden=new Date().getFullYear()>=2027});(root||document).querySelectorAll('[data-by]').forEach(function(e){var v=e.getAttribute('data-by');
   if(v==='open')e.textContent=(Y-19)+' or earlier';else if(v.indexOf('-')>0){var p=v.split('-');e.textContent=(Y-parseInt(p[1],10))+'-'+(Y-parseInt(p[0],10))}else e.textContent=Y-parseInt(v,10)});
   (root||document).querySelectorAll('[data-ageyr]').forEach(function(e){e.textContent=Y})}
 function ckAgeOptions(sel,suffix,extra){var Y=ckAgeYear(),cur=sel.value,h='<option value="">Select</option>';for(var n=8;n<=18;n++)h+='<option value="U'+n+suffix+'" data-min="'+(Y-n)+'" data-max="'+(Y-n)+'">U'+n+': born '+(Y-n)+'</option>';
