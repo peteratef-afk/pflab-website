@@ -82,10 +82,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 <main><div class="wrap">
   <div class="eyebrow">Team managers</div>
   <h1>Submit your teamsheet</h1>
-  <p class="lead">One teamsheet per team. List every player who may take the court, with their date of birth and contact details. We check eligibility on the day against this sheet, so please make sure it is complete and correct.</p>
+  <p class="lead">One teamsheet per team, due 3 days before your event (Launch Cup: Thursday 3 December, 8pm). List every player who may take the court, with their date of birth and contact details. We check eligibility on the day against this sheet, so please make sure it is complete and correct.</p>
 
   <div class="rules">
-    <div><b>Age groups go by birth year</b><p>2027 age groups: 2027 minus year of birth (U12 is born 2015). Choose the age group your team registered in. Younger players can always play up.</p></div>
+    <div><b>Age groups go by birth year</b><p>Go by the year of birth shown next to each age group (U12 is born <span data-by="12">2015</span>). Age groups roll over every 1 January; the Launch Cup uses 2027 age groups. Choose the age group your team registered in. Younger players can always play up.</p></div>
     <div><b>One dispensation per squad</b><p>Each squad may include one player who is one year older than the team's age group. Never more than one year.</p></div>
     <div><b>Girls may play down one year</b><p>Girls may play one age group below their own. This does not use your squad's dispensation.</p></div>
   </div>
@@ -156,7 +156,16 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 <footer><div class="wrap">Cage Kings is hosted by Prodigy Futbol Lab, Oakleigh. Questions: 0475 559 998 or info@pflab.com.au</div></footer>
 
 <script>
+
+// Age groups: U-number = age-group year minus birth year. Until 31 Dec 2026 the Launch Cup uses 2027 age groups; from 1 Jan 2027 it is always the current calendar year (rolls over every 1 January).
+function ckAgeYear(){var d=new Date(),y=d.getFullYear();return y<2027?2027:y}
+function ckApplyAgeYears(root){var Y=ckAgeYear();(root||document).querySelectorAll('[data-by]').forEach(function(e){var v=e.getAttribute('data-by');
+  if(v==='open')e.textContent=(Y-19)+' or earlier';else if(v.indexOf('-')>0){var p=v.split('-');e.textContent=(Y-parseInt(p[1],10))+'-'+(Y-parseInt(p[0],10))}else e.textContent=Y-parseInt(v,10)});
+  (root||document).querySelectorAll('[data-ageyr]').forEach(function(e){e.textContent=Y})}
+function ckAgeOptions(sel,suffix,extra){var Y=ckAgeYear(),cur=sel.value,h='<option value="">Select</option>';for(var n=8;n<=18;n++)h+='<option value="U'+n+suffix+'" data-min="'+(Y-n)+'" data-max="'+(Y-n)+'">U'+n+': born '+(Y-n)+'</option>';
+  h+='<option value="18+ Open'+suffix+'" data-min="0" data-max="'+(Y-19)+'">18+ Open: born '+(Y-19)+' or earlier</option>'+(extra||'');sel.innerHTML=h;sel.value=cur}
 (function(){
+  ckAgeOptions(document.getElementById('div'),'');ckApplyAgeYears();
   var rows=document.getElementById('rows'),div=document.getElementById('div'),sum=document.getElementById('sum'),err=document.getElementById('err'),f=document.getElementById('ts');
   var START=5;
   function okPhone(v){var d=v.replace(/[^\d+]/g,'').replace(/^\+61/,'0');return /^0[2-478]\d{8}$/.test(d)}
