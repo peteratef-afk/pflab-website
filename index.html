@@ -462,6 +462,23 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px}
 .fs-banner .tag{background:var(--red);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:6px 9px}
 .fs-banner s{color:#999;margin-left:4px}
 .fs-banner .go{margin-left:auto;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--red)}
+
+/* Cage Kings promo bar + nav link */
+.ck-bar{display:block;background:var(--red);color:#fff;text-align:center;font-size:13px;font-weight:600;letter-spacing:.02em;padding:9px 16px;line-height:1.35}
+.ck-bar b{font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.ck-bar u{text-underline-offset:3px;font-weight:800}
+.ck-bar:hover{background:var(--red-dark)}
+header.scrolled .ck-bar,header:has(.links.open) .ck-bar{display:none}
+.ck-link{color:#fff!important;border-bottom:2px solid var(--red);padding-bottom:2px}
+@media (max-width:640px){.ck-bar{font-size:12px;padding:8px 12px}.ck-bar .ck-x{display:none}.hero,.y-hero,.c-hero{padding-top:150px}}
+
+.ck-band{background:radial-gradient(700px 400px at 85% 50%,rgba(237,32,36,.25),transparent 60%),#000;border-bottom:1px solid var(--line);padding:70px 0}
+.ck-band .wrap{display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:center}
+.ck-band img{width:100%;max-width:220px;filter:drop-shadow(0 20px 50px rgba(237,32,36,.35))}
+.ck-band .ck-facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:18px;font-size:14px;color:#ddd}
+.ck-band .ck-facts b{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.ck-band .cta-row{margin-top:26px}
+@media (max-width:1000px){.ck-band .wrap{grid-template-columns:1fr;gap:28px}.ck-band img{max-width:150px}}
 </style>
 <meta name="facebook-domain-verification" content="x940sv9g287y3fxhh9yb6754q3ik5v" />
 <!-- Meta Pixel Code -->
@@ -503,6 +520,10 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
 </svg>
 
 <header id="top">
+  <a class="ck-bar" id="ckBar" href="cagekings/#register"><b>Cage Kings Launch Cup</b> &middot; Sun 6 Dec<span class="ck-x"> &middot; Moorabbin Indoor Sports</span> &middot; Registrations close Sun 29 Nov &middot; <u>Register your team</u></a>
+  <script>(function(){var b=document.getElementById('ckBar'),n=Date.now(),p='';
+if(n>Date.parse('2026-12-06T18:00:00+11:00')){b.href=p+'cagekings/#register';b.innerHTML='<b>Cage Kings</b> &middot; Saturday futsal league from 16 Jan 2027<span class="ck-x"> &middot; Cash prizes</span> &middot; <u>Register for the 2027 League</u>';}
+else if(n>Date.parse('2026-11-29T20:00:00+11:00')){b.href=p+'cagekings/#launch';b.innerHTML='<b>Cage Kings Launch Cup</b> &middot; Sun 6 Dec, 12pm to 6pm<span class="ck-x"> &middot; Moorabbin Indoor Sports</span> &middot; Free entry for spectators &middot; <u>Details</u>';}})();</script>
   <div class="wrap nav">
     <a href="#home" class="brand" aria-label="Prodigy Futbol Lab home">
       <img src="logo.png?v=c2" alt="Prodigy Futbol Lab crest">
@@ -510,6 +531,7 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
     </a>
     <nav class="links" id="links">
       <a href="#programs">Programs</a>
+      <a href="cagekings/" class="ck-link">Cage Kings</a>
       <a href="method.html">Our Method</a>
       <a href="#pricing">Pricing</a>
       <a href="#coaches">Coaches</a>
@@ -519,7 +541,6 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
       <a href="#faq">FAQ</a>
       <a href="contact.html">Contact us</a>
       <a href="ywcc.html" class="ywcc-link">Youth World Cup</a>
-      <a href="cagekings/">Cage Kings</a>
       <a href="#enquire" class="btn">Book a session</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
@@ -555,6 +576,27 @@ src="https://www.facebook.com/tr?id=1483114940349180&ev=PageView&noscript=1"
     <div class="stat"><b class="red">40+</b><span>PFL players individually coached to NPL1 level in the past 12 months</span></div>
   </div>
 </div>
+
+<!-- CAGE KINGS -->
+<section class="ck-band" id="cage-kings">
+  <div class="wrap">
+    <a href="cagekings/"><img src="img/cagekings-logo.png" alt="Cage Kings 5v5 futsal logo" loading="lazy"></a>
+    <div>
+      <div class="eyebrow" id="ckEyebrow">New from PFL · Registrations close Sun 29 Nov, 8pm</div>
+      <h2 id="ckTitle">Cage Kings Launch Cup.<br><span class="red">Sunday 6 December.</span></h2>
+      <p class="lead" id="ckLead">A 5v5 futsal tournament to launch the Cage Kings Saturday league, which starts 16 January 2027. Four divisions with prize money, and free entry for spectators.</p>
+      <div class="ck-facts" id="ckFacts">
+        <div><b>Venue</b>Moorabbin Indoor Sports</div>
+        <div><b>12pm to 3pm</b>U12 to 13 · U14 to 15</div>
+        <div><b>3pm to 6pm</b>U16 to 18 · 18+ Open</div>
+      </div>
+      <div class="cta-row"><a href="cagekings/#register" class="btn" id="ckBtn">Register your team</a><a href="cagekings/" class="btn ghost">See details</a></div>
+    </div>
+  </div>
+  <script>(function(){var n=Date.now(),$=function(i){return document.getElementById(i)};
+if(n>Date.parse('2026-12-06T18:00:00+11:00')){$('ckEyebrow').textContent='Cage Kings · 5v5 futsal';$('ckTitle').innerHTML='Cage Kings Saturday League.<br><span class="red">From 16 January 2027.</span>';$('ckLead').textContent='Weekly 5v5 futsal with cash prizes. Four divisions from U12 to 18+ Open, and Grand Finals at PFL Oakleigh in front of club scouts.';$('ckFacts').style.display='none';$('ckBtn').textContent='Register for the 2027 League';}
+else if(n>Date.parse('2026-11-29T20:00:00+11:00')){$('ckEyebrow').textContent='Registrations closed · Come and watch';$('ckBtn').textContent='Event details';$('ckBtn').href='cagekings/#launch';}})();</script>
+</section>
 
 <!-- METHOD -->
 <section id="method">
