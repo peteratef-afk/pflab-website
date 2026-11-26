@@ -441,9 +441,154 @@ fbq('track', 'PageView');
 .ck-ig b{font-size:20px}
 @media (max-width:1000px){.ck-hero .wrap,.ck-season .wrap{grid-template-columns:1fr}.ck-hero img{max-width:240px;margin:0;order:-1}.ck-divs{grid-template-columns:1fr 1fr}.ck-rules{grid-template-columns:1fr 1fr}.ck-strip{grid-template-columns:1fr 1fr}.ck-launch{grid-template-columns:1fr;gap:16px}}
 @media (max-width:640px){.ck-divs,.ck-rules{grid-template-columns:1fr}.ck-strip b{font-size:32px}.ck-gf b{font-size:68px}}
+[hidden]{display:none!important}
+.ck-cup{min-height:auto;padding:130px 0 50px}
+.ck-cup h1{font-size:clamp(44px,6.2vw,86px);line-height:.98;margin:16px 0 18px}
+.ck-cup .wrap{grid-template-columns:1.3fr .7fr}
+.ck-cup p{margin-bottom:18px}
+.ck-fees{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);max-width:640px}
+.ck-fees div{background:#0b0b0b;padding:16px 18px}
+.ck-fees small{display:block;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.ck-fees b{font-size:22px;display:block}.ck-fees span{font-size:13px;color:#cfcfcf}
+.ck-close{font-size:18px!important;color:#fff!important;margin:20px 0 0!important}.ck-close b{color:var(--red)}
+.ck-in{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:22px}
+.ck-in small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-right:4px}
+.ck-in span{border:1px solid var(--line);background:#0b0b0b;padding:7px 12px;font-size:13px;font-weight:700}
+.ck-ask{font-size:15px;color:#ddd;margin-top:10px}.ck-ask a{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:1000px){.ck-cup .wrap{grid-template-columns:1fr}.ck-cup img{max-width:160px}}
+#cup + #register{padding-top:36px}#cup + #register h2{font-size:clamp(34px,4.4vw,60px)}
+@media (max-width:640px){.ck-fees{grid-template-columns:1fr}.ck-fees div{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:12px 14px}.ck-fees small{width:100%;margin:0}.ck-fees b{display:inline;font-size:20px}.ck-cup{padding-top:110px;padding-bottom:30px}}
 </style>
 
 <main>
+<section class="ck-hero ck-cup" id="cup">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">5v5 Futsal · Hosted by Prodigy Futbol Lab</div>
+      <h1>Cage Kings Launch Cup.<br><span class="red">Sunday 6 December.</span></h1>
+      <p>5v5 futsal at Moorabbin Indoor Sports. U8 to U18 and 18+ Open.</p>
+      <div class="ck-fees">
+        <div><small>U8 to U15</small><b>$330</b><span>entry · winners take $900</span></div>
+        <div><small>U16 to U18</small><b>$440</b><span>entry · winners take $1,200</span></div>
+        <div><small>18+ Open</small><b>$550</b><span>entry · winners take $1,500</span></div>
+      </div>
+      <p class="ck-close" data-ck="cupClose"><b>Entries close Mon 30 Nov, 8pm.</b> No payment now.</p>
+      <div class="ck-in"><small>Teams already in</small><span>Icon Academy</span><span>Ftsalstar</span><span>Mountain Boys</span><span>Kings</span></div>
+    </div>
+    <img src="../img/cagekings-logo.png" alt="Cage Kings logo">
+  </div>
+</section>
+
+<section id="register">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Get involved</div>
+      <h2 data-ck="regH">Register for the <span class="red">Launch Cup</span></h2>
+      <p class="lead" data-ck="regLead">Register your team for Sunday 6 December. Referees, sponsors and the mailing list are in the other tabs.</p>
+      <p class="ck-ask">Questions? Call or text <a href="tel:0475559998">0475 559 998</a></p>
+    </div>
+    <div class="ck-tabs" role="tablist">
+      <button type="button" role="tab" aria-selected="true" data-tab="interest">Team registration</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="list">Mailing list</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="refs">Referees &amp; officials</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="sponsor">Sponsors</button>
+    </div>
+    <div class="ck-forms">
+
+      <form class="ck-form on" id="f-interest" data-subject="Launch Cup registration" novalidate>
+        <p class="intro" data-ck="formIntro">Register your team for the Launch Cup. No payment now: once entries close on Monday 30 November at 8pm, we will email you your division, session time and payment details.</p>
+        <div class="row">
+          <div class="field" data-ck="regAsField"><label>Registering as *</label><select name="Registering as" required data-ck="regAs"><option value="">Select</option><option selected>A team</option></select></div>
+          <div class="field"><label>Age group *</label><select name="Division" required data-div><option value="">Select</option><option value="U8 (5v5)">U8: born 2019</option><option value="U9 (5v5)">U9: born 2018</option><option value="U10 (5v5)">U10: born 2017</option><option value="U11 (5v5)">U11: born 2016</option><option value="U12 (5v5)">U12: born 2015</option><option value="U13 (5v5)">U13: born 2014</option><option value="U14 (5v5)">U14: born 2013</option><option value="U15 (5v5)">U15: born 2012</option><option value="U16 (5v5)">U16: born 2011</option><option value="U17 (5v5)">U17: born 2010</option><option value="U18 (5v5)">U18: born 2009</option><option value="18+ Open (5v5)">18+ Open: born 2008 or earlier</option></select><small data-ck27 style="display:block;margin-top:6px;color:#fff;font-weight:600">Launch Cup uses 2027 age groups: the age your players turn in 2027 (a player born 2015 is U12).</small><small style="display:block;margin-top:6px;color:#bbb">Choose the age group of your oldest player, by year of birth. We set the final divisions once entries close. Each division is a single age group or two consecutive age groups, never more.</small></div>
+        </div>
+        <div class="field" data-ck="seasonPick" hidden><label>Season *</label><select name="Season"></select></div>
+        <div class="field" data-ck="satPick" hidden><label>Saturdays *</label><div class="ck-sats"></div><p class="ck-note">Places are first paid, first in. If a Saturday is full when your payment arrives, it carries over to your next Saturday or puts you first on standby.</p></div>
+        <p class="ck-note" data-ck="regNote" hidden></p>
+        <div class="row">
+          <div class="field"><label>Team name *</label><input name="Team name" data-teamreq></div>
+          <div class="field" data-leagueonly><label>Number of players * <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(minimum 5)</span></label><input data-teamreq name="Number of players" type="number" min="5" inputmode="numeric"></div>
+        </div>
+        <h3 class="fh">Captain or team manager</h3>
+        <div class="field"><label>First &amp; last name *</label><input name="Contact name" required autocomplete="name"></div>
+        <div class="row">
+          <div class="field"><label>Email *</label><input name="Contact email" type="email" required autocomplete="email"></div>
+          <div class="field"><label>Mobile *</label><input name="Contact mobile" type="tel" required data-phone autocomplete="tel" placeholder="04xx xxx xxx"></div>
+        </div>
+        <div class="row" data-leagueonly>
+          <div class="field"><label>Suburb</label><input name="Suburb" autocomplete="address-level2"></div>
+          <div class="field"><label>Current club (if any)</label><input name="Current club"></div>
+        </div>
+        <div class="ck-u18" data-u18 data-leagueonly>
+          <h3 class="fh">Junior divisions <span>(players under 18)</span></h3>
+          <div class="field"><label>Player name(s) *</label><input name="Player name(s)" data-u18req placeholder="If you are registering on behalf of a player"></div>
+          <label class="consent"><input type="checkbox" name="Parent or guardian" value="Yes" data-u18req> I am the parent or guardian of the player(s), or the team manager acting with their parents' permission. *</label>
+          <label class="consent"><input type="checkbox" name="Media consent" value="Yes"> Photos and video of the player(s) may be used on Cage Kings and PFL social media and website. (Optional)</label>
+          <label class="consent"><input type="checkbox" name="Scout contact consent" value="Yes"> Cage Kings may share the player's name, age group and results with club scouts, and pass on scouts' contact requests to me. (Optional)</label>
+        </div>
+        <label class="consent" data-leagueonly><input type="checkbox" name="Rules and waiver accepted" value="Yes" required> I accept the Cage Kings rules and participation waiver for myself and my team, and I will sign the captain's sheet on the day. *</label>
+        <label class="consent" data-cuponly><input type="checkbox" name="Rules, waiver, payment terms and permission accepted" value="Yes" required> <span data-ck="cupConsent">I accept the Cage Kings rules and participation waiver for my team. I understand payment is due once Cage Kings emails our division and payment details, and entry is refunded in full only if a division is called off. For any player under 18, I am their parent or guardian, or the team manager acting with their parents' permission. *</span></label>
+        <label class="consent" data-leagueonly><input type="checkbox" name="Payment terms accepted" value="Yes" data-teamreq> Teams: <span data-ck="payTerms">I understand payment is due once Cage Kings emails my division and payment details. Entry is refunded in full only if a division is called off, and not if a team withdraws after paying. *</span></label>
+        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes"> Send me email and SMS updates about future Cage Kings events from Prodigy Futbol Lab. I can unsubscribe at any time. (Optional)</label>
+        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Register</button>
+      </form>
+
+      <form class="ck-form" id="f-list" data-subject="Cage Kings mailing list" novalidate>
+        <p class="intro" data-ck="listIntro">Be first to hear about the Launch Cup, new venues and season dates.</p>
+        <div class="field"><label>First &amp; last name *</label><input name="Name" required autocomplete="name"></div>
+        <div class="row">
+          <div class="field"><label>Email *</label><input name="Email" type="email" required autocomplete="email"></div>
+          <div class="field"><label>Mobile</label><input name="Mobile" type="tel" data-phone autocomplete="tel" placeholder="04xx xxx xxx"></div>
+        </div>
+        <div class="field"><label>Interested in</label><select name="Interested in"><option value="">Select</option><option value="U8">U8: born 2019</option><option value="U9">U9: born 2018</option><option value="U10">U10: born 2017</option><option value="U11">U11: born 2016</option><option value="U12">U12: born 2015</option><option value="U13">U13: born 2014</option><option value="U14">U14: born 2013</option><option value="U15">U15: born 2012</option><option value="U16">U16: born 2011</option><option value="U17">U17: born 2010</option><option value="U18">U18: born 2009</option><option value="18+ Open">18+ Open: born 2008 or earlier</option><option>Watching / general updates</option></select></div>
+        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes" required> I agree to receive email and SMS updates about Cage Kings from Prodigy Futbol Lab. I can unsubscribe at any time. *</label>
+        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Join the mailing list</button>
+      </form>
+
+      <form class="ck-form" id="f-refs" data-subject="Cage Kings referee and official EOI" novalidate>
+        <p class="intro">We need referees, scorekeepers and match officials for weekly sessions and Grand Finals. Paid shifts.</p>
+        <div class="field"><label>First &amp; last name *</label><input name="Name" required autocomplete="name"></div>
+        <div class="row">
+          <div class="field"><label>Email *</label><input name="Email" type="email" required autocomplete="email"></div>
+          <div class="field"><label>Mobile *</label><input name="Mobile" type="tel" required data-phone autocomplete="tel" placeholder="04xx xxx xxx"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Role *</label><select name="Role" required><option value="">Select</option><option>Referee</option><option>Scorekeeper / table official</option><option>Either</option></select></div>
+          <div class="field"><label>Are you 18 or over? *</label><select name="18 or over" required><option value="">Select</option><option>Yes</option><option>No</option></select></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Referee accreditation</label><input name="Accreditation" placeholder="e.g. Football Victoria Level 4, or none"></div>
+          <div class="field"><label>Working with Children Check</label><select name="WWCC"><option value="">Select</option><option>Yes, current</option><option>No, but happy to get one</option></select></div>
+        </div>
+        <div class="field"><label>Availability</label><textarea name="Availability" rows="3" placeholder="Days and times you can work"></textarea></div>
+        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes"> I agree to receive email and SMS updates about Cage Kings from Prodigy Futbol Lab. I can unsubscribe at any time. (Optional)</label>
+        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Send expression of interest</button>
+      </form>
+
+      <form class="ck-form" id="f-sponsor" data-subject="Cage Kings sponsor enquiry" novalidate>
+        <p class="intro">Put your brand in front of players and families across Melbourne's south east and east: venue signage, prize naming, social media and Grand Final presence.</p>
+        <div class="row">
+          <div class="field"><label>Business name *</label><input name="Business" required autocomplete="organization"></div>
+          <div class="field"><label>Contact name *</label><input name="Contact name" required autocomplete="name"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Email *</label><input name="Email" type="email" required autocomplete="email"></div>
+          <div class="field"><label>Mobile *</label><input name="Mobile" type="tel" required data-phone autocomplete="tel" placeholder="04xx xxx xxx"></div>
+        </div>
+        <div class="field"><label>Interested in</label><select name="Sponsorship interest"><option value="">Select</option><option>Naming a division or prize</option><option>Grand Finals</option><option>Venue signage and social media</option><option>Not sure yet, tell me more</option></select></div>
+        <div class="field"><label>Message</label><textarea name="Message" rows="3"></textarea></div>
+        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes"> I agree to receive email and SMS updates about Cage Kings from Prodigy Futbol Lab. I can unsubscribe at any time. (Optional)</label>
+        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Send sponsor enquiry</button>
+      </form>
+
+      <input type="text" id="ck_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <p class="form-foot" id="ckErr" style="color:var(--red);display:none"></p>
+      <div class="ck-done" id="ckDone"><h3>You're in.</h3><p id="ckDoneMsg">Thanks. We've received your details and will be in touch.</p>
+        <div class="ck-pay" id="ckPay"><h4>Pay to secure your place</h4><dl><dt>Amount</dt><dd id="payAmt"></dd><dt>Account name</dt><dd id="payName"></dd><dt>BSB</dt><dd id="payBsb"></dd><dt>Account number</dt><dd id="payAcc"></dd><dt>Reference</dt><dd id="payRef"></dd></dl><p><span data-ck="payDue">Payment is due by Monday 30 November at 8pm.</span> Screenshot or note these details. We'll email you a confirmation shortly. Your place is confirmed once payment is received.</p></div><div class="cta-row" style="margin-top:18px"><a href="https://www.instagram.com/cagekingsfootball/" class="btn" target="_blank" rel="noopener">Follow @cagekingsfootball</a><button type="button" class="btn ghost" id="ckAgain">Submit another</button></div></div>
+      <p class="form-foot">Your details are only used by Prodigy Futbol Lab to run Cage Kings and are never sold. <a href="../privacy.html" style="color:inherit;text-decoration:underline">Privacy policy</a></p>
+    </div>
+  </div>
+</section>
+
 <section class="ck-hero" id="home">
   <div class="wrap">
     <div>
@@ -545,114 +690,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<section id="register">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="eyebrow">Get involved</div>
-      <h2 data-ck="regH">Register for the <span class="red">Launch Cup</span></h2>
-      <p class="lead" data-ck="regLead">Register your team for Sunday 6 December. Referees, sponsors and the mailing list are in the other tabs.</p>
-    </div>
-    <div class="ck-tabs" role="tablist">
-      <button type="button" role="tab" aria-selected="true" data-tab="interest">Team registration</button>
-      <button type="button" role="tab" aria-selected="false" data-tab="list">Mailing list</button>
-      <button type="button" role="tab" aria-selected="false" data-tab="refs">Referees &amp; officials</button>
-      <button type="button" role="tab" aria-selected="false" data-tab="sponsor">Sponsors</button>
-    </div>
-    <div class="ck-forms">
-
-      <form class="ck-form on" id="f-interest" data-subject="Launch Cup registration" novalidate>
-        <p class="intro" data-ck="formIntro">Register your team for the Launch Cup. No payment yet: once entries close on Monday 30 November we will email you your division, session time and payment details. No team yet? Register as an individual and we will help place you.</p>
-        <div class="row">
-          <div class="field"><label>Registering as *</label><select name="Registering as" required data-ck="regAs"><option value="">Select</option><option>A team</option><option>An individual player (place me in a team)</option></select></div>
-          <div class="field"><label>Age group *</label><select name="Division" required data-div><option value="">Select</option><option value="U8 (5v5)">U8: born 2019</option><option value="U9 (5v5)">U9: born 2018</option><option value="U10 (5v5)">U10: born 2017</option><option value="U11 (5v5)">U11: born 2016</option><option value="U12 (5v5)">U12: born 2015</option><option value="U13 (5v5)">U13: born 2014</option><option value="U14 (5v5)">U14: born 2013</option><option value="U15 (5v5)">U15: born 2012</option><option value="U16 (5v5)">U16: born 2011</option><option value="U17 (5v5)">U17: born 2010</option><option value="U18 (5v5)">U18: born 2009</option><option value="18+ Open (5v5)">18+ Open: born 2008 or earlier</option></select><small data-ck27 style="display:block;margin-top:6px;color:#fff;font-weight:600">Launch Cup uses 2027 age groups: the age your players turn in 2027 (a player born 2015 is U12).</small><small style="display:block;margin-top:6px;color:#bbb">Choose the age group of your oldest player, by year of birth. We set the final divisions once entries close. Each division is a single age group or two consecutive age groups, never more.</small></div>
-        </div>
-        <div class="field" data-ck="sessPref"><label>Preferred session (optional)</label><select name="Preferred session"><option>No preference</option><option>12pm to 3pm</option><option>3pm to 6pm</option></select><small style="display:block;margin-top:6px;color:#bbb">We will do our best, but session times depend on how the divisions fall.</small></div>
-        <div class="field" data-ck="seasonPick" hidden><label>Season *</label><select name="Season"></select></div>
-        <div class="field" data-ck="satPick" hidden><label>Saturdays *</label><div class="ck-sats"></div><p class="ck-note">Places are first paid, first in. If a Saturday is full when your payment arrives, it carries over to your next Saturday or puts you first on standby.</p></div>
-        <p class="ck-note" data-ck="regNote" hidden></p>
-        <div class="row">
-          <div class="field"><label>Team name * <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(teams only)</span></label><input name="Team name" data-teamreq></div>
-          <div class="field"><label>Number of players * <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(minimum 5)</span></label><input data-teamreq name="Number of players" type="number" min="5" inputmode="numeric"></div>
-        </div>
-        <h3 class="fh">Captain or team manager</h3>
-        <div class="field"><label>First &amp; last name *</label><input name="Contact name" required autocomplete="name"></div>
-        <div class="row">
-          <div class="field"><label>Email *</label><input name="Contact email" type="email" required autocomplete="email"></div>
-          <div class="field"><label>Mobile *</label><input name="Contact mobile" type="tel" required data-phone autocomplete="tel" placeholder="04xx xxx xxx"></div>
-        </div>
-        <div class="row">
-          <div class="field"><label>Suburb</label><input name="Suburb" autocomplete="address-level2"></div>
-          <div class="field"><label>Current club (if any)</label><input name="Current club"></div>
-        </div>
-        <div class="ck-u18" data-u18>
-          <h3 class="fh">Junior divisions <span>(players under 18)</span></h3>
-          <div class="field"><label>Player name(s) *</label><input name="Player name(s)" data-u18req placeholder="If you are registering on behalf of a player"></div>
-          <label class="consent"><input type="checkbox" name="Parent or guardian" value="Yes" data-u18req> I am the parent or guardian of the player(s), or the team manager acting with their parents' permission. *</label>
-          <label class="consent"><input type="checkbox" name="Media consent" value="Yes"> Photos and video of the player(s) may be used on Cage Kings and PFL social media and website. (Optional)</label>
-          <label class="consent"><input type="checkbox" name="Scout contact consent" value="Yes"> Cage Kings may share the player's name, age group and results with club scouts, and pass on scouts' contact requests to me. (Optional)</label>
-        </div>
-        <label class="consent"><input type="checkbox" name="Rules and waiver accepted" value="Yes" required> I accept the Cage Kings rules and participation waiver for myself and my team, and I will sign the captain's sheet on the day. *</label>
-        <label class="consent"><input type="checkbox" name="Payment terms accepted" value="Yes" data-teamreq> Teams: <span data-ck="payTerms">I understand payment is due once Cage Kings emails my division and payment details. Entry is refunded in full only if a division is called off, and not if a team withdraws after paying. *</span></label>
-        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes"> Send me email and SMS updates about future Cage Kings events from Prodigy Futbol Lab. I can unsubscribe at any time. (Optional)</label>
-        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Register</button>
-      </form>
-
-      <form class="ck-form" id="f-list" data-subject="Cage Kings mailing list" novalidate>
-        <p class="intro" data-ck="listIntro">Be first to hear about the Launch Cup, new venues and season dates.</p>
-        <div class="field"><label>First &amp; last name *</label><input name="Name" required autocomplete="name"></div>
-        <div class="row">
-          <div class="field"><label>Email *</label><input name="Email" type="email" required autocomplete="email"></div>
-          <div class="field"><label>Mobile</label><input name="Mobile" type="tel" data-phone autocomplete="tel" placeholder="04xx xxx xxx"></div>
-        </div>
-        <div class="field"><label>Interested in</label><select name="Interested in"><option value="">Select</option><option value="U8">U8: born 2019</option><option value="U9">U9: born 2018</option><option value="U10">U10: born 2017</option><option value="U11">U11: born 2016</option><option value="U12">U12: born 2015</option><option value="U13">U13: born 2014</option><option value="U14">U14: born 2013</option><option value="U15">U15: born 2012</option><option value="U16">U16: born 2011</option><option value="U17">U17: born 2010</option><option value="U18">U18: born 2009</option><option value="18+ Open">18+ Open: born 2008 or earlier</option><option>Watching / general updates</option></select></div>
-        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes" required> I agree to receive email and SMS updates about Cage Kings from Prodigy Futbol Lab. I can unsubscribe at any time. *</label>
-        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Join the mailing list</button>
-      </form>
-
-      <form class="ck-form" id="f-refs" data-subject="Cage Kings referee and official EOI" novalidate>
-        <p class="intro">We need referees, scorekeepers and match officials for weekly sessions and Grand Finals. Paid shifts.</p>
-        <div class="field"><label>First &amp; last name *</label><input name="Name" required autocomplete="name"></div>
-        <div class="row">
-          <div class="field"><label>Email *</label><input name="Email" type="email" required autocomplete="email"></div>
-          <div class="field"><label>Mobile *</label><input name="Mobile" type="tel" required data-phone autocomplete="tel" placeholder="04xx xxx xxx"></div>
-        </div>
-        <div class="row">
-          <div class="field"><label>Role *</label><select name="Role" required><option value="">Select</option><option>Referee</option><option>Scorekeeper / table official</option><option>Either</option></select></div>
-          <div class="field"><label>Are you 18 or over? *</label><select name="18 or over" required><option value="">Select</option><option>Yes</option><option>No</option></select></div>
-        </div>
-        <div class="row">
-          <div class="field"><label>Referee accreditation</label><input name="Accreditation" placeholder="e.g. Football Victoria Level 4, or none"></div>
-          <div class="field"><label>Working with Children Check</label><select name="WWCC"><option value="">Select</option><option>Yes, current</option><option>No, but happy to get one</option></select></div>
-        </div>
-        <div class="field"><label>Availability</label><textarea name="Availability" rows="3" placeholder="Days and times you can work"></textarea></div>
-        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes"> I agree to receive email and SMS updates about Cage Kings from Prodigy Futbol Lab. I can unsubscribe at any time. (Optional)</label>
-        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Send expression of interest</button>
-      </form>
-
-      <form class="ck-form" id="f-sponsor" data-subject="Cage Kings sponsor enquiry" novalidate>
-        <p class="intro">Put your brand in front of players and families across Melbourne's south east and east: venue signage, prize naming, social media and Grand Final presence.</p>
-        <div class="row">
-          <div class="field"><label>Business name *</label><input name="Business" required autocomplete="organization"></div>
-          <div class="field"><label>Contact name *</label><input name="Contact name" required autocomplete="name"></div>
-        </div>
-        <div class="row">
-          <div class="field"><label>Email *</label><input name="Email" type="email" required autocomplete="email"></div>
-          <div class="field"><label>Mobile *</label><input name="Mobile" type="tel" required data-phone autocomplete="tel" placeholder="04xx xxx xxx"></div>
-        </div>
-        <div class="field"><label>Interested in</label><select name="Sponsorship interest"><option value="">Select</option><option>Naming a division or prize</option><option>Grand Finals</option><option>Venue signage and social media</option><option>Not sure yet, tell me more</option></select></div>
-        <div class="field"><label>Message</label><textarea name="Message" rows="3"></textarea></div>
-        <label class="consent"><input type="checkbox" name="Updates consent" value="Yes"> I agree to receive email and SMS updates about Cage Kings from Prodigy Futbol Lab. I can unsubscribe at any time. (Optional)</label>
-        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Send sponsor enquiry</button>
-      </form>
-
-      <input type="text" id="ck_honey" style="display:none" tabindex="-1" autocomplete="off">
-      <p class="form-foot" id="ckErr" style="color:var(--red);display:none"></p>
-      <div class="ck-done" id="ckDone"><h3>You're in.</h3><p id="ckDoneMsg">Thanks. We've received your details and will be in touch.</p>
-        <div class="ck-pay" id="ckPay"><h4>Pay to secure your place</h4><dl><dt>Amount</dt><dd id="payAmt"></dd><dt>Account name</dt><dd id="payName"></dd><dt>BSB</dt><dd id="payBsb"></dd><dt>Account number</dt><dd id="payAcc"></dd><dt>Reference</dt><dd id="payRef"></dd></dl><p><span data-ck="payDue">Payment is due by Monday 30 November at 8pm.</span> Screenshot or note these details. We'll email you a confirmation shortly. Your place is confirmed once payment is received.</p></div><div class="cta-row" style="margin-top:18px"><a href="https://www.instagram.com/cagekingsfootball/" class="btn" target="_blank" rel="noopener">Follow @cagekingsfootball</a><button type="button" class="btn ghost" id="ckAgain">Submit another</button></div></div>
-      <p class="form-foot">Your details are only used by Prodigy Futbol Lab to run Cage Kings and are never sold. <a href="../privacy.html" style="color:inherit;text-decoration:underline">Privacy policy</a></p>
-    </div>
-  </div>
-</section>
 
 <section id="faq" style="padding-top:0">
   <div class="wrap ck-faq">
@@ -663,7 +700,6 @@ fbq('track', 'PageView');
     <details data-ck="faqPay"><summary>How do I pay for the Launch Cup?</summary><p>Register your team on this page. No payment is needed yet. Once entries close on Monday 30 November, we'll email you your division, session time and the bank transfer details. Please don't pay until you receive that email. Entry is refunded in full only if a division is called off.</p></details>
     <details><summary>How are prizes paid?</summary><p>Prize money is paid to the winning team on the day.</p></details>
     <details><summary>Where are the sessions?</summary><p data-ck="faqWhere">The Launch Cup is at Moorabbin Indoor Sports, 2/117 Cochranes Rd, Moorabbin. League venues for 2027 will be announced soon. Grand Finals are held at Prodigy Futbol Lab, 144-154 Haughton Road, Oakleigh.</p></details>
-    <details><summary>Can I play without a team?</summary><p>Yes. Register as an individual player and we'll help place you in a team in your division.</p></details>
     <a class="ck-ig" href="https://www.instagram.com/cagekingsfootball/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1C2.7 8.5 2.7 8.9 2.7 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg><span><small>Results, dates and highlights</small><b>@cagekingsfootball</b></span></a>
   </div>
 </section>
@@ -710,10 +746,17 @@ function ckLabel(iso,long){var d=new Date(iso+'T12:00:00Z'),M=['Jan','Feb','Mar'
   function el(k){return document.querySelector('[data-ck="'+k+'"]')}
   function set(k,h){var e=el(k);if(e)e.innerHTML=h}
   function hide(k){var e=el(k);if(e)e.style.display='none'}
+  function hideAll(q){document.querySelectorAll(q).forEach(function(e){e.hidden=true})}
+  // Launch Cup phases: Launch Cup on top, registration form straight under it. League: original layout.
+  var cupS=document.getElementById('cup'),regS=document.getElementById('register'),faqS=document.getElementById('faq');
+  if(CK.phase==='league'){if(cupS)cupS.hidden=true;if(regS&&faqS)faqS.parentNode.insertBefore(regS,faqS);hideAll('[data-cuponly]')}
+  else{var hs=document.getElementById('home'),ls=document.getElementById('launch');if(hs)hs.hidden=true;if(ls)ls.hidden=true;hideAll('[data-leagueonly]');var raf=el('regAsField');if(raf)raf.style.display='none'}
   if(CK.phase==='late'){
     set('lcClose','<small>Late entries</small><b>Open until Sat 5 Dec<br>Pay within 24 hours</b>');
     set('lcPromoClose','Late entries are open until Saturday 5 December.');
-    set('formIntro','Register your team for the Launch Cup. As soon as you submit, you will see the bank transfer details. Late entry: payment is due within 24 hours to secure your place. No team yet? Register as an individual and we will help place you.');
+    set('formIntro','Register your team for the Launch Cup. As soon as you submit, you will see the bank transfer details. Late entry: payment is due within 24 hours to secure your place.');
+    set('cupClose','<b>Late entries open until Sat 5 Dec.</b> Pay within 24 hours to secure your place.');
+    set('cupConsent','I accept the Cage Kings rules and participation waiver for my team. I understand this is a late entry, payment is due within 24 hours, and entry is refunded in full only if a division is called off. For any player under 18, I am their parent or guardian, or the team manager acting with their parents\' permission. *');
     set('payTerms','I understand this is a late entry and payment is due within 24 hours. Entry is refunded in full only if a division is called off, and not if a team withdraws. *');
     set('payDue','Late entry: payment is due within 24 hours.');
     set('faqPay','<summary>How do I pay for the Launch Cup?</summary><p>Register your team on this page. The bank transfer details appear as soon as you submit, and we will email you a confirmation shortly after. Late entries pay within 24 hours of registering. Entry is refunded in full only if a division is called off.</p>');
@@ -726,9 +769,9 @@ function ckLabel(iso,long){var d=new Date(iso+'T12:00:00Z'),M=['Jan','Feb','Mar'
     var lc=document.getElementById('launch');if(lc)lc.style.display='none';
     hide('lcPromo');
     set('regH','Register for the <span class="red">'+S+' League</span>');
-    set('regLead','Sign up as a full-season team, a standby team or an individual player. Referees, sponsors and the mailing list are in the other tabs.');
-    set('formIntro','Register for the '+S+' Cage Kings Saturday league. Full-season teams lock in every Saturday with 10% off. Weekly teams pick their Saturdays. Standby teams are on call when a slot opens and pay only for the Saturdays they play. No team yet? Register as an individual and we will place you in a squad.');
-    set('regAs','<option value="">Select</option><option>Full-season team</option><option>Weekly team (pick your Saturdays)</option><option>Standby team (fill in on short notice)</option><option>Individual player (place me in a team)</option>');
+    set('regLead','Sign up as a full-season, weekly or standby team. Referees, sponsors and the mailing list are in the other tabs.');
+    set('formIntro','Register for the '+S+' Cage Kings Saturday league. Full-season teams lock in every Saturday with 10% off. Weekly teams pick their Saturdays. Standby teams are on call when a slot opens and pay only for the Saturdays they play.');
+    set('regAs','<option value="">Select</option><option>Full-season team</option><option>Weekly team (pick your Saturdays)</option><option>Standby team (fill in on short notice)</option>');
     var now=CK.now,seasons=CK_SEASONS.filter(function(x){return ckCutoff(x.sats[0])>now}),
         sats=[];CK_SEASONS.forEach(function(x){x.sats.forEach(function(d){if(ckCutoff(d)>now)sats.push(d)})});sats=sats.slice(0,8);
     var ss=document.querySelector('[data-ck="seasonPick"] select');
@@ -782,7 +825,7 @@ var CK_FEES={'18+ Open (5v5)':550};for(var _a=8;_a<=18;_a++)CK_FEES['U'+_a+' (5v
   document.querySelectorAll('[data-ck-tab]').forEach(function(a){a.addEventListener('click',function(){show(a.dataset.ckTab)})});
   var h=location.hash.replace('#','');if(['list','refs','sponsor','interest'].indexOf(h)>-1){show(h);setTimeout(function(){document.getElementById('register').scrollIntoView()},50)}
 
-  var div=document.querySelector('[data-div]'),u18=document.querySelector('[data-u18]');ckAgeOptions(div,' (5v5)');ckAgeOptions(document.querySelector('select[name="Interested in"]'),'','<option>Watching / general updates</option>');ckApplyAgeYears();var sp0=document.querySelector('[data-ck="sessPref"]');if(sp0&&CK.phase==='league')sp0.hidden=true;
+  var div=document.querySelector('[data-div]'),u18=document.querySelector('[data-u18]');ckAgeOptions(div,' (5v5)');ckAgeOptions(document.querySelector('select[name="Interested in"]'),'','<option>Watching / general updates</option>');ckApplyAgeYears();
   div.addEventListener('change',function(){u18.classList.toggle('on',/^U\d/.test(div.value))});
 
   document.querySelectorAll('.ck-form').forEach(function(f){
@@ -790,6 +833,7 @@ var CK_FEES={'18+ Open (5v5)':550};for(var _a=8;_a<=18;_a++)CK_FEES['U'+_a+' (5v
       e.preventDefault();err.style.display='none';
       var bad=[],isU18=f.id==='f-interest'&&u18.classList.contains('on'),isTeamReg=f.id==='f-interest'&&/^(A team|Full-season|Weekly|Standby)/.test(f.querySelector('[name="Registering as"]').value);
       f.querySelectorAll('input,select,textarea').forEach(function(i){
+        if(i.closest('[hidden]'))return;
         var req=i.required||(isU18&&i.hasAttribute('data-u18req'))||(isTeamReg&&i.hasAttribute('data-teamreq'));
         var v=i.type==='checkbox'?i.checked:i.value.trim()!=='';
         var ok=req?v:true;
